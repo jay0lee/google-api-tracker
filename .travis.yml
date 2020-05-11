@@ -15,20 +15,23 @@ install:
   - while read line; do
       export api=$(echo $line | cut -d' ' -f1);
       export ver=$(echo $line | cut -d' ' -f2);
+      export apifile="${api}-${ver}.json"
       export v2_url="https://${api}.googleapis.com/\$discovery/rest?version=${ver}";
       export v1_url="https://www.googleapis.com/discovery/v1/apis/${api}/${ver}/rest";
       echo "Checking v2 URL for $api $ver...";
-      curl -s -f -o $api-$ver.json $v2_url;
+      curl -s -f -o $apifile $v2_url;
       export result=$?;
       if [ $result -ne 0 ]; then
         echo "v2 URL failed with $result, checking v1 URL for $api $ver...";
-        curl -s -f -o $api-$ver.json $v1_url;
+        curl -s -f -o $apifile $v1_url;
         export result=$?;
         if [ $result -ne 0 ]; then
           echo "v1 failed also! Giving up.";
           exit 1;
         fi
       fi
+      # sort and standardize JSON
+      cat $apifile | python3 -mjson.tool > $apifile
     done < apis.txt
   - git add .
   - git diff --quiet && git diff --staged --quiet || git commit -am 'API changes'
