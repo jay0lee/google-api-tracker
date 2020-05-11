@@ -31,7 +31,7 @@ install:
         fi
       fi
       # sort and standardize JSON
-      cat $apifile | python3 -mjson.tool > $apifile
+      cat $apifile | python3 -mjson.tool > $apifile;
     done < apis.txt
   - git add .
   - git diff --quiet && git diff --staged --quiet || git commit -am 'API changes'
