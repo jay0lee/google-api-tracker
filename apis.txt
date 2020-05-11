@@ -4,7 +4,10 @@ admin reports_v1
 alertcenter v1beta1
 appsactivity v1
 calendar v3
+chat v1
 classroom v1
+cloudidentity v1
+cloudidentity v1beta1
 cloudresourcemanager v2
 cloudresourcemanager v1
 drive v2
