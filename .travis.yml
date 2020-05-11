@@ -28,8 +28,8 @@ install:
         if [ $result -ne 0 ]; then
           echo "v1 failed also! Giving up.";
           exit 1;
-        fi
-      fi
+        fi;
+      fi;
       cat $apifile | python3 -mjson.tool > $apifile;
     done < apis.txt
   - git add .
