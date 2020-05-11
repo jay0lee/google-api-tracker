@@ -30,7 +30,6 @@ install:
           exit 1;
         fi
       fi
-      # sort and standardize JSON
       cat $apifile | python3 -mjson.tool > $apifile;
     done < apis.txt
   - git add .
