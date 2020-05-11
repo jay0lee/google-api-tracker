@@ -35,4 +35,5 @@ install:
   - echo "https://${token}@github.com" > ~/.git_credentials
   - git config --global user.email "travis@travis-ci.org"
   - git config --global user.name "Travis CI"
-  - git push --quiet
+  - git remote add origin-gh https://${token}@github.com/$TRAVIS_REPO_SLUG.git > /dev/null 2>&1
+  - git push --quiet --set-upstream origin-gh master
