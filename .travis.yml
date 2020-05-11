@@ -30,7 +30,8 @@ install:
           exit 1;
         fi;
       fi;
-      cat ~/$apifile | python3 -mjson.tool > $apifile;
+      # sort and standardize JSON data
+      cat ~/$apifile | python3 -c "import json, sys, collections; print(json.dumps(json.loads(sys.stdin.read()), indent=2, sort_keys=True))" > $apifile; 
     done < apis.txt
   - git add .
   - git diff --quiet && git diff --staged --quiet || git commit -am 'API changes'
