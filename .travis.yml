@@ -1,6 +1,3 @@
-git:
-  depth: false
-
 env:
   global:
     secure: "O2t+eRfD+Diemym426Z5dgRw77qzb3NcmsY2ZBebnlgxQAY7pp8ae0Xg9uTOj1blmRt7yvfoO0ShSkxuQHbkt2aE/9GC4l5oXm3jx+RdAnZy+8+42KFjZ4ruonmhYAsgqSZaumCdIvJMwG1/yGsePVD+lcKB/xUpy+EY1syuAxvTmXlwAx/nPPu2S2qyjIiPnCPLJT/qH1J+8pgub/FAJYYDGjA0wQdCmjyKOmql50L3osY9S1YeaFR7TG06Un5JDfIWN9NMrfxOZNPk8Q5ouD9fSm1k6WqdP8lSeG6L+fxTuz88fqdjOb+OstOOvBbL3gVmB+bXztZ03ev6/9s55M8xu7OWni71OVVVrHpqUpe2lTHdGzCZO+U91yDmTSMRTEzGNfV6udEfrYIOJADFwGJLIp+W5HgxiyHcgwo4DV3QdSW3bljEJUofqFAaWIuzLtCA48hTwnno4gH4BujQobscRW3s2/1xATi3IOSe5t7alt2rZYFcJ5FM3imkI8yQsDlTCtW344oKzqvkzZFrSn+OQIV+UmnnSoXVo4uLdw6jqcQOQTvxT5gJNSyEvBtmcJJsIcVFEsU2O1EnqLNafjejKhGCeXLBOnnoifDtTzoxCQnc7BqpdXtjAf81wpwZxzziEHOguHqAkd9Tt5ntjpLHPMCDkwphu3VSFoyWuy8="
@@ -13,6 +10,8 @@ jobs:
       language: shell
 
 install:
+  - git clone https://github.com/$TRAVIS_REPO_SLUG.git $TRAVIS_REPO_SLUG
+  - cd $TRAVIS_REPO_SLUG
   - while read line; do
       export api=$(echo $line | cut -d' ' -f1);
       export ver=$(echo $line | cut -d' ' -f2);
