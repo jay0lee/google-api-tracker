@@ -30,7 +30,7 @@ install:
           exit 1;
         fi;
       fi;
-      cat ~/$apifile | python3 -c "import json, sys, collections; myjson = json.loads(sys.stdin.read()); myjson.pop('etag', None); myjon.pop('revision', None); print(json.dumps(mydict, indent=2, sort_keys=True))" > $apifile; 
+      cat ~/$apifile | python3 -c "import json, sys, collections; myjson = json.loads(sys.stdin.read()); myjson.pop('etag', None); myjson.pop('revision', None); print(json.dumps(mydict, indent=2, sort_keys=True))" > $apifile; 
     done < apis.txt
   - git add .
   - git diff --quiet && git diff --staged --quiet || git commit -am 'API changes [ci skip]'
