@@ -18,7 +18,6 @@
   "description": "Fetches reports for the administrators of G Suite customers about the usage, collaboration, security, and risk for their users.",
   "discoveryVersion": "v1",
   "documentationLink": "/admin-sdk/reports/",
-  "etag": "\"u9GIe6H63LSGq-9_t39K2Zx_EAc/cjy_qN1sx94qX1efDr-Kt6Rsqlk\"",
   "icons": {
     "x16": "https://www.gstatic.com/images/branding/product/1x/googleg_16dp.png",
     "x32": "https://www.gstatic.com/images/branding/product/1x/googleg_32dp.png"
@@ -560,7 +559,6 @@
       }
     }
   },
-  "revision": "20191014",
   "rootUrl": "https://www.googleapis.com/",
   "schemas": {
     "Activities": {

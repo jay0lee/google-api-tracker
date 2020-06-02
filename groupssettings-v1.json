@@ -14,7 +14,6 @@
   "description": "Manages permission levels and related settings of a group.",
   "discoveryVersion": "v1",
   "documentationLink": "https://developers.google.com/google-apps/groups-settings/get_started",
-  "etag": "\"u9GIe6H63LSGq-9_t39K2Zx_EAc/V2V-RMnoYCfSSC985XKqZdYWInI\"",
   "icons": {
     "x16": "https://www.gstatic.com/images/branding/product/1x/googleg_16dp.png",
     "x32": "https://www.gstatic.com/images/branding/product/1x/googleg_32dp.png"
@@ -153,7 +152,6 @@
       }
     }
   },
-  "revision": "20190725",
   "rootUrl": "https://www.googleapis.com/",
   "schemas": {
     "Groups": {

@@ -1171,7 +1171,6 @@
       }
     }
   },
-  "revision": "20200527",
   "rootUrl": "https://cloudresourcemanager.googleapis.com/",
   "schemas": {
     "Ancestor": {

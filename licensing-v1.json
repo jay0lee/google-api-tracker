@@ -14,7 +14,6 @@
   "description": "Licensing API to view and manage licenses for your domain",
   "discoveryVersion": "v1",
   "documentationLink": "https://developers.google.com/admin-sdk/licensing/",
-  "etag": "\"u9GIe6H63LSGq-9_t39K2Zx_EAc/V3n4vxCP3J8VvoP6bHur312Efdk\"",
   "icons": {
     "x16": "https://www.gstatic.com/images/branding/product/1x/googleg_16dp.png",
     "x32": "https://www.gstatic.com/images/branding/product/1x/googleg_32dp.png"
@@ -357,7 +356,6 @@
       }
     }
   },
-  "revision": "20190916",
   "rootUrl": "https://www.googleapis.com/",
   "schemas": {
     "LicenseAssignment": {
