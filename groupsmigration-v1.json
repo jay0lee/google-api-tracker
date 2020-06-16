@@ -8,60 +8,32 @@
       }
     }
   },
-  "basePath": "",
-  "baseUrl": "https://www.googleapis.com/",
+  "basePath": "/groups/v1/groups/",
+  "baseUrl": "https://www.googleapis.com/groups/v1/groups/",
   "batchPath": "batch/groupsmigration/v1",
   "canonicalName": "Groups Migration",
-  "description": "The Groups Migration API allows domain administrators to archive\n    emails into Google groups.",
+  "description": "Groups Migration Api.",
   "discoveryVersion": "v1",
   "documentationLink": "https://developers.google.com/google-apps/groups-migration/",
   "icons": {
-    "x16": "http://www.google.com/images/icons/product/search-16.gif",
-    "x32": "http://www.google.com/images/icons/product/search-32.gif"
+    "x16": "https://www.google.com/images/icons/product/discussions-16.gif",
+    "x32": "https://www.google.com/images/icons/product/discussions-32.gif"
   },
   "id": "groupsmigration:v1",
   "kind": "discovery#restDescription",
-  "mtlsRootUrl": "https://www.mtls.googleapis.com/",
   "name": "groupsmigration",
   "ownerDomain": "google.com",
   "ownerName": "Google",
   "parameters": {
-    "$.xgafv": {
-      "description": "V1 error format.",
-      "enum": [
-        "1",
-        "2"
-      ],
-      "enumDescriptions": [
-        "v1 error format",
-        "v2 error format"
-      ],
-      "location": "query",
-      "type": "string"
-    },
-    "access_token": {
-      "description": "OAuth access token.",
-      "location": "query",
-      "type": "string"
-    },
     "alt": {
       "default": "json",
-      "description": "Data format for response.",
+      "description": "Data format for the response.",
       "enum": [
-        "json",
-        "media",
-        "proto"
+        "json"
       ],
       "enumDescriptions": [
-        "Responses with Content-Type of application/json",
-        "Media download with context-dependent Content-Type",
-        "Responses with Content-Type of application/x-protobuf"
+        "Responses with Content-Type of application/json"
       ],
-      "location": "query",
-      "type": "string"
-    },
-    "callback": {
-      "description": "JSONP",
       "location": "query",
       "type": "string"
     },
@@ -87,17 +59,12 @@
       "type": "boolean"
     },
     "quotaUser": {
-      "description": "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.",
+      "description": "An opaque string that represents a user for quota purposes. Must not exceed 40 characters.",
       "location": "query",
       "type": "string"
     },
-    "uploadType": {
-      "description": "Legacy upload protocol for media (e.g. \"media\", \"multipart\").",
-      "location": "query",
-      "type": "string"
-    },
-    "upload_protocol": {
-      "description": "Upload protocol for media (e.g. \"raw\", \"multipart\").",
+    "userIp": {
+      "description": "Deprecated. Please use quotaUser instead.",
       "location": "query",
       "type": "string"
     }
@@ -108,15 +75,18 @@
       "methods": {
         "insert": {
           "description": "Inserts a new mail into the archive of the Google group.",
-          "flatPath": "groups/v1/groups/{groupId}/archive",
           "httpMethod": "POST",
           "id": "groupsmigration.archive.insert",
           "mediaUpload": {
             "accept": [
               "message/rfc822"
             ],
-            "maxSize": "26214400",
+            "maxSize": "25MB",
             "protocols": {
+              "resumable": {
+                "multipart": true,
+                "path": "/resumable/upload/groups/v1/groups/{groupId}/archive"
+              },
               "simple": {
                 "multipart": true,
                 "path": "/upload/groups/v1/groups/{groupId}/archive"
@@ -134,7 +104,7 @@
               "type": "string"
             }
           },
-          "path": "groups/v1/groups/{groupId}/archive",
+          "path": "{groupId}/archive",
           "response": {
             "$ref": "Groups"
           },
@@ -153,6 +123,7 @@
       "id": "Groups",
       "properties": {
         "kind": {
+          "default": "groupsmigration#groups",
           "description": "The kind of insert resource this is.",
           "type": "string"
         },
@@ -164,7 +135,7 @@
       "type": "object"
     }
   },
-  "servicePath": "",
+  "servicePath": "groups/v1/groups/",
   "title": "Groups Migration API",
   "version": "v1"
 }
