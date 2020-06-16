@@ -11,4 +11,4 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: fetch discovery
-      run: fetch-discovery.sh
+      run: bash ./fetch-discovery.sh
