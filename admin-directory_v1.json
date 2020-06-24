@@ -405,7 +405,7 @@
               "type": "string"
             },
             "query": {
-              "description": "Search string in the format given at http://support.google.com/chromeos/a/bin/answer.py?answer=1698333",
+              "description": "Search string in the format provided by this Help Center article.",
               "location": "query",
               "type": "string"
             },
@@ -1499,9 +1499,10 @@
             },
             "maxResults": {
               "default": "100",
-              "description": "Maximum number of results to return. Max allowed value is 100.",
+              "description": "Maximum number of results to return.",
               "format": "int32",
               "location": "query",
+              "maximum": "100",
               "minimum": "1",
               "type": "integer"
             },
@@ -1549,7 +1550,7 @@
               "type": "string"
             },
             "query": {
-              "description": "Search string in the format given at http://support.google.com/a/bin/answer.py?answer=1408863#search",
+              "description": "Search string in the format provided by this Help Center article.",
               "location": "query",
               "type": "string"
             },
@@ -4577,6 +4578,23 @@
           "description": "Date and time the device was last enrolled (Read-only)",
           "format": "date-time",
           "type": "string"
+        },
+        "lastKnownNetwork": {
+          "description": "Contains last used network (Read-only)",
+          "items": {
+            "properties": {
+              "ipAddress": {
+                "description": "The IP address",
+                "type": "string"
+              },
+              "wanIpAddress": {
+                "description": "The WAN IP address",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "type": "array"
         },
         "lastSync": {
           "description": "Date and time the device was last synchronized with the policy settings in the G Suite administrator control panel (Read-only)",
