@@ -12,7 +12,7 @@ while read line; do
             curl -s --compressed -f -o ~/$apifile $v1_url
             export result=$?
             if [ $result -ne 0 ]; then
-              echo "v1 failed also! Giving up."
+              echo "v1 failed also with $result! Giving up."
               exit 1
             fi
           fi
