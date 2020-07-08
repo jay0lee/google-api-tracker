@@ -22,6 +22,8 @@ oauth2 v2
 pubsub v1
 reseller v1
 servicemanagement v1
+serviceusage v1
+serviceusage v1beta1
 sheets v4
 siteVerification v1
 storage v1
