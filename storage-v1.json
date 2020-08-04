@@ -3404,8 +3404,8 @@
                         "type": "string"
                       },
                       "customTimeBefore": {
-                        "description": "A timestamp in RFC 3339 format. This condition is satisfied when the custom time on an object is before this timestamp.",
-                        "format": "date-time",
+                        "description": "A date in RFC 3339 format with only the date part (for instance, \"2013-01-15\"). This condition is satisfied when the custom time on an object is before this date in UTC.",
+                        "format": "date",
                         "type": "string"
                       },
                       "daysSinceCustomTime": {
@@ -3434,8 +3434,8 @@
                         "type": "array"
                       },
                       "noncurrentTimeBefore": {
-                        "description": "A timestamp in RFC 3339 format. This condition is satisfied when the noncurrent time on an object is before this timestamp. This condition is relevant only for versioned objects.",
-                        "format": "date-time",
+                        "description": "A date in RFC 3339 format with only the date part (for instance, \"2013-01-15\"). This condition is satisfied when the noncurrent time on an object is before this date in UTC. This condition is relevant only for versioned objects.",
+                        "format": "date",
                         "type": "string"
                       },
                       "numNewerVersions": {
