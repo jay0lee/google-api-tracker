@@ -1780,7 +1780,7 @@
               "type": "string"
             },
             "kmsKeyName": {
-              "description": "Not currently supported. Specifying the parameter causes the request to fail with status code 400 - Bad Request.",
+              "description": "Resource name of the Cloud KMS key, of the form projects/my-project/locations/global/keyRings/my-kr/cryptoKeys/my-key, that will be used to encrypt the object. Overrides the object metadata's kms_key_name value, if any.",
               "location": "query",
               "type": "string"
             },
@@ -4094,7 +4094,7 @@
           "type": "string"
         },
         "kmsKeyName": {
-          "description": "Cloud KMS Key used to encrypt this object, if the object is encrypted by such a key.",
+          "description": "Not currently supported. Specifying the parameter causes the request to fail with status code 400 - Bad Request.",
           "type": "string"
         },
         "md5Hash": {
