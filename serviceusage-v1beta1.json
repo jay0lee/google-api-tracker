@@ -1924,6 +1924,17 @@
           },
           "type": "array"
         },
+        "monitoredResources": {
+          "description": "Defines the monitored resources used by this service. This is required by the Service.monitoring and Service.logging configurations.",
+          "items": {
+            "$ref": "MonitoredResourceDescriptor"
+          },
+          "type": "array"
+        },
+        "monitoring": {
+          "$ref": "Monitoring",
+          "description": "Monitoring configuration. This should not include the 'producer_destinations' field."
+        },
         "name": {
           "description": "The DNS address at which this service is available. An example DNS address would be: `calendar.googleapis.com`.",
           "type": "string"
@@ -2953,6 +2964,17 @@
             "$ref": "Endpoint"
           },
           "type": "array"
+        },
+        "monitoredResources": {
+          "description": "Defines the monitored resources used by this service. This is required by the Service.monitoring and Service.logging configurations.",
+          "items": {
+            "$ref": "MonitoredResourceDescriptor"
+          },
+          "type": "array"
+        },
+        "monitoring": {
+          "$ref": "Monitoring",
+          "description": "Monitoring configuration. This should not include the 'producer_destinations' field."
         },
         "name": {
           "description": "The DNS address at which this service is available. An example DNS address would be: `calendar.googleapis.com`.",
