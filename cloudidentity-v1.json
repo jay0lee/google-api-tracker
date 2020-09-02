@@ -1222,6 +1222,25 @@
           },
           "type": "array"
         },
+        "type": {
+          "description": "Output only. The type of the membership.",
+          "enum": [
+            "TYPE_UNSPECIFIED",
+            "USER",
+            "SERVICE_ACCOUNT",
+            "GROUP",
+            "OTHER"
+          ],
+          "enumDescriptions": [
+            "Default. Should not be used.",
+            "Represents user type.",
+            "Represents service account type.",
+            "Represents group type.",
+            "Represents other type."
+          ],
+          "readOnly": true,
+          "type": "string"
+        },
         "updateTime": {
           "description": "Output only. Last updated timestamp of the Membership. Output only.",
           "format": "google-datetime",
