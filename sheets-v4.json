@@ -3447,16 +3447,6 @@
       "properties": {
         "daysOfWeek": {
           "description": "Days of the week to refresh. At least one day must be specified.",
-          "enumDescriptions": [
-            "The day of the week is unspecified.",
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday",
-            "Sunday"
-          ],
           "items": {
             "enum": [
               "DAY_OF_WEEK_UNSPECIFIED",
@@ -6656,7 +6646,7 @@
       "id": "SpreadsheetTheme",
       "properties": {
         "primaryFontFamily": {
-          "description": "/ Name of the primary font family.",
+          "description": "Name of the primary font family.",
           "type": "string"
         },
         "themeColors": {
