@@ -5,8 +5,8 @@ env:
 jobs:
   include:
     - os: linux
-      dist: focus
-      name: "Focus"
+      dist: focal
+      name: "Focal"
       language: shell
 
 install:
