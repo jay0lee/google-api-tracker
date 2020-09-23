@@ -5,8 +5,8 @@ env:
 jobs:
   include:
     - os: linux
-      dist: xenial
-      name: "Xenial"
+      dist: focus
+      name: "Focus"
       language: shell
 
 install:
