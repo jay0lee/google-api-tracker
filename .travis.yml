@@ -26,8 +26,7 @@ install:
         curl -s --compressed -f -o ~/$apifile $v1_url;
         export result=$?;
         if [ $result -ne 0 ]; then
-          echo "v1 failed also with $result! Giving up.";
-          exit 1;
+          echo "$api $ver v1 failed also with $result!";
         fi;
       fi;
       cat ~/$apifile | python3 -c "import json, sys, collections; disc = json.loads(sys.stdin.read()); disc.pop('etag', None); disc.pop('revision', None); print(json.dumps(disc, indent=2, sort_keys=True))" > $apifile; 
