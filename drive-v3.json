@@ -3664,7 +3664,7 @@
           "type": "boolean"
         },
         "publishedLink": {
-          "description": "A link to the published revision.",
+          "description": "A link to the published revision. This is only populated for Google Sites files.",
           "type": "string"
         },
         "publishedOutsideDomain": {
