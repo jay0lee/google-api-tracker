@@ -2,7 +2,6 @@ admin datatransfer_v1
 admin directory_v1
 admin reports_v1
 alertcenter v1beta1
-appsactivity v2
 calendar v3
 chat v1
 classroom v1
@@ -12,6 +11,7 @@ cloudresourcemanager v2
 cloudresourcemanager v1
 drive v2
 drive v3
+driveactivity v2
 gmail v1
 groupsmigration v1
 groupssettings v1
