@@ -2983,7 +2983,7 @@
             "description": "A mapping from export format to URL",
             "type": "string"
           },
-          "description": "Links for exporting Google Docs to specific formats.",
+          "description": "Links for exporting Docs Editors files to specific formats.",
           "type": "object"
         },
         "fileExtension": {
@@ -3618,7 +3618,7 @@
             "description": "A mapping from export format to URL",
             "type": "string"
           },
-          "description": "Links for exporting Google Docs to specific formats.",
+          "description": "Links for exporting Docs Editors files to specific formats.",
           "type": "object"
         },
         "id": {
@@ -3656,11 +3656,11 @@
           "type": "string"
         },
         "publishAuto": {
-          "description": "Whether subsequent revisions will be automatically republished. This is only applicable to Google Docs.",
+          "description": "Whether subsequent revisions will be automatically republished. This is only applicable to Docs Editors files.",
           "type": "boolean"
         },
         "published": {
-          "description": "Whether this revision is published. This is only applicable to Google Docs.",
+          "description": "Whether this revision is published. This is only applicable to Docs Editors files.",
           "type": "boolean"
         },
         "publishedLink": {
@@ -3668,7 +3668,7 @@
           "type": "string"
         },
         "publishedOutsideDomain": {
-          "description": "Whether this revision is published outside the domain. This is only applicable to Google Docs.",
+          "description": "Whether this revision is published outside the domain. This is only applicable to Docs Editors files.",
           "type": "boolean"
         },
         "size": {
