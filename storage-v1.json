@@ -35,6 +35,7 @@
   "labels": [
     "labs"
   ],
+  "mtlsRootUrl": "https://storage.mtls.googleapis.com/",
   "name": "storage",
   "ownerDomain": "google.com",
   "ownerName": "Google",
