@@ -3335,6 +3335,10 @@
               },
               "type": "object"
             },
+            "publicAccessPrevention": {
+              "description": "The bucket's Public Access Prevention configuration. Currently, 'unspecified' and 'enforced' are supported.",
+              "type": "string"
+            },
             "uniformBucketLevelAccess": {
               "description": "The bucket's uniform bucket-level access configuration.",
               "properties": {
