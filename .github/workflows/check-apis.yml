@@ -16,32 +16,10 @@ jobs:
           fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
 
       - name: Check for updates
-        run: |
-          while read line; do
-            export api=$(echo $line | cut -d' ' -f1);
-            export ver=$(echo $line | cut -d' ' -f2);
-            export apifile="${api}-${ver}.json"
-            export v2_url="https://${api}.googleapis.com/\$discovery/rest?version=${ver}";
-            export v1_url="https://www.googleapis.com/discovery/v1/apis/${api}/${ver}/rest";
-            echo "Checking v2 URL for $api $ver...";
-            curl -s -f --compressed -o ~/$apifile $v2_url; result=$?; true;
-            if [ $result -ne 0 ]; then
-              echo "v2 URL failed with $result, checking v1 URL for $api $ver...";
-              curl -s --compressed -f -o ~/$apifile $v1_url; result=$?; true;
-              if [ $result -ne 0 ]; then
-                echo "$api $ver v1 failed also with $result!";
-              fi;
-            fi;
-            cat ~/$apifile | python3 -c "import json, sys, collections; disc = json.loads(sys.stdin.read()); disc.pop('etag', None); disc.pop('revision', None); print(json.dumps(disc, indent=2, sort_keys=True))" > $apifile; 
-          done < apis.txt
+        run: check-apis.sh 
 
       - name: Commit files
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add --all
-          git add data/*
-          git diff --quiet && git diff --staged --quiet || git commit -am 'API changes [ci skip]'
+        run: bash check-updates.sh 
 
       - name: Push changes
         uses: ad-m/github-push-action@master
