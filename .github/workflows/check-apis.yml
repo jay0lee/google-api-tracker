@@ -19,7 +19,7 @@ jobs:
         run: bash check-apis.sh
 
       - name: Commit files
-        run: |	        run: bash check-updates.sh
+        run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add --all
