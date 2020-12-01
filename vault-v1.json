@@ -1405,6 +1405,10 @@
         "mailQuery": {
           "$ref": "HeldMailQuery",
           "description": "Details pertaining to mail holds. If set, corpus must be mail."
+        },
+        "voiceQuery": {
+          "$ref": "HeldVoiceQuery",
+          "description": "Details pertaining to Voice holds. If set, corpus must be Voice."
         }
       },
       "type": "object"
@@ -1611,6 +1615,10 @@
             "Europe region."
           ],
           "type": "string"
+        },
+        "voiceOptions": {
+          "$ref": "VoiceExportOptions",
+          "description": "Option available for voice export."
         }
       },
       "type": "object"
@@ -1854,6 +1862,32 @@
       },
       "type": "object"
     },
+    "HeldVoiceQuery": {
+      "description": "Query options for Voice holds.",
+      "id": "HeldVoiceQuery",
+      "properties": {
+        "coveredData": {
+          "description": "Data covered by this rule. Should be non-empty. Order does not matter and duplicates will be ignored.",
+          "items": {
+            "enum": [
+              "COVERED_DATA_UNSPECIFIED",
+              "TEXT_MESSAGES",
+              "VOICEMAILS",
+              "CALL_LOGS"
+            ],
+            "enumDescriptions": [
+              "Covered data unspecified.",
+              "Voice text message will be covered.",
+              "Voicemail will be covered.",
+              "Call logs will be covered."
+            ],
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
     "Hold": {
       "description": "Represents a hold within Vault. A hold restricts purging of artifacts based on the combination of the query and accounts restrictions. A hold can be configured to either apply to an explicitly configured set of accounts, or can be applied to all members of an organizational unit.",
       "id": "Hold",
@@ -1872,14 +1906,16 @@
             "DRIVE",
             "MAIL",
             "GROUPS",
-            "HANGOUTS_CHAT"
+            "HANGOUTS_CHAT",
+            "VOICE"
           ],
           "enumDescriptions": [
             "No corpus specified.",
             "Drive.",
             "Mail.",
             "Groups.",
-            "Hangouts Chat."
+            "Hangouts Chat.",
+            "Google Voice."
           ],
           "type": "string"
         },
@@ -2213,14 +2249,16 @@
             "DRIVE",
             "MAIL",
             "GROUPS",
-            "HANGOUTS_CHAT"
+            "HANGOUTS_CHAT",
+            "VOICE"
           ],
           "enumDescriptions": [
             "No corpus specified.",
             "Drive.",
             "Mail.",
             "Groups.",
-            "Hangouts Chat."
+            "Hangouts Chat.",
+            "Google Voice."
           ],
           "type": "string"
         },
@@ -2329,6 +2367,10 @@
         "timeZone": {
           "description": "The time zone name. It should be an IANA TZ name, such as \"America/Los_Angeles\". For more information, see Time Zone.",
           "type": "string"
+        },
+        "voiceOptions": {
+          "$ref": "VoiceOptions",
+          "description": "For voice search, specify more options in this field."
         }
       },
       "type": "object"
@@ -2489,6 +2531,53 @@
         "email": {
           "description": "The email address of the user.",
           "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "VoiceExportOptions": {
+      "description": "The options for voice export.",
+      "id": "VoiceExportOptions",
+      "properties": {
+        "exportFormat": {
+          "description": "The export format for voice export.",
+          "enum": [
+            "EXPORT_FORMAT_UNSPECIFIED",
+            "MBOX",
+            "PST"
+          ],
+          "enumDescriptions": [
+            "No export format specified.",
+            "MBOX as export format.",
+            "PST as export format"
+          ],
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "VoiceOptions": {
+      "description": "Voice search options",
+      "id": "VoiceOptions",
+      "properties": {
+        "coveredData": {
+          "description": "Datatypes to search",
+          "items": {
+            "enum": [
+              "COVERED_DATA_UNSPECIFIED",
+              "TEXT_MESSAGES",
+              "VOICEMAILS",
+              "CALL_LOGS"
+            ],
+            "enumDescriptions": [
+              "Covered data unspecified.",
+              "Voice text message will be covered.",
+              "Voicemail will be covered.",
+              "Call logs will be covered."
+            ],
+            "type": "string"
+          },
+          "type": "array"
         }
       },
       "type": "object"
