@@ -1271,13 +1271,17 @@
               "ACTION_TYPE_UNSPECIFIED",
               "DRIVE_BLOCK_EXTERNAL_SHARING",
               "DRIVE_WARN_ON_EXTERNAL_SHARING",
-              "ALERT"
+              "ALERT",
+              "RULE_ACTIVATE",
+              "RULE_DEACTIVATE"
             ],
             "enumDescriptions": [
               "Action type is unspecified.",
               "Block sharing a file externally.",
               "Show a warning message when sharing a file externally.",
-              "Send alert."
+              "Send alert.",
+              "Activate Rule Action",
+              "Deactivate Rule Action"
             ],
             "type": "string"
           },
@@ -1302,13 +1306,17 @@
               "ACTION_TYPE_UNSPECIFIED",
               "DRIVE_BLOCK_EXTERNAL_SHARING",
               "DRIVE_WARN_ON_EXTERNAL_SHARING",
-              "ALERT"
+              "ALERT",
+              "RULE_ACTIVATE",
+              "RULE_DEACTIVATE"
             ],
             "enumDescriptions": [
               "Action type is unspecified.",
               "Block sharing a file externally.",
               "Show a warning message when sharing a file externally.",
-              "Send alert."
+              "Send alert.",
+              "Activate Rule Action",
+              "Deactivate Rule Action"
             ],
             "type": "string"
           },
