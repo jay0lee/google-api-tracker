@@ -6,7 +6,7 @@
           "description": "See, edit, create, and delete all of your Google Drive files"
         },
         "https://www.googleapis.com/auth/drive.appdata": {
-          "description": "View and manage its own configuration data in your Google Drive"
+          "description": "See, create, and delete its own configuration data in your Google Drive"
         },
         "https://www.googleapis.com/auth/drive.apps.readonly": {
           "description": "View your Google Drive apps"
