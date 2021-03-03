@@ -3478,6 +3478,27 @@
               "location": "query",
               "type": "string"
             },
+            "event": {
+              "description": "Event on which subscription is intended (if subscribing)",
+              "enum": [
+                "eventUndefined",
+                "add",
+                "delete",
+                "makeAdmin",
+                "undelete",
+                "update"
+              ],
+              "enumDescriptions": [
+                "",
+                "User Created Event",
+                "User Deleted Event",
+                "User Admin Status Change Event",
+                "User Undeleted Event",
+                "User Updated Event"
+              ],
+              "location": "query",
+              "type": "string"
+            },
             "maxResults": {
               "default": "100",
               "description": "Maximum number of results to return.",
