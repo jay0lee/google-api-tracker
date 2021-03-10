@@ -4,6 +4,7 @@ admin reports_v1
 alertcenter v1beta1
 calendar v3
 chat v1
+chromepolicy v1
 classroom v1
 cloudidentity v1
 cloudidentity v1beta1
