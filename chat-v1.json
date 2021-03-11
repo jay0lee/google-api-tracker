@@ -548,7 +548,6 @@
               ],
               "parameters": {
                 "name": {
-                  "description": "Resource name, in the form \"spaces/*/messages/*\". Example: spaces/AAAAMpdlehY/messages/UMxbHmzDlr4.UMxbHmzDlr4",
                   "location": "path",
                   "pattern": "^spaces/[^/]+/messages/[^/]+$",
                   "required": true,
@@ -1266,7 +1265,6 @@
           "type": "string"
         },
         "name": {
-          "description": "Resource name, in the form \"spaces/*/messages/*\". Example: spaces/AAAAMpdlehY/messages/UMxbHmzDlr4.UMxbHmzDlr4",
           "type": "string"
         },
         "previewText": {
@@ -1341,7 +1339,7 @@
       "type": "object"
     },
     "SlashCommand": {
-      "description": "A Slash Command in Hangouts Chat.",
+      "description": "A Slash Command in Chat.",
       "id": "SlashCommand",
       "properties": {
         "commandId": {
