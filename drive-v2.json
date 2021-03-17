@@ -12,7 +12,7 @@
           "description": "View your Google Drive apps"
         },
         "https://www.googleapis.com/auth/drive.file": {
-          "description": "View and manage Google Drive files and folders that you have opened or created with this app"
+          "description": "See, edit, create, and delete only the specific Google Drive files you use with this app"
         },
         "https://www.googleapis.com/auth/drive.metadata": {
           "description": "View and manage metadata of files in your Google Drive"
