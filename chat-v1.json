@@ -1462,7 +1462,7 @@
       "type": "object"
     },
     "User": {
-      "description": "A user in Hangouts Chat.",
+      "description": "A user in Google Chat.",
       "id": "User",
       "properties": {
         "displayName": {
@@ -1474,7 +1474,7 @@
           "type": "string"
         },
         "isAnonymous": {
-          "description": "True when the user is deleted or the user's proifle is not visible.",
+          "description": "True when the user is deleted or the user's profile is not visible.",
           "type": "boolean"
         },
         "name": {
