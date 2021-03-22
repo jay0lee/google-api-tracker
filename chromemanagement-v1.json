@@ -254,7 +254,7 @@
                   "type": "string"
                 },
                 "orderBy": {
-                  "description": "Field used to order results. Supported order by fields: * machine_name * device_id",
+                  "description": "Field used to order results. Supported order by fields: * machine * device_id",
                   "location": "query",
                   "type": "string"
                 },
