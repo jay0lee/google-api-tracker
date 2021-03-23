@@ -1763,7 +1763,7 @@
           "type": "string"
         },
         "id": {
-          "description": "Identifier of the ACL rule.",
+          "description": "Identifier of the Access Control List (ACL) rule. See Sharing calendars.",
           "type": "string"
         },
         "kind": {
@@ -1787,7 +1787,7 @@
               "calendar.acl.update"
             ]
           },
-          "description": "The scope of the rule.",
+          "description": "The extent to which calendar access is granted by this ACL rule.",
           "properties": {
             "type": {
               "annotations": {
