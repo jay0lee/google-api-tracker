@@ -360,10 +360,12 @@
             "projection": {
               "description": "Determines whether the response contains the full list of properties or only a subset.",
               "enum": [
+                "PROJECTION_UNDEFINED",
                 "BASIC",
                 "FULL"
               ],
               "enumDescriptions": [
+                "",
                 "Includes only the basic metadata fields (e.g., deviceId, serialNumber, status, and user)",
                 "Includes all metadata fields"
               ],
@@ -406,6 +408,7 @@
             "orderBy": {
               "description": "Device property to use for sorting results.",
               "enum": [
+                "orderByUndefined",
                 "annotatedLocation",
                 "annotatedUser",
                 "lastSync",
@@ -415,6 +418,7 @@
                 "supportEndDate"
               ],
               "enumDescriptions": [
+                "",
                 "Chrome device location as annotated by the administrator.",
                 "Chromebook user as annotated by administrator.",
                 "The date and time the Chrome device was last synchronized with the policy settings in the Admin console.",
@@ -439,10 +443,12 @@
             "projection": {
               "description": "Restrict information returned to a set of selected fields.",
               "enum": [
+                "PROJECTION_UNDEFINED",
                 "BASIC",
                 "FULL"
               ],
               "enumDescriptions": [
+                "",
                 "Includes only the basic metadata fields (e.g., deviceId, serialNumber, status, and user)",
                 "Includes all metadata fields"
               ],
@@ -457,10 +463,12 @@
             "sortOrder": {
               "description": "Whether to return results in ascending or descending order. Must be used with the `orderBy` parameter.",
               "enum": [
+                "SORT_ORDER_UNDEFINED",
                 "ASCENDING",
                 "DESCENDING"
               ],
               "enumDescriptions": [
+                "",
                 "Ascending order.",
                 "Descending order."
               ],
@@ -533,10 +541,12 @@
             "projection": {
               "description": "Restrict information returned to a set of selected fields.",
               "enum": [
+                "PROJECTION_UNDEFINED",
                 "BASIC",
                 "FULL"
               ],
               "enumDescriptions": [
+                "",
                 "Includes only the basic metadata fields (e.g., deviceId, serialNumber, status, and user)",
                 "Includes all metadata fields"
               ],
@@ -580,10 +590,12 @@
             "projection": {
               "description": "Restrict information returned to a set of selected fields.",
               "enum": [
+                "PROJECTION_UNDEFINED",
                 "BASIC",
                 "FULL"
               ],
               "enumDescriptions": [
+                "",
                 "Includes only the basic metadata fields (e.g., deviceId, serialNumber, status, and user)",
                 "Includes all metadata fields"
               ],
@@ -1384,9 +1396,11 @@
             "orderBy": {
               "description": "Column to use for sorting results",
               "enum": [
+                "orderByUndefined",
                 "email"
               ],
               "enumDescriptions": [
+                "",
                 "Email of the group."
               ],
               "location": "query",
@@ -1405,10 +1419,12 @@
             "sortOrder": {
               "description": "Whether to return results in ascending or descending order. Only of use when orderBy is also used",
               "enum": [
+                "SORT_ORDER_UNDEFINED",
                 "ASCENDING",
                 "DESCENDING"
               ],
               "enumDescriptions": [
+                "",
                 "Ascending order.",
                 "Descending order."
               ],
@@ -1902,10 +1918,12 @@
             "projection": {
               "description": "Restrict information returned to a set of selected fields.",
               "enum": [
+                "PROJECTION_UNDEFINED",
                 "BASIC",
                 "FULL"
               ],
               "enumDescriptions": [
+                "",
                 "Includes only the basic metadata fields (e.g., deviceId, model, status, type, and status)",
                 "Includes all metadata fields"
               ],
@@ -1956,6 +1974,7 @@
             "orderBy": {
               "description": "Device property to use for sorting results.",
               "enum": [
+                "orderByUndefined",
                 "deviceId",
                 "email",
                 "lastSync",
@@ -1966,6 +1985,7 @@
                 "type"
               ],
               "enumDescriptions": [
+                "",
                 "The serial number for a Google Sync mobile device. For Android devices, this is a software generated unique identifier.",
                 "The device owner's email address.",
                 "Last policy settings sync date time of the device.",
@@ -1986,10 +2006,12 @@
             "projection": {
               "description": "Restrict information returned to a set of selected fields.",
               "enum": [
+                "PROJECTION_UNDEFINED",
                 "BASIC",
                 "FULL"
               ],
               "enumDescriptions": [
+                "",
                 "Includes only the basic metadata fields (e.g., deviceId, model, status, type, and status)",
                 "Includes all metadata fields"
               ],
@@ -2004,10 +2026,12 @@
             "sortOrder": {
               "description": "Whether to return results in ascending or descending order. Must be used with the `orderBy` parameter.",
               "enum": [
+                "SORT_ORDER_UNDEFINED",
                 "ASCENDING",
                 "DESCENDING"
               ],
               "enumDescriptions": [
+                "",
                 "Ascending order.",
                 "Descending order."
               ],
@@ -2152,10 +2176,12 @@
             "type": {
               "description": "Whether to return all sub-organizations or just immediate children.",
               "enum": [
+                "typeUndefined",
                 "all",
                 "children"
               ],
               "enumDescriptions": [
+                "",
                 "All sub-organizational units.",
                 "Immediate children only (default)."
               ],
@@ -2360,11 +2386,13 @@
                   "default": "SOURCE_UNSPECIFIED",
                   "description": "Source from which Building.coordinates are derived.",
                   "enum": [
+                    "COORDINATES_SOURCE_UNDEFINED",
                     "CLIENT_SPECIFIED",
                     "RESOLVED_FROM_ADDRESS",
                     "SOURCE_UNSPECIFIED"
                   ],
                   "enumDescriptions": [
+                    "",
                     "Building.coordinates are set to the coordinates included in the request.",
                     "Building.coordinates are automatically populated based on the postal address.",
                     "Defaults to `RESOLVED_FROM_ADDRESS` if postal address is provided. Otherwise, defaults to `CLIENT_SPECIFIED` if coordinates are provided."
@@ -2448,11 +2476,13 @@
                   "default": "SOURCE_UNSPECIFIED",
                   "description": "Source from which Building.coordinates are derived.",
                   "enum": [
+                    "COORDINATES_SOURCE_UNDEFINED",
                     "CLIENT_SPECIFIED",
                     "RESOLVED_FROM_ADDRESS",
                     "SOURCE_UNSPECIFIED"
                   ],
                   "enumDescriptions": [
+                    "",
                     "Building.coordinates are set to the coordinates included in the request.",
                     "Building.coordinates are automatically populated based on the postal address.",
                     "Defaults to `RESOLVED_FROM_ADDRESS` if postal address is provided. Otherwise, defaults to `CLIENT_SPECIFIED` if coordinates are provided."
@@ -2498,11 +2528,13 @@
                   "default": "SOURCE_UNSPECIFIED",
                   "description": "Source from which Building.coordinates are derived.",
                   "enum": [
+                    "COORDINATES_SOURCE_UNDEFINED",
                     "CLIENT_SPECIFIED",
                     "RESOLVED_FROM_ADDRESS",
                     "SOURCE_UNSPECIFIED"
                   ],
                   "enumDescriptions": [
+                    "",
                     "Building.coordinates are set to the coordinates included in the request.",
                     "Building.coordinates are automatically populated based on the postal address.",
                     "Defaults to `RESOLVED_FROM_ADDRESS` if postal address is provided. Otherwise, defaults to `CLIENT_SPECIFIED` if coordinates are provided."
@@ -3640,11 +3672,13 @@
               "default": "basic",
               "description": "What subset of fields to fetch for this user.",
               "enum": [
+                "projectionUndefined",
                 "basic",
                 "custom",
                 "full"
               ],
               "enumDescriptions": [
+                "",
                 "Do not include any custom fields for the user.",
                 "Include custom fields from schemas requested in `customFieldMask`.",
                 "Include all fields associated with this user."
@@ -3662,10 +3696,12 @@
               "default": "admin_view",
               "description": "Whether to fetch the administrator-only or domain-wide public view of the user. For more information, see [Retrieve a user as a non-administrator](/admin-sdk/directory/v1/guides/manage-users#retrieve_users_non_admin).",
               "enum": [
+                "view_type_undefined",
                 "admin_view",
                 "domain_public"
               ],
               "enumDescriptions": [
+                "",
                 "Results include both administrator-only and domain-public fields for the user.",
                 "Results only include fields for the user that are publicly visible to other users in the domain."
               ],
@@ -3725,6 +3761,7 @@
             "event": {
               "description": "Event on which subscription is intended (if subscribing)",
               "enum": [
+                "eventUndefined",
                 "add",
                 "delete",
                 "makeAdmin",
@@ -3732,6 +3769,7 @@
                 "update"
               ],
               "enumDescriptions": [
+                "",
                 "User Created Event",
                 "User Deleted Event",
                 "User Admin Status Change Event",
@@ -3753,11 +3791,13 @@
             "orderBy": {
               "description": "Property to use for sorting results.",
               "enum": [
+                "orderByUndefined",
                 "email",
                 "familyName",
                 "givenName"
               ],
               "enumDescriptions": [
+                "",
                 "Primary email of the user.",
                 "User's family name.",
                 "User's given name."
@@ -3774,11 +3814,13 @@
               "default": "basic",
               "description": "What subset of fields to fetch for this user.",
               "enum": [
+                "projectionUndefined",
                 "basic",
                 "custom",
                 "full"
               ],
               "enumDescriptions": [
+                "",
                 "Do not include any custom fields for the user.",
                 "Include custom fields from schemas requested in `customFieldMask`.",
                 "Include all fields associated with this user."
@@ -3799,10 +3841,12 @@
             "sortOrder": {
               "description": "Whether to return results in ascending or descending order.",
               "enum": [
+                "SORT_ORDER_UNDEFINED",
                 "ASCENDING",
                 "DESCENDING"
               ],
               "enumDescriptions": [
+                "",
                 "Ascending order.",
                 "Descending order."
               ],
@@ -3813,10 +3857,12 @@
               "default": "admin_view",
               "description": "Whether to fetch the administrator-only or domain-wide public view of the user. For more information, see [Retrieve a user as a non-administrator](/admin-sdk/directory/v1/guides/manage-users#retrieve_users_non_admin).",
               "enum": [
+                "view_type_undefined",
                 "admin_view",
                 "domain_public"
               ],
               "enumDescriptions": [
+                "",
                 "Results include both administrator-only and domain-public fields for the user.",
                 "Results only include fields for the user that are publicly visible to other users in the domain."
               ],
@@ -3982,6 +4028,7 @@
             "event": {
               "description": "Events to watch for.",
               "enum": [
+                "eventTypeUnspecified",
                 "add",
                 "delete",
                 "makeAdmin",
@@ -3989,6 +4036,7 @@
                 "update"
               ],
               "enumDescriptions": [
+                "",
                 "User Created Event",
                 "User Deleted Event",
                 "User Admin Status Change Event",
@@ -4010,11 +4058,13 @@
             "orderBy": {
               "description": "Column to use for sorting results",
               "enum": [
+                "orderByUnspecified",
                 "email",
                 "familyName",
                 "givenName"
               ],
               "enumDescriptions": [
+                "",
                 "Primary email of the user.",
                 "User's family name.",
                 "User's given name."
@@ -4031,11 +4081,13 @@
               "default": "basic",
               "description": "What subset of fields to fetch for this user.",
               "enum": [
+                "projectionUnspecified",
                 "basic",
                 "custom",
                 "full"
               ],
               "enumDescriptions": [
+                "",
                 "Do not include any custom fields for the user.",
                 "Include custom fields from schemas mentioned in customFieldMask.",
                 "Include all fields associated with this user."
@@ -4056,10 +4108,12 @@
             "sortOrder": {
               "description": "Whether to return results in ascending or descending order.",
               "enum": [
+                "sortOrderUnspecified",
                 "ASCENDING",
                 "DESCENDING"
               ],
               "enumDescriptions": [
+                "",
                 "Ascending order.",
                 "Descending order."
               ],
@@ -4194,10 +4248,12 @@
                 "event": {
                   "description": "Events to watch for.",
                   "enum": [
+                    "eventUndefined",
                     "add",
                     "delete"
                   ],
                   "enumDescriptions": [
+                    "",
                     "Alias Created Event",
                     "Alias Deleted Event"
                   ],
@@ -5732,10 +5788,10 @@
         },
         "printer": {
           "$ref": "Printer",
-          "description": "Failed printer."
+          "description": "Failed printers."
         },
-        "printerId": {
-          "description": "Id of a failed printer.",
+        "printerIds": {
+          "description": "Ids of failed printers.",
           "type": "string"
         }
       },
