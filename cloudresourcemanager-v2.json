@@ -613,7 +613,7 @@
           "type": "string"
         },
         "gettable": {
-          "description": "True if the project can be retrieved using GetProject. No other operations on the project are guaranteed to work until the project creation is complete.",
+          "description": "True if the project can be retrieved using `GetProject`. No other operations on the project are guaranteed to work until the project creation is complete.",
           "type": "boolean"
         },
         "ready": {
@@ -636,19 +636,19 @@
       "type": "object"
     },
     "DeleteFolderMetadata": {
-      "description": "A status object which is used as the `metadata` field for the Operation returned by DeleteFolder.",
+      "description": "A status object which is used as the `metadata` field for the `Operation` returned by `DeleteFolder`.",
       "id": "DeleteFolderMetadata",
       "properties": {},
       "type": "object"
     },
     "DeleteOrganizationMetadata": {
-      "description": "A status object which is used as the `metadata` field for the Operation returned by DeleteOrganization.",
+      "description": "A status object which is used as the `metadata` field for the operation returned by DeleteOrganization.",
       "id": "DeleteOrganizationMetadata",
       "properties": {},
       "type": "object"
     },
     "DeleteProjectMetadata": {
-      "description": "A status object which is used as the `metadata` field for the Operation returned by DeleteProject.",
+      "description": "A status object which is used as the `metadata` field for the Operation returned by `DeleteProject`.",
       "id": "DeleteProjectMetadata",
       "properties": {},
       "type": "object"
@@ -839,7 +839,7 @@
       "type": "object"
     },
     "MoveFolderMetadata": {
-      "description": "Metadata pertaining to the Folder move process.",
+      "description": "Metadata pertaining to the folder move process.",
       "id": "MoveFolderMetadata",
       "properties": {
         "destinationParent": {
@@ -1070,7 +1070,7 @@
       "type": "object"
     },
     "UndeleteFolderMetadata": {
-      "description": "A status object which is used as the `metadata` field for the Operation returned by UndeleteFolder.",
+      "description": "A status object which is used as the `metadata` field for the `Operation` returned by `UndeleteFolder`.",
       "id": "UndeleteFolderMetadata",
       "properties": {},
       "type": "object"
@@ -1088,7 +1088,7 @@
       "type": "object"
     },
     "UndeleteProjectMetadata": {
-      "description": "A status object which is used as the `metadata` field for the Operation returned by UndeleteProject.",
+      "description": "A status object which is used as the `metadata` field for the Operation returned by `UndeleteProject`.",
       "id": "UndeleteProjectMetadata",
       "properties": {},
       "type": "object"
