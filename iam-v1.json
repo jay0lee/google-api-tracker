@@ -2205,7 +2205,7 @@
             "NOT_SUPPORTED"
           ],
           "enumDescriptions": [
-            "Default state. Permission is fully supported for custom role use.",
+            "Permission is fully supported for custom role use.",
             "Permission is being tested to check custom role compatibility.",
             "Permission is not supported for custom role use."
           ],
