@@ -2134,7 +2134,7 @@
           "type": "array"
         },
         "issuerUri": {
-          "description": "Required. The OIDC issuer URL.",
+          "description": "Required. The OIDC issuer URL. Must be an HTTPS endpoint.",
           "type": "string"
         }
       },
