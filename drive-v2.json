@@ -5464,6 +5464,7 @@
             },
             "type": "object"
           },
+          "readOnly": true,
           "type": "array"
         },
         "photoLink": {
@@ -5513,6 +5514,7 @@
             },
             "type": "object"
           },
+          "readOnly": true,
           "type": "array"
         },
         "type": {
