@@ -9,11 +9,11 @@ while read line; do
     v2_url="https://${api}.googleapis.com/\$discovery/rest?version=${ver}";
     v1_url="https://www.googleapis.com/discovery/v1/apis/${api}/${ver}/rest";
     echo "Checking v2 URL for $api $ver...";
-    use_url=$v2_url
+    export use_url="${v2_url}"
     curl -s -f --compressed -o ~/$apifile $use_url; result=$?; true;
     if [ $result -ne 0 ]; then
         echo "v2 URL failed with $result, checking v1 URL for $api $ver...";
-        use_url=$v1_url
+        export use_url="${v1_url}"
         curl -s --compressed -f -o ~/$apifile $use_url; result=$?; true;
         if [ $result -ne 0 ]; then
             echo "$api $ver v1 failed also with $result!";
