@@ -679,7 +679,7 @@
           "parameters": {
             "pageSize": {
               "default": "10",
-              "description": "Maximum number of shared drives to return.",
+              "description": "Maximum number of shared drives to return per page.",
               "format": "int32",
               "location": "query",
               "maximum": "100",
@@ -2190,6 +2190,7 @@
       }
     }
   },
+  "retrieved_from": null,
   "rootUrl": "https://www.googleapis.com/",
   "schemas": {
     "About": {

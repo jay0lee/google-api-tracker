@@ -959,6 +959,7 @@
       }
     }
   },
+  "retrieved_from": null,
   "rootUrl": "https://serviceusage.googleapis.com/",
   "schemas": {
     "AdminQuotaPolicy": {

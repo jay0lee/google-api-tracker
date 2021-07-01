@@ -1273,6 +1273,7 @@
       }
     }
   },
+  "retrieved_from": null,
   "rootUrl": "https://cloudidentity.googleapis.com/",
   "schemas": {
     "CheckTransitiveMembershipResponse": {

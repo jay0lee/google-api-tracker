@@ -146,6 +146,7 @@
       }
     }
   },
+  "retrieved_from": null,
   "rootUrl": "https://groupsmigration.googleapis.com/",
   "schemas": {
     "Groups": {

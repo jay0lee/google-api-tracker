@@ -2682,6 +2682,7 @@
       }
     }
   },
+  "retrieved_from": null,
   "rootUrl": "https://gmail.googleapis.com/",
   "schemas": {
     "AutoForwarding": {

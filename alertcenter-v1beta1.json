@@ -423,6 +423,7 @@
       }
     }
   },
+  "retrieved_from": null,
   "rootUrl": "https://alertcenter.googleapis.com/",
   "schemas": {
     "AccountWarning": {

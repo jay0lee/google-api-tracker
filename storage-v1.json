@@ -3229,6 +3229,7 @@
       }
     }
   },
+  "retrieved_from": null,
   "rootUrl": "https://storage.googleapis.com/",
   "schemas": {
     "Bucket": {

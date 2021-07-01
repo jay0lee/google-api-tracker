@@ -870,6 +870,7 @@
       }
     }
   },
+  "retrieved_from": null,
   "rootUrl": "https://sheets.googleapis.com/",
   "schemas": {
     "AddBandingRequest": {

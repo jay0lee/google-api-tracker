@@ -1424,6 +1424,7 @@
       }
     }
   },
+  "retrieved_from": null,
   "rootUrl": "https://pubsub.googleapis.com/",
   "schemas": {
     "AcknowledgeRequest": {

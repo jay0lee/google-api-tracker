@@ -1193,6 +1193,7 @@
       }
     }
   },
+  "retrieved_from": null,
   "rootUrl": "https://vault.googleapis.com/",
   "schemas": {
     "AccountCount": {

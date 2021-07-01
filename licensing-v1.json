@@ -400,6 +400,7 @@
       }
     }
   },
+  "retrieved_from": null,
   "rootUrl": "https://licensing.googleapis.com/",
   "schemas": {
     "Empty": {

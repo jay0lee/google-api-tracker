@@ -2400,6 +2400,7 @@
       }
     }
   },
+  "retrieved_from": null,
   "rootUrl": "https://classroom.googleapis.com/",
   "schemas": {
     "Announcement": {

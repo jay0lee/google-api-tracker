@@ -288,6 +288,7 @@
       }
     }
   },
+  "retrieved_from": null,
   "rootUrl": "https://chromemanagement.googleapis.com/",
   "schemas": {
     "GoogleChromeManagementV1BrowserVersion": {
