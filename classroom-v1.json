@@ -2400,7 +2400,7 @@
       }
     }
   },
-  "retrieved_from": null,
+  "retrieved_from": "https://classroom.googleapis.com/$discovery/rest?version=v1",
   "rootUrl": "https://classroom.googleapis.com/",
   "schemas": {
     "Announcement": {

@@ -324,7 +324,7 @@
       }
     }
   },
-  "retrieved_from": null,
+  "retrieved_from": "https://chromepolicy.googleapis.com/$discovery/rest?version=v1",
   "rootUrl": "https://chromepolicy.googleapis.com/",
   "schemas": {
     "GoogleChromePolicyV1AdditionalTargetKeyName": {

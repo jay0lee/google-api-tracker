@@ -288,7 +288,7 @@
       }
     }
   },
-  "retrieved_from": null,
+  "retrieved_from": "https://chromemanagement.googleapis.com/$discovery/rest?version=v1",
   "rootUrl": "https://chromemanagement.googleapis.com/",
   "schemas": {
     "GoogleChromeManagementV1BrowserVersion": {

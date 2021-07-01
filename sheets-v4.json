@@ -870,7 +870,7 @@
       }
     }
   },
-  "retrieved_from": null,
+  "retrieved_from": "https://sheets.googleapis.com/$discovery/rest?version=v4",
   "rootUrl": "https://sheets.googleapis.com/",
   "schemas": {
     "AddBandingRequest": {

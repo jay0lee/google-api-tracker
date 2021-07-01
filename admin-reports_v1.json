@@ -631,7 +631,7 @@
       }
     }
   },
-  "retrieved_from": null,
+  "retrieved_from": "https://admin.googleapis.com/$discovery/rest?version=reports_v1",
   "rootUrl": "https://admin.googleapis.com/",
   "schemas": {
     "Activities": {

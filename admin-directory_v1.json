@@ -4397,7 +4397,7 @@
       }
     }
   },
-  "retrieved_from": null,
+  "retrieved_from": "https://admin.googleapis.com/$discovery/rest?version=directory_v1",
   "rootUrl": "https://admin.googleapis.com/",
   "schemas": {
     "Alias": {

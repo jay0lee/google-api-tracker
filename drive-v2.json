@@ -3526,7 +3526,7 @@
       }
     }
   },
-  "retrieved_from": null,
+  "retrieved_from": "https://www.googleapis.com/discovery/v1/apis/drive/v2/rest",
   "rootUrl": "https://www.googleapis.com/",
   "schemas": {
     "About": {

@@ -272,7 +272,7 @@
       }
     }
   },
-  "retrieved_from": null,
+  "retrieved_from": "https://admin.googleapis.com/$discovery/rest?version=datatransfer_v1",
   "rootUrl": "https://admin.googleapis.com/",
   "schemas": {
     "Application": {

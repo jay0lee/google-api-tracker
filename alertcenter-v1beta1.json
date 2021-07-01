@@ -423,7 +423,7 @@
       }
     }
   },
-  "retrieved_from": null,
+  "retrieved_from": "https://alertcenter.googleapis.com/$discovery/rest?version=v1beta1",
   "rootUrl": "https://alertcenter.googleapis.com/",
   "schemas": {
     "AccountWarning": {

@@ -1424,7 +1424,7 @@
       }
     }
   },
-  "retrieved_from": null,
+  "retrieved_from": "https://pubsub.googleapis.com/$discovery/rest?version=v1",
   "rootUrl": "https://pubsub.googleapis.com/",
   "schemas": {
     "AcknowledgeRequest": {

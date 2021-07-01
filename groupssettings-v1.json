@@ -152,7 +152,7 @@
       }
     }
   },
-  "retrieved_from": null,
+  "retrieved_from": "https://groupssettings.googleapis.com/$discovery/rest?version=v1",
   "rootUrl": "https://www.googleapis.com/",
   "schemas": {
     "Groups": {

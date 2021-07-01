@@ -1336,7 +1336,7 @@
       }
     }
   },
-  "retrieved_from": null,
+  "retrieved_from": "https://cloudidentity.googleapis.com/$discovery/rest?version=v1beta1",
   "rootUrl": "https://cloudidentity.googleapis.com/",
   "schemas": {
     "AndroidAttributes": {

@@ -631,7 +631,7 @@
       }
     }
   },
-  "retrieved_from": null,
+  "retrieved_from": "https://reseller.googleapis.com/$discovery/rest?version=v1",
   "rootUrl": "https://reseller.googleapis.com/",
   "schemas": {
     "Address": {

@@ -601,7 +601,7 @@
       }
     }
   },
-  "retrieved_from": null,
+  "retrieved_from": "https://chat.googleapis.com/$discovery/rest?version=v1",
   "rootUrl": "https://chat.googleapis.com/",
   "schemas": {
     "ActionParameter": {

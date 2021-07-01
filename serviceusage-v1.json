@@ -426,7 +426,7 @@
       }
     }
   },
-  "retrieved_from": null,
+  "retrieved_from": "https://serviceusage.googleapis.com/$discovery/rest?version=v1",
   "rootUrl": "https://serviceusage.googleapis.com/",
   "schemas": {
     "AdminQuotaPolicy": {

@@ -3229,7 +3229,7 @@
       }
     }
   },
-  "retrieved_from": null,
+  "retrieved_from": "https://storage.googleapis.com/$discovery/rest?version=v1",
   "rootUrl": "https://storage.googleapis.com/",
   "schemas": {
     "Bucket": {
