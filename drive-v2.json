@@ -1029,7 +1029,7 @@
           "parameters": {
             "maxResults": {
               "default": "10",
-              "description": "Maximum number of shared drives to return.",
+              "description": "Maximum number of shared drives to return per page.",
               "format": "int32",
               "location": "query",
               "maximum": "100",
