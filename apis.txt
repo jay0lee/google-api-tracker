@@ -9,6 +9,7 @@ chromepolicy v1
 classroom v1
 cloudidentity v1
 cloudidentity v1beta1
+cloudresourcemanager v3
 cloudresourcemanager v2
 cloudresourcemanager v1
 drive v2
