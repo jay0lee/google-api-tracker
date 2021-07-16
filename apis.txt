@@ -2,7 +2,7 @@ admin datatransfer_v1
 admin directory_v1
 admin reports_v1
 alertcenter v1beta1
-calendar v3
+calendar-json v3
 chat v1
 chromemanagement v1
 chromepolicy v1
