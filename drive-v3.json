@@ -1173,7 +1173,7 @@
             },
             "spaces": {
               "default": "drive",
-              "description": "A comma-separated list of spaces to query within the corpus. Supported values are 'drive', 'appDataFolder' and 'photos'.",
+              "description": "A comma-separated list of spaces to query within the corpus. Supported values are 'drive' and 'appDataFolder'.",
               "location": "query",
               "type": "string"
             },
@@ -3003,7 +3003,7 @@
           "type": "string"
         },
         "folderColorRgb": {
-          "description": "The color for a folder as an RGB hex string. The supported colors are published in the folderColorPalette field of the About resource.\nIf an unsupported color is specified, the closest color in the palette will be used instead.",
+          "description": "The color for a folder or shortcut to a folder as an RGB hex string. The supported colors are published in the folderColorPalette field of the About resource.\nIf an unsupported color is specified, the closest color in the palette will be used instead.",
           "type": "string"
         },
         "fullFileExtension": {
