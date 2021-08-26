@@ -2585,7 +2585,7 @@
     }
   },
   "servicePath": "",
-  "title": "G Suite Vault API",
+  "title": "Google Vault API",
   "version": "v1",
   "version_module": true
 }
