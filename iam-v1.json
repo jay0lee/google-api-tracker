@@ -522,7 +522,7 @@
                       "type": "string"
                     },
                     "updateMask": {
-                      "description": "Required. The list of fields update.",
+                      "description": "Required. The list of fields to update.",
                       "format": "google-fieldmask",
                       "location": "query",
                       "type": "string"
