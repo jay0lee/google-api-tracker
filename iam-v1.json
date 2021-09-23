@@ -1484,7 +1484,7 @@
                   ]
                 },
                 "disable": {
-                  "description": "Disable a ServiceAccountKey. A disabled service account key can be enabled through EnableServiceAccountKey.",
+                  "description": "Disable a ServiceAccountKey. A disabled service account key can be enabled through EnableServiceAccountKey. The API is currently in preview phase.",
                   "flatPath": "v1/projects/{projectsId}/serviceAccounts/{serviceAccountsId}/keys/{keysId}:disable",
                   "httpMethod": "POST",
                   "id": "iam.projects.serviceAccounts.keys.disable",
@@ -1512,7 +1512,7 @@
                   ]
                 },
                 "enable": {
-                  "description": "Enable a ServiceAccountKey.",
+                  "description": "Enable a ServiceAccountKey. The API is currently in preview phase.",
                   "flatPath": "v1/projects/{projectsId}/serviceAccounts/{serviceAccountsId}/keys/{keysId}:enable",
                   "httpMethod": "POST",
                   "id": "iam.projects.serviceAccounts.keys.enable",
