@@ -981,7 +981,7 @@
           ]
         },
         "export": {
-          "description": "Exports a Google Doc to the requested MIME type and returns the exported content. Please note that the exported content is limited to 10MB.",
+          "description": "Exports a Google Workspace document to the requested MIME type and returns exported byte content. Note that the exported content is limited to 10MB.",
           "httpMethod": "GET",
           "id": "drive.files.export",
           "parameterOrder": [
