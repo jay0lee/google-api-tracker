@@ -3365,7 +3365,7 @@
               "type": "object"
             },
             "publicAccessPrevention": {
-              "description": "The bucket's Public Access Prevention configuration. Currently, 'inherited' and 'enforced' are supported.",
+              "description": "The bucket's Public Access Prevention configuration. Currently, 'unspecified' and 'enforced' are supported.",
               "type": "string"
             },
             "uniformBucketLevelAccess": {
