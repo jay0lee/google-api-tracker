@@ -32,3 +32,4 @@ sheets v4
 siteVerification v1
 storage v1
 vault v1
+versionhistory v1
