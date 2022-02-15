@@ -78,11 +78,6 @@
       "location": "query",
       "type": "string"
     },
-    "uploadType": {
-      "description": "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\").",
-      "location": "query",
-      "type": "string"
-    },
     "userIp": {
       "description": "Deprecated. Please use quotaUser instead.",
       "location": "query",
