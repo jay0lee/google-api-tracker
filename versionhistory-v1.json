@@ -452,6 +452,11 @@
           "format": "double",
           "type": "number"
         },
+        "fractionGroup": {
+          "description": "Rollout fraction group. Only fractions with the same fraction_group are statistically comparable: there may be non-fractional differences between different fraction groups.",
+          "format": "int64",
+          "type": "string"
+        },
         "name": {
           "description": "Release name. Format is \"{product}/platforms/{platform}/channels/{channel}/versions/{version}/releases/{release}\"",
           "type": "string"
