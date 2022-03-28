@@ -444,7 +444,7 @@
                   ],
                   "parameters": {
                     "filter": {
-                      "description": "Optional. Only include resources that match the filter. Supported filter fields: - org_unit_id - serial_number ",
+                      "description": "Optional. Only include resources that match the filter. Supported filter fields: - org_unit_id - serial_number - device_id ",
                       "location": "query",
                       "type": "string"
                     },
