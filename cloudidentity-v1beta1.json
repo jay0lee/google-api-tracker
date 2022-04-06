@@ -1933,6 +1933,10 @@
           "readOnly": true,
           "type": "string"
         },
+        "deviceId": {
+          "description": "Unique identifier for the device.",
+          "type": "string"
+        },
         "deviceType": {
           "description": "Output only. Type of device.",
           "enum": [
