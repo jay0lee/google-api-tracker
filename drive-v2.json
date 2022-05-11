@@ -4530,6 +4530,10 @@
               "description": "Whether the current user can rename this shared drive.",
               "type": "boolean"
             },
+            "canResetDriveRestrictions": {
+              "description": "Whether the current user can reset the shared drive restrictions to defaults.",
+              "type": "boolean"
+            },
             "canShare": {
               "description": "Whether the current user can share files or folders in this shared drive.",
               "type": "boolean"
@@ -5936,6 +5940,10 @@
             },
             "canRenameTeamDrive": {
               "description": "Whether the current user can rename this Team Drive.",
+              "type": "boolean"
+            },
+            "canResetTeamDriveRestrictions": {
+              "description": "Whether the current user can reset the Team Drive restrictions to defaults.",
               "type": "boolean"
             },
             "canShare": {
