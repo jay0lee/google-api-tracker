@@ -3087,6 +3087,12 @@
       },
       "type": "object"
     },
+    "WorkloadIdentityPoolOperationMetadata": {
+      "description": "Metadata for long-running WorkloadIdentityPool operations.",
+      "id": "WorkloadIdentityPoolOperationMetadata",
+      "properties": {},
+      "type": "object"
+    },
     "WorkloadIdentityPoolProvider": {
       "description": "A configuration for an external identity provider.",
       "id": "WorkloadIdentityPoolProvider",
