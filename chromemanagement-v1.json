@@ -449,6 +449,12 @@
                       "pattern": "^customers/[^/]+/telemetry/devices/[^/]+$",
                       "required": true,
                       "type": "string"
+                    },
+                    "readMask": {
+                      "description": "Required. Read mask to specify which fields to return.",
+                      "format": "google-fieldmask",
+                      "location": "query",
+                      "type": "string"
                     }
                   },
                   "path": "v1/{+name}",
