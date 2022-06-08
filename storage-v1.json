@@ -3180,7 +3180,7 @@
                         "type": "string"
                       },
                       "type": {
-                        "description": "Type of the action. Currently, only Delete and SetStorageClass are supported.",
+                        "description": "Type of the action. Currently, only Delete, SetStorageClass, and AbortIncompleteMultipartUpload are supported.",
                         "type": "string"
                       }
                     },
