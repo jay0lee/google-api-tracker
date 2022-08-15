@@ -421,9 +421,11 @@
             "MAC_ARM64",
             "LACROS",
             "LACROS_ARM32",
-            "CHROMEOS"
+            "CHROMEOS",
+            "LACROS_ARM64"
           ],
           "enumDescriptions": [
+            "",
             "",
             "",
             "",
