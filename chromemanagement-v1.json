@@ -1053,6 +1053,11 @@
           "readOnly": true,
           "type": "boolean"
         },
+        "isExtensionPolicySupported": {
+          "description": "Output only. Whether an app supports policy for extensions.",
+          "readOnly": true,
+          "type": "boolean"
+        },
         "isKioskOnly": {
           "description": "Output only. Whether the app is only for Kiosk mode on ChromeOS devices",
           "readOnly": true,
