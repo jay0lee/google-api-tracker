@@ -12,11 +12,11 @@ while read line; do
     export use_url="${v2_url}"
     curl -s -f --compressed -o ~/$apifile $use_url; result=$?; true;
     if [ $result -ne 0 ]; then
-        echo "v2 URL failed with $result, checking v1 URL for $api $ver...";
+        echo " v2 URL failed with ${result}, checking v1 URL for ${api} ${ver}...";
         export use_url="${v1_url}"
         curl -s --compressed -f -o ~/$apifile $use_url; result=$?; true;
         if [ $result -ne 0 ]; then
-            echo "$api $ver v1 failed also with $result! Giving up on this API";
+            echo " v1 also failed with ${result} for ${api} ${ver}. Giving up.";
             continue
         fi;
     fi;
