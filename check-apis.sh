@@ -16,7 +16,8 @@ while read line; do
         export use_url="${v1_url}"
         curl -s --compressed -f -o ~/$apifile $use_url; result=$?; true;
         if [ $result -ne 0 ]; then
-            echo "$api $ver v1 failed also with $result!";
+            echo "$api $ver v1 failed also with $result! Giving up on this API";
+            continue
         fi;
     fi;
     cat ~/$apifile | python3 -c "${pyparser}" > $apifile;
