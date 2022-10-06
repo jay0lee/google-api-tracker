@@ -3855,7 +3855,7 @@
           "type": "string"
         },
         "expirationTime": {
-          "description": "The time at which this permission will expire (RFC 3339 date-time). Expiration times have the following restrictions:  \n- They can only be set on user and group permissions \n- The time must be in the future \n- The time cannot be more than a year in the future",
+          "description": "The time at which this permission will expire (RFC 3339 date-time). Expiration times have the following restrictions:  \n- They cannot be set on shared drive items \n- They can only be set on user and group permissions \n- The time must be in the future \n- The time cannot be more than a year in the future",
           "format": "date-time",
           "type": "string"
         },
