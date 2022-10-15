@@ -1,4 +1,13 @@
 {
+  "auth": {
+    "oauth2": {
+      "scopes": {
+        "https://www.googleapis.com/auth/chat.memberships": {
+          "description": "View, add, and remove members from conversations in Google Chat"
+        }
+      }
+    }
+  },
   "basePath": "",
   "baseUrl": "https://chat.googleapis.com/",
   "batchPath": "batch",
@@ -107,6 +116,11 @@
             "parent"
           ],
           "parameters": {
+            "messageId": {
+              "description": "Optional. A custom name for a Chat message assigned at creation. Must start with `client-` and contain only lowercase letters, numbers, and hyphens up to 63 characters in length. Specify this field to get, update, or delete the message with the specified value. For example usage, see [Name a created message](https://developers.google.com/chat/api/guides/crudl/messages#name_a_created_message).",
+              "location": "query",
+              "type": "string"
+            },
             "parent": {
               "description": "Required. Space resource name, in the form \"spaces/*\". Example: spaces/AAAAAAAAAAA",
               "location": "path",
@@ -142,6 +156,11 @@
             "parent"
           ],
           "parameters": {
+            "messageId": {
+              "description": "Optional. A custom name for a Chat message assigned at creation. Must start with `client-` and contain only lowercase letters, numbers, and hyphens up to 63 characters in length. Specify this field to get, update, or delete the message with the specified value. For example usage, see [Name a created message](https://developers.google.com/chat/api/guides/crudl/messages#name_a_created_message).",
+              "location": "query",
+              "type": "string"
+            },
             "parent": {
               "description": "Required. Space resource name, in the form \"spaces/*\". Example: spaces/AAAAAAAAAAA",
               "location": "path",
@@ -181,6 +200,11 @@
                 "parent"
               ],
               "parameters": {
+                "messageId": {
+                  "description": "Optional. A custom name for a Chat message assigned at creation. Must start with `client-` and contain only lowercase letters, numbers, and hyphens up to 63 characters in length. Specify this field to get, update, or delete the message with the specified value. For example usage, see [Name a created message](https://developers.google.com/chat/api/guides/crudl/messages#name_a_created_message).",
+                  "location": "query",
+                  "type": "string"
+                },
                 "parent": {
                   "description": "Required. Space resource name, in the form \"spaces/*\". Example: spaces/AAAAAAAAAAA",
                   "location": "path",
@@ -249,6 +273,11 @@
             "parent"
           ],
           "parameters": {
+            "messageId": {
+              "description": "Optional. A custom name for a Chat message assigned at creation. Must start with `client-` and contain only lowercase letters, numbers, and hyphens up to 63 characters in length. Specify this field to get, update, or delete the message with the specified value. For example usage, see [Name a created message](https://developers.google.com/chat/api/guides/crudl/messages#name_a_created_message).",
+              "location": "query",
+              "type": "string"
+            },
             "parent": {
               "description": "Required. Space resource name, in the form \"spaces/*\". Example: spaces/AAAAAAAAAAA",
               "location": "path",
@@ -284,6 +313,11 @@
             "parent"
           ],
           "parameters": {
+            "messageId": {
+              "description": "Optional. A custom name for a Chat message assigned at creation. Must start with `client-` and contain only lowercase letters, numbers, and hyphens up to 63 characters in length. Specify this field to get, update, or delete the message with the specified value. For example usage, see [Name a created message](https://developers.google.com/chat/api/guides/crudl/messages#name_a_created_message).",
+              "location": "query",
+              "type": "string"
+            },
             "parent": {
               "description": "Required. Space resource name, in the form \"spaces/*\". Example: spaces/AAAAAAAAAAA",
               "location": "path",
@@ -323,6 +357,11 @@
                 "parent"
               ],
               "parameters": {
+                "messageId": {
+                  "description": "Optional. A custom name for a Chat message assigned at creation. Must start with `client-` and contain only lowercase letters, numbers, and hyphens up to 63 characters in length. Specify this field to get, update, or delete the message with the specified value. For example usage, see [Name a created message](https://developers.google.com/chat/api/guides/crudl/messages#name_a_created_message).",
+                  "location": "query",
+                  "type": "string"
+                },
                 "parent": {
                   "description": "Required. Space resource name, in the form \"spaces/*\". Example: spaces/AAAAAAAAAAA",
                   "location": "path",
@@ -410,6 +449,11 @@
             "parent"
           ],
           "parameters": {
+            "messageId": {
+              "description": "Optional. A custom name for a Chat message assigned at creation. Must start with `client-` and contain only lowercase letters, numbers, and hyphens up to 63 characters in length. Specify this field to get, update, or delete the message with the specified value. For example usage, see [Name a created message](https://developers.google.com/chat/api/guides/crudl/messages#name_a_created_message).",
+              "location": "query",
+              "type": "string"
+            },
             "parent": {
               "description": "Required. Space resource name, in the form \"spaces/*\". Example: spaces/AAAAAAAAAAA",
               "location": "path",
@@ -493,7 +537,10 @@
               "path": "v1/{+parent}/members",
               "response": {
                 "$ref": "ListMembershipsResponse"
-              }
+              },
+              "scopes": [
+                "https://www.googleapis.com/auth/chat.memberships"
+              ]
             }
           }
         },
@@ -508,6 +555,11 @@
                 "parent"
               ],
               "parameters": {
+                "messageId": {
+                  "description": "Optional. A custom name for a Chat message assigned at creation. Must start with `client-` and contain only lowercase letters, numbers, and hyphens up to 63 characters in length. Specify this field to get, update, or delete the message with the specified value. For example usage, see [Name a created message](https://developers.google.com/chat/api/guides/crudl/messages#name_a_created_message).",
+                  "location": "query",
+                  "type": "string"
+                },
                 "parent": {
                   "description": "Required. Space resource name, in the form \"spaces/*\". Example: spaces/AAAAAAAAAAA",
                   "location": "path",
@@ -566,7 +618,7 @@
               ],
               "parameters": {
                 "name": {
-                  "description": "Required. Resource name of the message to be retrieved, in the form \"spaces/*/messages/*\". Example: spaces/AAAAAAAAAAA/messages/BBBBBBBBBBB.BBBBBBBBBBB",
+                  "description": "Required. Resource name of the message to retrieve. Format: spaces/{space}/messages/{message} If the message begins with `client-`, then it has a custom name assigned by a Chat app that created it with the Chat REST API. That Chat app (but not others) can pass the custom name to get, update, or delete the message. To learn more, see [create and name a message] (https://developers.google.com/chat/api/guides/crudl/messages#name_a_created_message).",
                   "location": "path",
                   "pattern": "^spaces/[^/]+/messages/[^/]+$",
                   "required": true,
@@ -587,6 +639,11 @@
                 "name"
               ],
               "parameters": {
+                "allowMissing": {
+                  "description": "Optional. If `true` and the message is not found, a new message is created and `updateMask` is ignored. The specified message ID must be [client-assigned](https://developers.google.com/chat/api/guides/crudl/messages#name_a_created_message) or the request fails.",
+                  "location": "query",
+                  "type": "boolean"
+                },
                 "name": {
                   "description": "Resource name in the form `spaces/*/messages/*`. Example: `spaces/AAAAAAAAAAA/messages/BBBBBBBBBBB.BBBBBBBBBBB`",
                   "location": "path",
@@ -2489,6 +2546,10 @@
             "$ref": "CardWithId"
           },
           "type": "array"
+        },
+        "clientAssignedMessageId": {
+          "description": "A custom name for a Chat message assigned at creation. Must start with `client-` and contain only lowercase letters, numbers, and hyphens up to 63 characters in length. Specify this field to get, update, or delete the message with the specified value. For example usage, see [Name a created message](https://developers.google.com/chat/api/guides/crudl/messages#name_a_created_message).",
+          "type": "string"
         },
         "createTime": {
           "description": "Output only. The time at which the message was created in Google Chat server.",
