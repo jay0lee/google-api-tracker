@@ -612,7 +612,7 @@
               }
             },
             "get": {
-              "description": "Returns a message. Requires [service account authentication](https://developers.google.com/chat/api/guides/auth/service-accounts). [Developer Preview](https://developers.google.com/workspace/preview): Returns a message. Requires [user authentication](https://developers.google.com/chat/api/guides/auth/users) and the `chat.messages` or `chat.messages.readonly` authorization scope.",
+              "description": "Returns a message. Requires [service account authentication](https://developers.google.com/chat/api/guides/auth/service-accounts). [Developer Preview](https://developers.google.com/workspace/preview): Returns a message. Requires [user authentication](https://developers.google.com/chat/api/guides/auth/users) and the `chat.messages` or `chat.messages.readonly` authorization scope. Messages from a blocked member or messages from a blocked space can also be fetched.",
               "flatPath": "v1/spaces/{spacesId}/messages/{messagesId}",
               "httpMethod": "GET",
               "id": "chat.spaces.messages.get",
