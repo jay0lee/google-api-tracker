@@ -7955,10 +7955,6 @@
     "UserName": {
       "id": "UserName",
       "properties": {
-        "displayName": {
-          "description": "The user's display name. Limit: 256 characters.",
-          "type": "string"
-        },
         "familyName": {
           "annotations": {
             "required": [
