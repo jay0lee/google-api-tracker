@@ -1822,7 +1822,7 @@
             "PERIMETER_TYPE_BRIDGE"
           ],
           "enumDescriptions": [
-            "Regular Perimeter.",
+            "Regular Perimeter. When no value is specified, the perimeter uses this type.",
             "Perimeter Bridge."
           ],
           "type": "string"
