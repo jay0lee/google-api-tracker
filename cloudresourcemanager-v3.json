@@ -980,8 +980,7 @@
             "$ref": "SearchProjectsResponse"
           },
           "scopes": [
-            "https://www.googleapis.com/auth/cloud-platform",
-            "https://www.googleapis.com/auth/cloud-platform.read-only"
+            "https://www.googleapis.com/auth/cloud-platform"
           ]
         },
         "setIamPolicy": {
