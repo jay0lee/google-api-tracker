@@ -12,7 +12,7 @@
           "description": "Compose and send messages in Google Chat"
         },
         "https://www.googleapis.com/auth/chat.messages.readonly": {
-          "description": "view messages and reactions in Google Chat"
+          "description": "View messages and reactions in Google Chat"
         }
       }
     }
@@ -1085,7 +1085,6 @@
       "type": "object"
     },
     "AttachmentDataRef": {
-      "description": "[Developer Preview](https://developers.google.com/workspace/preview).",
       "id": "AttachmentDataRef",
       "properties": {
         "resourceName": {
