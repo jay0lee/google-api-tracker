@@ -1606,8 +1606,7 @@
               "DRIVE_WARN_ON_EXTERNAL_SHARING",
               "ALERT",
               "RULE_ACTIVATE",
-              "RULE_DEACTIVATE",
-              "DELETE_WEBPROTECT_EVIDENCE"
+              "RULE_DEACTIVATE"
             ],
             "enumDescriptions": [
               "Action type is unspecified.",
@@ -1615,8 +1614,7 @@
               "Show a warning message when sharing a file externally.",
               "Send alert.",
               "Activate Rule Action",
-              "Deactivate Rule Action",
-              "Chrome actions Delete web protect evidence file"
+              "Deactivate Rule Action"
             ],
             "type": "string"
           },
@@ -1650,8 +1648,7 @@
               "DRIVE_WARN_ON_EXTERNAL_SHARING",
               "ALERT",
               "RULE_ACTIVATE",
-              "RULE_DEACTIVATE",
-              "DELETE_WEBPROTECT_EVIDENCE"
+              "RULE_DEACTIVATE"
             ],
             "enumDescriptions": [
               "Action type is unspecified.",
@@ -1659,8 +1656,7 @@
               "Show a warning message when sharing a file externally.",
               "Send alert.",
               "Activate Rule Action",
-              "Deactivate Rule Action",
-              "Chrome actions Delete web protect evidence file"
+              "Deactivate Rule Action"
             ],
             "type": "string"
           },
