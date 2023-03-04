@@ -2140,6 +2140,11 @@
               "location": "query",
               "type": "boolean"
             },
+            "matchGlob": {
+              "description": "Filter results to objects and prefixes that match this glob pattern.",
+              "location": "query",
+              "type": "string"
+            },
             "maxResults": {
               "default": "1000",
               "description": "Maximum number of items plus prefixes to return in a single page of responses. As duplicate prefixes are omitted, fewer total results may be returned than requested. The service will use this parameter or 1,000 items, whichever is smaller.",
