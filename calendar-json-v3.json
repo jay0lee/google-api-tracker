@@ -1087,6 +1087,12 @@
               "required": true,
               "type": "string"
             },
+            "eventTypes": {
+              "description": "Event types to return. Optional. The default is [\"default\", \"outOfOffice\", \"focusTime\"]. This is used by the Working Location developer preview and only the default value is allowed for non-opted-in users.",
+              "location": "query",
+              "repeated": true,
+              "type": "string"
+            },
             "iCalUID": {
               "description": "Specifies an event ID in the iCalendar format to be provided in the response. Optional. Use this if you want to search for an event by its iCalendar ID.",
               "location": "query",
@@ -1482,6 +1488,12 @@
               "description": "Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the \"primary\" keyword.",
               "location": "path",
               "required": true,
+              "type": "string"
+            },
+            "eventTypes": {
+              "description": "Event types to return. Optional. The default is [\"default\", \"outOfOffice\", \"focusTime\"]. This is used by the Working Location developer preview and only the default value is allowed for non-opted-in users.",
+              "location": "query",
+              "repeated": true,
               "type": "string"
             },
             "iCalUID": {
