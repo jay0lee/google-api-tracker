@@ -2881,16 +2881,14 @@
             "CLOUD",
             "ADS",
             "PHOTOS",
-            "STREET_VIEW",
-            "SHOPPING"
+            "STREET_VIEW"
           ],
           "enumDescriptions": [
             "Not useful.",
             "Google Cloud Platform Org.",
             "Ads (Advertising) Org.",
             "Photos Org.",
-            "Street View Org.",
-            "Shopping Org."
+            "Street View Org."
           ],
           "type": "string"
         },
