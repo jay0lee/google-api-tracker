@@ -1289,7 +1289,7 @@
           ]
         },
         "emptyTrash": {
-          "description": "Permanently deletes all of the user's trashed files.",
+          "description": "Permanently deletes all trashed files of a user or shared drive.",
           "httpMethod": "DELETE",
           "id": "drive.files.emptyTrash",
           "parameters": {
@@ -2230,7 +2230,7 @@
           "supportsMediaUpload": true
         },
         "watch": {
-          "description": "Subscribes to changes to a file. While you can establish a channel for changes to a file on a shared drive, a change to a shared drive file won't create a notification.",
+          "description": "Subscribe to changes on a file.",
           "httpMethod": "POST",
           "id": "drive.files.watch",
           "parameterOrder": [
