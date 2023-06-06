@@ -1841,13 +1841,6 @@
         "secondaryButton": {
           "$ref": "GoogleAppsCardV1Button",
           "description": "The secondary button of the fixed footer. The button must be a text button with text and color set. If `secondaryButton` is set, you must also set `primaryButton`."
-        },
-        "widgets": {
-          "description": "A list of widgets included in the card footer. Primary button and secondary button are rendered below these widgets.",
-          "items": {
-            "$ref": "GoogleAppsCardV1FooterWidget"
-          },
-          "type": "array"
         }
       },
       "type": "object"
@@ -2055,33 +2048,6 @@
       "description": "Displays a divider between widgets as a horizontal line. For example, the following JSON creates a divider: ``` \"divider\": {} ```",
       "id": "GoogleAppsCardV1Divider",
       "properties": {},
-      "type": "object"
-    },
-    "GoogleAppsCardV1FooterWidget": {
-      "description": "The CardFixedFooter can contain a list of these widgets.",
-      "id": "GoogleAppsCardV1FooterWidget",
-      "properties": {
-        "buttonList": {
-          "$ref": "GoogleAppsCardV1ButtonList",
-          "description": "ButtonList widget."
-        },
-        "dateTimePicker": {
-          "$ref": "GoogleAppsCardV1DateTimePicker",
-          "description": "DateTimePicker widget."
-        },
-        "decoratedText": {
-          "$ref": "GoogleAppsCardV1DecoratedText",
-          "description": "DecoratedText widget."
-        },
-        "textInput": {
-          "$ref": "GoogleAppsCardV1TextInput",
-          "description": "TextInput widget."
-        },
-        "textParagraph": {
-          "$ref": "GoogleAppsCardV1TextParagraph",
-          "description": "TextParagraph widget."
-        }
-      },
       "type": "object"
     },
     "GoogleAppsCardV1Grid": {
@@ -3047,9 +3013,8 @@
           "type": "string"
         },
         "createTime": {
-          "description": "Output only. The time at which the message was created in Google Chat.",
+          "description": "For spaces created in Chat, the time at which the message was created. For imported spaces, set this field to the historical timestamp at which the message was created in the source in order to preserve the original creation time.",
           "format": "google-datetime",
-          "readOnly": true,
           "type": "string"
         },
         "deleteTime": {
