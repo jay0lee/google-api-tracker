@@ -4359,6 +4359,18 @@
           ],
           "type": "string"
         },
+        "labelFilterBehavior": {
+          "description": "Filtering behavior of labelIds list specified. This field replaces label_filter_action; if set, label_filter_action is ignored.",
+          "enum": [
+            "include",
+            "exclude"
+          ],
+          "enumDescriptions": [
+            "Only get push notifications for message changes relating to labelIds specified.",
+            "Get push notifications for all message changes except those relating to labelIds specified."
+          ],
+          "type": "string"
+        },
         "labelIds": {
           "description": "List of label_ids to restrict notifications about. By default, if unspecified, all changes are pushed out. If specified then dictates which labels are required for a push notification to be generated.",
           "items": {
