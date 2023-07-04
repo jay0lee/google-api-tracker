@@ -1675,7 +1675,7 @@
           "type": "string"
         },
         "filenameSuffix": {
-          "description": "Optional. User-provided suffix for Cloud Storage filename. See the [object naming requirements](https://cloud.google.com/storage/docs/objects#naming). Must not end in \"/\".",
+          "description": "Optional. User-provided suffix for Cloud Storage filename. See the [object naming requirements](https://cloud.google.com/storage/docs/objects#naming).",
           "type": "string"
         },
         "maxBytes": {
