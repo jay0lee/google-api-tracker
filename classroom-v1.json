@@ -2562,6 +2562,7 @@
           "type": "string"
         },
         "courseMaterialSets": {
+          "deprecated": true,
           "description": "Sets of materials that appear on the \"about\" page of this course. Read-only.",
           "items": {
             "$ref": "CourseMaterialSet"
