@@ -21,7 +21,7 @@ cloudresourcemanager v1
 drive v2
 drive v3
 driveactivity v2
-drivelabels v1
+drivelabels v2
 gmail v1
 groupsmigration v1
 groupssettings v1
