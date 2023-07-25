@@ -1631,6 +1631,13 @@
             "type": "string"
           },
           "type": "array"
+        },
+        "roles": {
+          "description": "Value for `roles` should be a list of valid Cloud IAM roles for the corresponding `service_name` in ApiOperation. Example: roles = ['roles/owner'] roles = ['roles/accessapproval.approver']",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
         }
       },
       "type": "object"
@@ -1790,6 +1797,13 @@
         },
         "resources": {
           "description": "A list of resources, currently only projects in the form `projects/`, protected by this ServicePerimeter that are allowed to be accessed by sources defined in the corresponding IngressFrom. If a single `*` is specified, then access to all resources inside the perimeter are allowed.",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "roles": {
+          "description": "List of roles to allow instead of operations. Example: roles = ['roles/owner'] roles = ['roles/accessapproval.approver']",
           "items": {
             "type": "string"
           },
