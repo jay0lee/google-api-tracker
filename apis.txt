@@ -6,9 +6,6 @@ admin directory_v1
 admin reports_v1
 alertcenter v1beta1
 calendar-json v3
-calendaruseravailability v1alpha
-calendaruseravailability v1beta
-calendaruseravailability v1
 chat v1
 chromemanagement v1
 chromepolicy v1
@@ -30,6 +27,7 @@ iamcredentials v1
 iap v1
 licensing v1
 oauth2 v2
+people v1
 pubsub v1
 reseller v1
 servicemanagement v1
