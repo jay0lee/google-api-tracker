@@ -3908,13 +3908,7 @@
           "httpMethod": "POST",
           "id": "directory.users.insert",
           "parameterOrder": [],
-          "parameters": {
-            "resolveConflictAccount": {
-              "description": "Optional. If set to `true`, the option selected for [handling unmanaged user accounts](https://support.google.com/a/answer/11112794) will apply. Default: `false`",
-              "location": "query",
-              "type": "boolean"
-            }
-          },
+          "parameters": {},
           "path": "admin/directory/v1/users",
           "request": {
             "$ref": "User"
