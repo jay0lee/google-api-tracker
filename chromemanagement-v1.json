@@ -1690,6 +1690,36 @@
       },
       "type": "object"
     },
+    "GoogleChromeManagementV1DeviceActivityReport": {
+      "description": "Device activity report. * Granular permission needed: TELEMETRY_API_DEVICE_ACTIVITY_REPORT",
+      "id": "GoogleChromeManagementV1DeviceActivityReport",
+      "properties": {
+        "deviceActivityState": {
+          "description": "Output only. Device activity state.",
+          "enum": [
+            "DEVICE_ACTIVITY_STATE_UNSPECIFIED",
+            "ACTIVE",
+            "IDLE",
+            "LOCKED"
+          ],
+          "enumDescriptions": [
+            "Device activity state is unspecified.",
+            "Device is currently being used.",
+            "Device is currently idle.",
+            "Device is currently locked."
+          ],
+          "readOnly": true,
+          "type": "string"
+        },
+        "reportTime": {
+          "description": "Output only. Timestamp of when the report was collected.",
+          "format": "google-datetime",
+          "readOnly": true,
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "GoogleChromeManagementV1DeviceAueCountReport": {
       "description": "Report for CountChromeDevicesPerAueDateResponse, contains the count of devices of a specific model and auto update expiration range.",
       "id": "GoogleChromeManagementV1DeviceAueCountReport",
@@ -3010,6 +3040,14 @@
           "description": "Output only. Audio reports collected periodically sorted in a decreasing order of report_time.",
           "items": {
             "$ref": "GoogleChromeManagementV1AudioStatusReport"
+          },
+          "readOnly": true,
+          "type": "array"
+        },
+        "deviceActivityReport": {
+          "description": "Output only. Device activity reports collected periodically sorted in a decreasing order of report_time.",
+          "items": {
+            "$ref": "GoogleChromeManagementV1DeviceActivityReport"
           },
           "readOnly": true,
           "type": "array"
