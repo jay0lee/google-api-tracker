@@ -23,6 +23,7 @@ gmail v1
 groupsmigration v1
 groupssettings v1
 iam v1
+iam v2
 iamcredentials v1
 iap v1
 licensing v1
