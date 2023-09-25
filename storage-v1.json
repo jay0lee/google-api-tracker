@@ -2372,6 +2372,11 @@
               "required": true,
               "type": "string"
             },
+            "copySourceAcl": {
+              "description": "If true, copies the source object's ACL; otherwise, uses the bucket's default object ACL. The default is false.",
+              "location": "query",
+              "type": "boolean"
+            },
             "generation": {
               "description": "Selects a specific revision of this object.",
               "format": "int64",
