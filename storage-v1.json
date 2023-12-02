@@ -214,7 +214,7 @@
               "type": "string"
             }
           },
-          "path": "b/{bucket}/anywhereCache",
+          "path": "b/{bucket}/anywhereCaches",
           "response": {
             "$ref": "AnywhereCaches"
           },
