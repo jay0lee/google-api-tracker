@@ -1143,7 +1143,7 @@
     "services": {
       "methods": {
         "get": {
-          "description": "Get a {{vpcsvcctl_name_short}} Supported Service by name.",
+          "description": "Get a VPS-SC Supported Service by name.",
           "flatPath": "v1alpha/services/{name}",
           "httpMethod": "GET",
           "id": "accesscontextmanager.services.get",
@@ -1167,7 +1167,7 @@
           ]
         },
         "list": {
-          "description": "Lists all {{vpcsvcctl_name_short}} supported services.",
+          "description": "Lists all VPC-SC supported services.",
           "flatPath": "v1alpha/services",
           "httpMethod": "GET",
           "id": "accesscontextmanager.services.list",
@@ -1966,7 +1966,7 @@
           "type": "string"
         },
         "supportedServices": {
-          "description": "List of services supported by {{vpcsvcctl_name_short}} instances.",
+          "description": "List of services supported by VPC-SC instances.",
           "items": {
             "$ref": "SupportedService"
           },
@@ -2290,11 +2290,11 @@
       "type": "object"
     },
     "SupportedService": {
-      "description": "`SupportedService` specifies {{vpcsvcctl_name_short}} supported service and its properties.",
+      "description": "`SupportedService` specifies VPC-SC supported service and its properties.",
       "id": "SupportedService",
       "properties": {
         "availableOnRestrictedVip": {
-          "description": "True if the service is available on the restricted VIP. Services on the restricted VIP typically either support {{vpcsvcctl_name_short}} or are core infrastructure services required for the functioning of Google Cloud.",
+          "description": "True if the service is available on the restricted VIP. Services on the restricted VIP typically either support VPC Service Controls or are core infrastructure services required for the functioning of Google Cloud.",
           "type": "boolean"
         },
         "knownLimitations": {
