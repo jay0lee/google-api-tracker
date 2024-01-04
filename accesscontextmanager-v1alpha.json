@@ -1721,7 +1721,7 @@
       "type": "object"
     },
     "GcpUserAccessBinding": {
-      "description": "Restricts access to Cloud Console and Google Cloud APIs for a set of users using Context-Aware Access.",
+      "description": "Restricts access to Cloud Console and Google Cloud APIs for a set of users using Context-Aware Access. Next ID: 9",
       "id": "GcpUserAccessBinding",
       "properties": {
         "accessLevels": {
@@ -1980,11 +1980,11 @@
       "id": "MethodSelector",
       "properties": {
         "method": {
-          "description": "Value for `method` should be a valid method name for the corresponding `service_name` in ApiOperation. If `*` used as value for `method`, then ALL methods and permissions are allowed.",
+          "description": "A valid method name for the corresponding `service_name` in ApiOperation. If `*` is used as the value for the `method`, then ALL methods and permissions are allowed.",
           "type": "string"
         },
         "permission": {
-          "description": "Value for `permission` should be a valid Cloud IAM permission for the corresponding `service_name` in ApiOperation.",
+          "description": "A valid Cloud IAM permission for the corresponding `service_name` in ApiOperation.",
           "type": "string"
         }
       },
@@ -2290,7 +2290,7 @@
       "type": "object"
     },
     "SupportedService": {
-      "description": "`SupportedService` specifies VPC-SC supported service and its properties.",
+      "description": "`SupportedService` specifies the VPC Service Controls and its properties.",
       "id": "SupportedService",
       "properties": {
         "availableOnRestrictedVip": {
@@ -2298,7 +2298,7 @@
           "type": "boolean"
         },
         "knownLimitations": {
-          "description": "True if the service is supported with some limitations. Check documentation for details.",
+          "description": "True if the service is supported with some limitations. Check [documentation](https://cloud.google.com/vpc-service-controls/docs/supported-products) for details.",
           "type": "boolean"
         },
         "name": {
@@ -2330,14 +2330,14 @@
           "type": "string"
         },
         "supportedMethods": {
-          "description": "The list of the supported methods. Field exist only in response on [GetSupportedService]",
+          "description": "The list of the supported methods. This field exists only in response to GetSupportedService",
           "items": {
             "$ref": "MethodSelector"
           },
           "type": "array"
         },
         "title": {
-          "description": "The name of the supported product, such as 'Cloud Product API'",
+          "description": "The name of the supported product, such as 'Cloud Product API'.",
           "type": "string"
         }
       },

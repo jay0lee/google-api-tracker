@@ -98,7 +98,7 @@
   },
   "protocol": "rest",
   "resources": {
-    "anywhereCaches": {
+    "anywhereCache": {
       "methods": {
         "disable": {
           "description": "Disables an Anywhere Cache instance.",
@@ -116,7 +116,7 @@
               "type": "string"
             },
             "bucket": {
-              "description": "Name of the parent bucket.",
+              "description": "Name of the partent bucket",
               "location": "path",
               "required": true,
               "type": "string"
@@ -148,7 +148,7 @@
               "type": "string"
             },
             "bucket": {
-              "description": "Name of the parent bucket.",
+              "description": "Name of the partent bucket",
               "location": "path",
               "required": true,
               "type": "string"
@@ -175,7 +175,7 @@
           ],
           "parameters": {
             "bucket": {
-              "description": "Name of the parent bucket.",
+              "description": "Name of the partent bucket",
               "location": "path",
               "required": true,
               "type": "string"
@@ -203,7 +203,7 @@
           ],
           "parameters": {
             "bucket": {
-              "description": "Name of the parent bucket.",
+              "description": "Name of the partent bucket",
               "location": "path",
               "required": true,
               "type": "string"
@@ -249,7 +249,7 @@
               "type": "string"
             },
             "bucket": {
-              "description": "Name of the parent bucket.",
+              "description": "Name of the partent bucket",
               "location": "path",
               "required": true,
               "type": "string"
@@ -281,7 +281,7 @@
               "type": "string"
             },
             "bucket": {
-              "description": "Name of the parent bucket.",
+              "description": "Name of the partent bucket",
               "location": "path",
               "required": true,
               "type": "string"
@@ -313,7 +313,7 @@
               "type": "string"
             },
             "bucket": {
-              "description": "Name of the parent bucket.",
+              "description": "Name of the partent bucket",
               "location": "path",
               "required": true,
               "type": "string"
@@ -3858,10 +3858,6 @@
         "updateTime": {
           "description": "The modification time of the cache instance metadata in RFC 3339 format.",
           "format": "date-time",
-          "type": "string"
-        },
-        "zone": {
-          "description": "The zone in which the cache instance is running. For example, us-central1-a.",
           "type": "string"
         }
       },
