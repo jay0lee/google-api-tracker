@@ -3145,8 +3145,7 @@
           "id": "storage.objects.restore",
           "parameterOrder": [
             "bucket",
-            "object",
-            "generation"
+            "object"
           ],
           "parameters": {
             "bucket": {
