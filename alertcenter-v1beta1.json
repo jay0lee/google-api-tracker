@@ -1181,8 +1181,16 @@
           "description": "Required for iOS, empty for others.",
           "type": "string"
         },
+        "ownerId": {
+          "description": "Obfuscated ID of the owner of the device",
+          "type": "string"
+        },
         "resourceId": {
           "description": "The device resource ID.",
+          "type": "string"
+        },
+        "ruleAction": {
+          "description": "Action taken as result of the rule",
           "type": "string"
         },
         "serialNumber": {
