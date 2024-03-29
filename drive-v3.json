@@ -891,7 +891,7 @@
           ]
         },
         "update": {
-          "description": "Updates the metadate for a shared drive.",
+          "description": "Updates the metadata for a shared drive.",
           "flatPath": "drives/{driveId}",
           "httpMethod": "PATCH",
           "id": "drive.drives.update",
