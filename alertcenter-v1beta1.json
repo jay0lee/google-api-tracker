@@ -1177,6 +1177,10 @@
           "description": "The email of the user this alert was created for.",
           "type": "string"
         },
+        "id": {
+          "description": "ID of the rule that triggered the alert",
+          "type": "string"
+        },
         "iosVendorId": {
           "description": "Required for iOS, empty for others.",
           "type": "string"
