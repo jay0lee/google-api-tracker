@@ -2955,6 +2955,11 @@
           "description": "Serial Number of device. Example: HT82V1A01076.",
           "type": "string"
         },
+        "unifiedDeviceId": {
+          "description": "Output only. Unified device id of the device.",
+          "readOnly": true,
+          "type": "string"
+        },
         "wifiMacAddresses": {
           "description": "WiFi MAC addresses of device.",
           "items": {
