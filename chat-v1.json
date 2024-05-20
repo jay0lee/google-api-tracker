@@ -347,7 +347,7 @@
           ],
           "parameters": {
             "name": {
-              "description": "Required. Resource name of the space, in the form \"spaces/*\". Format: `spaces/{space}`",
+              "description": "Required. Resource name of the space, in the form `spaces/{space}`. Format: `spaces/{space}`",
               "location": "path",
               "pattern": "^spaces/[^/]+$",
               "required": true,
@@ -903,7 +903,7 @@
                   ],
                   "parameters": {
                     "name": {
-                      "description": "Required. Resource name of the attachment, in the form `spaces/*/messages/*/attachments/*`.",
+                      "description": "Required. Resource name of the attachment, in the form `spaces/{space}/messages/{message}/attachments/{attachment}`.",
                       "location": "path",
                       "pattern": "^spaces/[^/]+/messages/[^/]+/attachments/[^/]+$",
                       "required": true,
@@ -1424,7 +1424,7 @@
           "readOnly": true
         },
         "name": {
-          "description": "Resource name of the attachment, in the form `spaces/*/messages/*/attachments/*`.",
+          "description": "Resource name of the attachment, in the form `spaces/{space}/messages/{message}/attachments/{attachment}`.",
           "type": "string"
         },
         "source": {
