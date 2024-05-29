@@ -471,6 +471,10 @@
           "description": "Release name. Format is \"{product}/platforms/{platform}/channels/{channel}/versions/{version}/releases/{release}\"",
           "type": "string"
         },
+        "pinnable": {
+          "description": "Whether or not the release was available for version pinning.",
+          "type": "boolean"
+        },
         "serving": {
           "$ref": "Interval",
           "description": "Timestamp interval of when the release was live. If end_time is unspecified, the release is currently live."
