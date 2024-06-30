@@ -29,6 +29,16 @@
   "endpoints": [
     {
       "description": "Regional Endpoint",
+      "endpointUrl": "https://storage.europe-west3.rep.googleapis.com/",
+      "location": "europe-west3"
+    },
+    {
+      "description": "Regional Endpoint",
+      "endpointUrl": "https://storage.europe-west9.rep.googleapis.com/",
+      "location": "europe-west9"
+    },
+    {
+      "description": "Regional Endpoint",
       "endpointUrl": "https://storage.me-central2.rep.googleapis.com/",
       "location": "me-central2"
     }
