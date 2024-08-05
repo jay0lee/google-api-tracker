@@ -5132,7 +5132,7 @@
       "id": "LookerDataSourceSpec",
       "properties": {
         "explore": {
-          "description": "Name of a LookerML model explore.",
+          "description": "Name of a Looker model explore.",
           "type": "string"
         },
         "instanceUri": {
@@ -5140,7 +5140,7 @@
           "type": "string"
         },
         "model": {
-          "description": "Name of a LookerML model.",
+          "description": "Name of a Looker model.",
           "type": "string"
         }
       },
