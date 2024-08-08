@@ -559,7 +559,7 @@
     "buckets": {
       "methods": {
         "delete": {
-          "description": "Permanently deletes an empty bucket.",
+          "description": "Deletes an empty bucket. Deletions are permanent unless soft delete is enabled on the bucket.",
           "httpMethod": "DELETE",
           "id": "storage.buckets.delete",
           "parameterOrder": [
@@ -611,6 +611,12 @@
               "required": true,
               "type": "string"
             },
+            "generation": {
+              "description": "If present, specifies the generation of the bucket. This is required if softDeleted is true.",
+              "format": "int64",
+              "location": "query",
+              "type": "string"
+            },
             "ifMetagenerationMatch": {
               "description": "Makes the return of the bucket metadata conditional on whether the bucket's current metageneration matches the given value.",
               "format": "int64",
@@ -635,6 +641,11 @@
               ],
               "location": "query",
               "type": "string"
+            },
+            "softDeleted": {
+              "description": "If true, return the soft-deleted version of this bucket. The default is false. For more information, see [Soft Delete](https://cloud.google.com/storage/docs/soft-delete).",
+              "location": "query",
+              "type": "boolean"
             },
             "userProject": {
               "description": "The project to be billed for this request. Required for Requester Pays buckets.",
@@ -859,6 +870,11 @@
               "location": "query",
               "type": "string"
             },
+            "softDeleted": {
+              "description": "If true, only soft-deleted bucket versions will be returned. The default is false. For more information, see [Soft Delete](https://cloud.google.com/storage/docs/soft-delete).",
+              "location": "query",
+              "type": "boolean"
+            },
             "userProject": {
               "description": "The project to be billed for this request.",
               "location": "query",
@@ -1010,6 +1026,41 @@
           "scopes": [
             "https://www.googleapis.com/auth/cloud-platform",
             "https://www.googleapis.com/auth/devstorage.full_control"
+          ]
+        },
+        "restore": {
+          "description": "Restores a soft-deleted bucket.",
+          "httpMethod": "POST",
+          "id": "storage.buckets.restore",
+          "parameterOrder": [
+            "bucket",
+            "generation"
+          ],
+          "parameters": {
+            "bucket": {
+              "description": "Name of a bucket.",
+              "location": "path",
+              "required": true,
+              "type": "string"
+            },
+            "generation": {
+              "description": "Generation of a bucket.",
+              "format": "int64",
+              "location": "query",
+              "required": true,
+              "type": "string"
+            },
+            "userProject": {
+              "description": "The project to be billed for this request. Required for Requester Pays buckets.",
+              "location": "query",
+              "type": "string"
+            }
+          },
+          "path": "b/{bucket}/restore",
+          "scopes": [
+            "https://www.googleapis.com/auth/cloud-platform",
+            "https://www.googleapis.com/auth/devstorage.full_control",
+            "https://www.googleapis.com/auth/devstorage.read_write"
           ]
         },
         "setIamPolicy": {
@@ -2778,7 +2829,7 @@
               "type": "string"
             },
             "softDeleted": {
-              "description": "If true, only soft-deleted object versions will be listed. The default is false. For more information, see Soft Delete.",
+              "description": "If true, only soft-deleted object versions will be listed. The default is false. For more information, see [Soft Delete](https://cloud.google.com/storage/docs/soft-delete).",
               "location": "query",
               "type": "boolean"
             },
@@ -3040,7 +3091,7 @@
               "type": "string"
             },
             "softDeleted": {
-              "description": "If true, only soft-deleted object versions will be listed. The default is false. For more information, see Soft Delete.",
+              "description": "If true, only soft-deleted object versions will be listed. The default is false. For more information, see [Soft Delete](https://cloud.google.com/storage/docs/soft-delete).",
               "location": "query",
               "type": "boolean"
             },
@@ -4292,6 +4343,11 @@
           "description": "HTTP 1.1 Entity tag for the bucket.",
           "type": "string"
         },
+        "generation": {
+          "description": "The generation of this bucket.",
+          "format": "int64",
+          "type": "string"
+        },
         "hierarchicalNamespace": {
           "description": "The bucket's hierarchical namespace configuration.",
           "properties": {
@@ -4589,6 +4645,10 @@
         "rpo": {
           "description": "The Recovery Point Objective (RPO) of this bucket. Set to ASYNC_TURBO to turn on Turbo Replication on a bucket.",
           "type": "string"
+        },
+        "satisfiesPZI": {
+          "description": "Reserved for future use.",
+          "type": "boolean"
         },
         "satisfiesPZS": {
           "description": "Reserved for future use.",
