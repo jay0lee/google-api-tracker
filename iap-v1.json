@@ -741,7 +741,7 @@
         },
         "policyDelegationSettings": {
           "$ref": "PolicyDelegationSettings",
-          "description": "Optional. Settings to configure Policy delegation for apps hosted in tenant projects. INTERNAL_ONLY."
+          "description": "Optional. Settings to allow google-internal teams to use IAP for apps hosted in a tenant project."
         },
         "reauthSettings": {
           "$ref": "ReauthSettings",
