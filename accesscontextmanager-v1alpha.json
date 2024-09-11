@@ -1268,6 +1268,35 @@
       },
       "type": "object"
     },
+    "AccessScope": {
+      "description": "Access scope represents the client scope, etc. to which the settings will be applied to.",
+      "id": "AccessScope",
+      "properties": {
+        "clientScope": {
+          "$ref": "ClientScope",
+          "description": "Optional. Client scope for this access scope."
+        }
+      },
+      "type": "object"
+    },
+    "AccessSettings": {
+      "description": "Access settings represent the set of conditions that must be met for access to be granted. At least one of the fields must be set.",
+      "id": "AccessSettings",
+      "properties": {
+        "accessLevels": {
+          "description": "Optional. Access level that a user must have to be granted access. Only one access level is supported, not multiple. This repeated field must have exactly one element. Example: \"accessPolicies/9522/accessLevels/device_trusted\"",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "reauthSettings": {
+          "$ref": "ReauthSettings",
+          "description": "Optional. Reauth settings applied to user access on a given AccessScope."
+        }
+      },
+      "type": "object"
+    },
     "ApiOperation": {
       "description": "Identification for an API Operation.",
       "id": "ApiOperation",
@@ -1451,6 +1480,17 @@
         "role": {
           "description": "Role that is assigned to the list of `members`, or principals. For example, `roles/viewer`, `roles/editor`, or `roles/owner`. For an overview of the IAM roles and permissions, see the [IAM documentation](https://cloud.google.com/iam/docs/roles-overview). For a list of the available pre-defined roles, see [here](https://cloud.google.com/iam/docs/understanding-roles).",
           "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "ClientScope": {
+      "description": "Client scope represents the application, etc. subject to this binding's restrictions.",
+      "id": "ClientScope",
+      "properties": {
+        "restrictedClientApplication": {
+          "$ref": "Application",
+          "description": "Optional. The application that is subject to this binding's scope."
         }
       },
       "type": "object"
@@ -1774,6 +1814,13 @@
           "description": "Optional. A list of applications that are subject to this binding's restrictions. If the list is empty, the binding restrictions will universally apply to all applications.",
           "items": {
             "$ref": "Application"
+          },
+          "type": "array"
+        },
+        "scopedAccessSettings": {
+          "description": "Optional. A list of scoped access settings that set this binding's restrictions on a subset of applications. This field cannot be set if restricted_client_applications is set.",
+          "items": {
+            "$ref": "ScopedAccessSettings"
           },
           "type": "array"
         }
@@ -2225,6 +2272,25 @@
             "$ref": "ServicePerimeter"
           },
           "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "ScopedAccessSettings": {
+      "description": "A relationship between access settings and its scope.",
+      "id": "ScopedAccessSettings",
+      "properties": {
+        "activeSettings": {
+          "$ref": "AccessSettings",
+          "description": "Optional. Access settings for this scoped access settings. This field may be empty if dry_run_settings is set."
+        },
+        "dryRunSettings": {
+          "$ref": "AccessSettings",
+          "description": "Optional. Dry-run access settings for this scoped access settings. This field may be empty if active_settings is set."
+        },
+        "scope": {
+          "$ref": "AccessScope",
+          "description": "Optional. Application, etc. to which the access settings will be applied to. Implicitly, this is the scoped access settings key; as such, it must be unique and non-empty."
         }
       },
       "type": "object"
