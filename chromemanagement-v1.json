@@ -9,7 +9,7 @@
           "description": "See reports about devices and Chrome browsers managed within your organization"
         },
         "https://www.googleapis.com/auth/chrome.management.telemetry.readonly": {
-          "description": "See basic device and telemetry information collected from Chrome OS devices or users managed within your organization"
+          "description": "See basic device and telemetry information collected from ChromeOS devices or users managed within your organization"
         }
       }
     }
