@@ -4263,12 +4263,12 @@
       "id": "AdvanceRelocateBucketOperationRequest",
       "properties": {
         "expireTime": {
-          "description": "Specifies the time when the relocation will revert to the sync stage if the relocation hasn't succeeded.",
+          "description": "Specifies the time when the relocation will revert to the sync stage if the relocation hasn\u2019t succeeded.",
           "format": "date-time",
           "type": "string"
         },
         "ttl": {
-          "description": "Specifies the duration after which the relocation will revert to the sync stage if the relocation hasn't succeeded. Optional, if not supplied, a default value of 12h will be used.",
+          "description": "Specifies the duration after which the relocation will revert to the sync stage if the relocation hasn\u2019t succeeded. Optional, if not supplied, a default value of 12h will be used.",
           "format": "google-duration",
           "type": "string"
         }
