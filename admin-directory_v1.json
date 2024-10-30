@@ -5184,25 +5184,6 @@
       },
       "type": "object"
     },
-    "ByteUsage": {
-      "description": "Represents a data capacity with some amount of current usage in bytes.",
-      "id": "ByteUsage",
-      "properties": {
-        "capacityBytes": {
-          "description": "Output only. The total capacity value, in bytes.",
-          "format": "int64",
-          "readOnly": true,
-          "type": "string"
-        },
-        "usedBytes": {
-          "description": "Output only. The current usage value, in bytes.",
-          "format": "int64",
-          "readOnly": true,
-          "type": "string"
-        }
-      },
-      "type": "object"
-    },
     "CalendarResource": {
       "description": "Public API: Resources.calendars",
       "id": "CalendarResource",
@@ -5658,11 +5639,6 @@
           ],
           "readOnly": true,
           "type": "string"
-        },
-        "diskSpaceUsage": {
-          "$ref": "ByteUsage",
-          "description": "Output only. How much disk space the device has available and is currently using.",
-          "readOnly": true
         },
         "diskVolumeReports": {
           "description": "Reports of disk space and other info about mounted/connected volumes.",
