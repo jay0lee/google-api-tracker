@@ -1727,6 +1727,10 @@
         "accessLevel": {
           "description": "An AccessLevel resource name that allows protected resources inside the ServicePerimeters to access outside the ServicePerimeter boundaries. AccessLevels listed must be in the same policy as this ServicePerimeter. Referencing a nonexistent AccessLevel will cause an error. If an AccessLevel name is not specified, only resources within the perimeter can be accessed through Google Cloud calls with request origins within the perimeter. Example: `accessPolicies/MY_POLICY/accessLevels/MY_LEVEL`. If a single `*` is specified for `access_level`, then all EgressSources will be allowed.",
           "type": "string"
+        },
+        "resource": {
+          "description": "A Google Cloud resource that is allowed to egress the perimeter. Requests from these resources are allowed to access data outside the perimeter. Currently only projects are allowed. Project format: `projects/{project_number}`. The resource may be in any Google Cloud organization, not just the organization that the perimeter is defined in. `*` is not allowed, the case of allowing all Google Cloud resources only is not supported.",
+          "type": "string"
         }
       },
       "type": "object"
@@ -1831,7 +1835,7 @@
         },
         "sessionSettings": {
           "$ref": "SessionSettings",
-          "description": "Optional. The Google Cloud session length (GCSL) policy for the group key."
+          "description": "Optional. GCSL policy for the group key."
         }
       },
       "type": "object"
@@ -2365,7 +2369,7 @@
       "id": "SessionSettings",
       "properties": {
         "maxInactivity": {
-          "description": "Optional. How long a user is allowed to take between actions before a new access token must be issued. Only set for Google Cloud apps.",
+          "description": "Optional. How long a user is allowed to take between actions before a new access token must be issued. Presently only set for Cloud Apps.",
           "format": "google-duration",
           "type": "string"
         },
@@ -2375,11 +2379,11 @@
           "type": "string"
         },
         "sessionLengthEnabled": {
-          "description": "Optional. This field enables or disables Google Cloud session length. When false, all fields set above will be disregarded and the session length is basically infinite.",
+          "description": "Optional. Big red button to turn off GCSL. When false, all fields set above will be disregarded and the session length is basically infinite.",
           "type": "boolean"
         },
         "sessionReauthMethod": {
-          "description": "Optional. Session method when user's Google Cloud session is up.",
+          "description": "Optional. Session method when users GCP session is up.",
           "enum": [
             "SESSION_REAUTH_METHOD_UNSPECIFIED",
             "LOGIN",
@@ -2387,9 +2391,9 @@
             "PASSWORD"
           ],
           "enumDescriptions": [
-            "If method is undefined in the API, LOGIN will be used by default.",
-            "The user will be prompted to perform regular login. Users who are enrolled for two-step verification and haven't chosen \"Remember this computer\" will be prompted for their second factor.",
-            "The user will be prompted to authenticate using their security key. If no security key has been configured, then authentication will fallback to LOGIN.",
+            "If method undefined in API, we will use LOGIN by default.",
+            "The user will prompted to perform regular login. Users who are enrolled for two-step verification and haven't chosen to \"Remember this computer\" will be prompted for their second factor.",
+            "The user will be prompted to autheticate using their security key. If no security key has been configured, then we will fallback to LOGIN.",
             "The user will be prompted for their password."
           ],
           "type": "string"
