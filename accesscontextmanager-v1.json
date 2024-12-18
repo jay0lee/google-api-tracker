@@ -1931,7 +1931,7 @@
       "type": "object"
     },
     "GcpUserAccessBindingOperationMetadata": {
-      "description": "Metadata of Google Cloud Access Binding Long Running Operations.",
+      "description": "Metadata of GCP Access Binding Long Running Operations.",
       "id": "GcpUserAccessBindingOperationMetadata",
       "properties": {},
       "type": "object"
