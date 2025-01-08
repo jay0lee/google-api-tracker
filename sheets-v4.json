@@ -3941,7 +3941,7 @@
       "type": "object"
     },
     "DeleteDimensionRequest": {
-      "description": "Deletes the dimensions from the sheet.",
+      "description": " Deletes the dimensions from the sheet.",
       "id": "DeleteDimensionRequest",
       "properties": {
         "range": {
