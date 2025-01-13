@@ -1762,14 +1762,16 @@
             "CANARY",
             "DEV",
             "BETA",
-            "STABLE"
+            "STABLE",
+            "LTS"
           ],
           "enumDescriptions": [
             "No release channel specified.",
             "Canary release channel.",
             "Dev release channel.",
             "Beta release channel.",
-            "Stable release channel."
+            "Stable release channel.",
+            "Long-term support release channel."
           ],
           "readOnly": true,
           "type": "string"
