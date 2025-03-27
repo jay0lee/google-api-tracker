@@ -1781,6 +1781,13 @@
           "description": "file name, relative to root of source tree",
           "type": "string"
         },
+        "optionDependency": {
+          "description": "Names of files imported by this file purely for the purpose of providing option extensions. These are excluded from the dependency list above.",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
         "package": {
           "description": "e.g. \"foo\", \"foo.bar\", etc.",
           "type": "string"
