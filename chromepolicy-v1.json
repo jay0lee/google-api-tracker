@@ -1629,6 +1629,20 @@
             "$ref": "Proto2OneofDescriptorProto"
           },
           "type": "array"
+        },
+        "visibility": {
+          "description": "Support for `export` and `local` keywords on enums.",
+          "enum": [
+            "VISIBILITY_UNSET",
+            "VISIBILITY_LOCAL",
+            "VISIBILITY_EXPORT"
+          ],
+          "enumDescriptions": [
+            "",
+            "",
+            ""
+          ],
+          "type": "string"
         }
       },
       "type": "object"
@@ -1645,6 +1659,20 @@
             "$ref": "Proto2EnumValueDescriptorProto"
           },
           "type": "array"
+        },
+        "visibility": {
+          "description": "Support for `export` and `local` keywords on enums.",
+          "enum": [
+            "VISIBILITY_UNSET",
+            "VISIBILITY_LOCAL",
+            "VISIBILITY_EXPORT"
+          ],
+          "enumDescriptions": [
+            "",
+            "",
+            ""
+          ],
+          "type": "string"
         }
       },
       "type": "object"
