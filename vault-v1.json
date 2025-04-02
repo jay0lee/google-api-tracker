@@ -1634,7 +1634,6 @@
           "type": "string"
         },
         "includeSharedDrives": {
-          "deprecated": true,
           "description": "Set to **true** to include shared drives.",
           "type": "boolean"
         },
