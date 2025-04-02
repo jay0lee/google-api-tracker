@@ -32,6 +32,7 @@ orgpolicy v2
 people v1
 pubsub v1
 reseller v1
+safebrowsing v5
 servicemanagement v1
 serviceusage v1
 serviceusage v1beta1
