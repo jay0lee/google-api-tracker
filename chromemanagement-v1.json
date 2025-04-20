@@ -901,7 +901,7 @@
                   "type": "string"
                 },
                 "appType": {
-                  "description": "Type of the app.",
+                  "description": "Type of the app. Optional. If not provided, an app type will be inferred from the format of the app ID.",
                   "enum": [
                     "APP_TYPE_UNSPECIFIED",
                     "EXTENSION",
