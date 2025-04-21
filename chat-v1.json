@@ -2528,8 +2528,8 @@
           ],
           "enumDescriptions": [
             "Don't use. Unspecified.",
-            "Default value. No border.",
-            "Outline."
+            "No border.",
+            "Default value. Outline."
           ],
           "type": "string"
         }

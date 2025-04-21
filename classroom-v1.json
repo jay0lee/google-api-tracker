@@ -5573,7 +5573,7 @@
         },
         "form": {
           "$ref": "Form",
-          "description": "Google Forms material."
+          "description": "Google Forms material. Read-only."
         },
         "link": {
           "$ref": "Link",
