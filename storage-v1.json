@@ -54,6 +54,11 @@
     },
     {
       "description": "Regional Endpoint",
+      "endpointUrl": "https://storage.asia-northeast3.rep.googleapis.com/",
+      "location": "asia-northeast3"
+    },
+    {
+      "description": "Regional Endpoint",
       "endpointUrl": "https://storage.asia-south1.rep.googleapis.com/",
       "location": "asia-south1"
     },
