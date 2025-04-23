@@ -978,6 +978,10 @@
           "description": "The human readable name. Mutable.",
           "type": "string"
         },
+        "equivalentConstraint": {
+          "description": "Managed constraint and canned constraint sometimes can have equivalents. This field is used to store the equivalent constraint name.",
+          "type": "string"
+        },
         "listConstraint": {
           "$ref": "GoogleCloudOrgpolicyV2ConstraintListConstraint",
           "description": "Defines this constraint as being a list constraint."
