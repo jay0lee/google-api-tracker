@@ -256,10 +256,12 @@
       "default": "json",
       "description": "Data format for the response.",
       "enum": [
-        "json"
+        "json",
+        "media"
       ],
       "enumDescriptions": [
-        "Responses with Content-Type of application/json"
+        "Responses with Content-Type of application/json",
+        "Responses containing object data"
       ],
       "location": "query",
       "type": "string"
@@ -3435,6 +3437,19 @@
             "ifSourceMetagenerationNotMatch": {
               "description": "Makes the operation conditional on whether the source object's current metageneration does not match the given value. `ifSourceMetagenerationMatch` and `ifSourceMetagenerationNotMatch` conditions are mutually exclusive: it's an error for both of them to be set in the request.",
               "format": "int64",
+              "location": "query",
+              "type": "string"
+            },
+            "projection": {
+              "description": "Set of properties to return. Defaults to noAcl.",
+              "enum": [
+                "full",
+                "noAcl"
+              ],
+              "enumDescriptions": [
+                "Include all properties.",
+                "Omit the owner, acl property."
+              ],
               "location": "query",
               "type": "string"
             },
