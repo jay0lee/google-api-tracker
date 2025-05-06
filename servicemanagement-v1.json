@@ -911,7 +911,7 @@
             "description": "Properties of the object.",
             "type": "any"
           },
-          "description": "Content of the configuration. The underlying schema should be defined by Aspect owners as protobuf message under `apiserving/configaspects/proto`.",
+          "description": "Content of the configuration. The underlying schema should be defined by Aspect owners as protobuf message under `google/api/configaspects/proto`.",
           "type": "object"
         }
       },
