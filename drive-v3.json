@@ -1949,12 +1949,6 @@
               "location": "query",
               "type": "string"
             },
-            "enforceExpansiveAccess": {
-              "default": "false",
-              "description": "Whether the request should enforce expansive access rules.",
-              "location": "query",
-              "type": "boolean"
-            },
             "enforceSingleParent": {
               "default": "false",
               "deprecated": true,
