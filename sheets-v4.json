@@ -1110,6 +1110,18 @@
       },
       "type": "object"
     },
+    "AddTableResponse": {
+      "description": "The result of adding a table.",
+      "id": "AddTableResponse",
+      "properties": {
+        "table": {
+          "$ref": "Table",
+          "description": "Output only. The table that was added.",
+          "readOnly": true
+        }
+      },
+      "type": "object"
+    },
     "AppendCellsRequest": {
       "description": "Adds new cells after the last row with data in a sheet, inserting new rows into the sheet if necessary.",
       "id": "AppendCellsRequest",
@@ -6408,6 +6420,10 @@
         "addSlicer": {
           "$ref": "AddSlicerResponse",
           "description": "A reply from adding a slicer."
+        },
+        "addTable": {
+          "$ref": "AddTableResponse",
+          "description": "A reply from adding a table."
         },
         "cancelDataSourceRefresh": {
           "$ref": "CancelDataSourceRefreshResponse",
