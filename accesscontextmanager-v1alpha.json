@@ -2344,7 +2344,7 @@
           "type": "array"
         },
         "resources": {
-          "description": "A list Google Cloud resources that are inside of the service perimeter. Only projects and VPCs are allowed. Project format: `projects/{project_number}`. VPC network format: `//compute.googleapis.com/projects/{PROJECT_ID}/global/networks/{NETWORK_NAME}`.",
+          "description": "A list Google Cloud resources that are inside of the service perimeter. Only projects, VPCs are allowed. Project format: `projects/{project_number}`. VPC network format: `//compute.googleapis.com/projects/{PROJECT_ID}/global/networks/{NETWORK_NAME}`.",
           "items": {
             "type": "string"
           },
