@@ -4820,10 +4820,6 @@
         "ipFilter": {
           "description": "The bucket's IP filter configuration. Specifies the network sources that are allowed to access the operations on the bucket, as well as its underlying objects. Only enforced when the mode is set to 'Enabled'.",
           "properties": {
-            "allowCrossOrgVpcs": {
-              "description": "Whether to allow cross-org VPCs in the bucket's IP filter configuration.",
-              "type": "boolean"
-            },
             "mode": {
               "description": "The mode of the IP filter. Valid values are 'Enabled' and 'Disabled'.",
               "type": "string"
