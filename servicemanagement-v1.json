@@ -3305,6 +3305,10 @@
         "trafficPercentStrategy": {
           "$ref": "TrafficPercentStrategy",
           "description": "Google Service Control selects service configurations based on traffic percentage."
+        },
+        "universe": {
+          "description": "The TPC universe which the rollout will be rolled out to.",
+          "type": "string"
         }
       },
       "type": "object"
