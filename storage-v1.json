@@ -3305,6 +3305,11 @@
               "location": "query",
               "type": "string"
             },
+            "filter": {
+              "description": "Filter the returned objects. Currently only supported for the contexts field. If delimiter is set, the returned prefixes are exempt from this filter.",
+              "location": "query",
+              "type": "string"
+            },
             "includeFoldersAsPrefixes": {
               "description": "Only applicable if delimiter is set to '/'. If true, will also include folders and managed folders (besides objects) in the returned prefixes.",
               "location": "query",
@@ -5931,6 +5936,20 @@
           "description": "Content-Type of the object data. If an object is stored without a Content-Type, it is served as application/octet-stream.",
           "type": "string"
         },
+        "contexts": {
+          "description": "User-defined or system-defined object contexts. Each object context is a key-payload pair, where the key provides the identification and the payload holds the associated value and additional metadata.",
+          "properties": {
+            "custom": {
+              "additionalProperties": {
+                "$ref": "ObjectCustomContextPayload",
+                "description": "A single user-defined object context."
+              },
+              "description": "User-defined object contexts.",
+              "type": "object"
+            }
+          },
+          "type": "object"
+        },
         "crc32c": {
           "description": "CRC32c checksum, as described in RFC 4960, Appendix B; encoded using base64 in big-endian byte order. For more information about using the CRC32c checksum, see [Data Validation and Change Detection](https://cloud.google.com/storage/docs/data-validation).",
           "type": "string"
@@ -6195,6 +6214,27 @@
         "kind": {
           "default": "storage#objectAccessControls",
           "description": "The kind of item this is. For lists of object access control entries, this is always storage#objectAccessControls.",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "ObjectCustomContextPayload": {
+      "description": "The payload of a single user-defined object context.",
+      "id": "ObjectCustomContextPayload",
+      "properties": {
+        "createTime": {
+          "description": "The time at which the object context was created in RFC 3339 format.",
+          "format": "date-time",
+          "type": "string"
+        },
+        "updateTime": {
+          "description": "The time at which the object context was last updated in RFC 3339 format.",
+          "format": "date-time",
+          "type": "string"
+        },
+        "value": {
+          "description": "The value of the object context.",
           "type": "string"
         }
       },
