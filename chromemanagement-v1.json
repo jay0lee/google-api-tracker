@@ -1869,6 +1869,12 @@
           "readOnly": true,
           "type": "boolean"
         },
+        "manifestVersion": {
+          "description": "Output only. The version of this extension's manifest.",
+          "format": "int64",
+          "readOnly": true,
+          "type": "string"
+        },
         "minUserCount": {
           "description": "Output only. The minimum number of users using this app.",
           "format": "int32",
