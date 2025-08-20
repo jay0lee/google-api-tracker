@@ -2578,7 +2578,7 @@
                           ],
                           "parameters": {
                             "name": {
-                              "description": "Identifier. The resource name of the managed identity.",
+                              "description": "Output only. The resource name of the managed identity.",
                               "location": "path",
                               "pattern": "^projects/[^/]+/locations/[^/]+/workloadIdentityPools/[^/]+/namespaces/[^/]+/managedIdentities/[^/]+$",
                               "required": true,
@@ -2948,7 +2948,7 @@
                       ],
                       "parameters": {
                         "name": {
-                          "description": "Identifier. The resource name of the provider.",
+                          "description": "Output only. The resource name of the provider.",
                           "location": "path",
                           "pattern": "^projects/[^/]+/locations/[^/]+/workloadIdentityPools/[^/]+/providers/[^/]+$",
                           "required": true,
@@ -6572,11 +6572,11 @@
       "id": "WorkloadIdentityPoolManagedIdentity",
       "properties": {
         "description": {
-          "description": "Optional. A description of the managed identity. Cannot exceed 256 characters.",
+          "description": "A description of the managed identity. Cannot exceed 256 characters.",
           "type": "string"
         },
         "disabled": {
-          "description": "Optional. Whether the managed identity is disabled. If disabled, credentials may no longer be issued for the identity, however existing credentials will still be accepted until they expire.",
+          "description": "Whether the managed identity is disabled. If disabled, credentials may no longer be issued for the identity, however existing credentials will still be accepted until they expire.",
           "type": "boolean"
         },
         "expireTime": {
@@ -6586,7 +6586,8 @@
           "type": "string"
         },
         "name": {
-          "description": "Identifier. The resource name of the managed identity.",
+          "description": "Output only. The resource name of the managed identity.",
+          "readOnly": true,
           "type": "string"
         },
         "state": {
@@ -6612,11 +6613,11 @@
       "id": "WorkloadIdentityPoolNamespace",
       "properties": {
         "description": {
-          "description": "Optional. A description of the namespace. Cannot exceed 256 characters.",
+          "description": "A description of the namespace. Cannot exceed 256 characters.",
           "type": "string"
         },
         "disabled": {
-          "description": "Optional. Whether the namespace is disabled. If disabled, credentials may no longer be issued for identities within this namespace, however existing credentials will still be accepted until they expire.",
+          "description": "Whether the namespace is disabled. If disabled, credentials may no longer be issued for identities within this namespace, however existing credentials will still be accepted until they expire.",
           "type": "boolean"
         },
         "expireTime": {
@@ -6697,7 +6698,8 @@
           "type": "string"
         },
         "name": {
-          "description": "Identifier. The resource name of the provider.",
+          "description": "Output only. The resource name of the provider.",
+          "readOnly": true,
           "type": "string"
         },
         "oidc": {
