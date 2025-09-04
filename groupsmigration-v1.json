@@ -146,7 +146,7 @@
       }
     }
   },
-  "retrieved_from": "https://groupsmigration.googleapis.com/$discovery/rest?version=v1",
+  "retrieved_from": "https://www.googleapis.com/discovery/v1/apis/groupsmigration/v1/rest",
   "rootUrl": "https://groupsmigration.googleapis.com/",
   "schemas": {
     "Groups": {
