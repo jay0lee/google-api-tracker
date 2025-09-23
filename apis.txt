@@ -19,6 +19,7 @@ cloudidentity v1beta1
 cloudresourcemanager v3
 cloudresourcemanager v2
 cloudresourcemanager v1
+discovery v1
 drive v2
 drive v3
 driveactivity v2
