@@ -12,6 +12,7 @@ calendar-json v3
 chat v1
 chromemanagement v1
 chromepolicy v1
+chromewebstore v1.1
 classroom v1
 cloudidentity v1
 cloudidentity v1beta1
