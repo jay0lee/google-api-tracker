@@ -905,6 +905,11 @@
                         "name"
                       ],
                       "parameters": {
+                        "hardDelete": {
+                          "description": "Optional. Deletes the SCIM tenant immediately. This operation cannot be undone.",
+                          "location": "query",
+                          "type": "boolean"
+                        },
                         "name": {
                           "description": "Required. Agentspace only. The name of the scim tenant to delete. Format: `locations/{location}/workforcePools/{workforce_pool}/providers/{provider}/scimTenants/{scim_tenant}`",
                           "location": "path",
