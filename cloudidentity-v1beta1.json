@@ -2217,7 +2217,7 @@
     "policies": {
       "methods": {
         "get": {
-          "description": "Get a Policy",
+          "description": "Get a policy.",
           "flatPath": "v1beta1/policies/{policiesId}",
           "httpMethod": "GET",
           "id": "cloudidentity.policies.get",
@@ -2243,7 +2243,7 @@
           ]
         },
         "list": {
-          "description": "List Policies",
+          "description": "List policies.",
           "flatPath": "v1beta1/policies",
           "httpMethod": "GET",
           "id": "cloudidentity.policies.list",
