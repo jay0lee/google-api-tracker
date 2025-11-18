@@ -12,7 +12,7 @@
           "description": "See and download your contacts"
         },
         "https://www.googleapis.com/auth/directory.readonly": {
-          "description": "See and download your organization's GSuite directory"
+          "description": "See and download your organization's Google Workspace directory"
         },
         "https://www.googleapis.com/auth/user.addresses.read": {
           "description": "View your street addresses"
