@@ -45,6 +45,8 @@ serviceusage v1beta1
 sheets v4
 siteVerification v1
 storage v1
+sts v1
+sts v1beta
 vault v1
 verifiedaccess v1
 verifiedaccess v2
