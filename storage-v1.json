@@ -5499,6 +5499,10 @@
       "description": "A Compose request.",
       "id": "ComposeRequest",
       "properties": {
+        "deleteSourceObjects": {
+          "description": "If true, the source objects will be deleted.",
+          "type": "boolean"
+        },
         "destination": {
           "$ref": "Object",
           "description": "Properties of the resulting object."
