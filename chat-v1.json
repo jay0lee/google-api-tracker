@@ -3477,7 +3477,7 @@
           "type": "string"
         },
         "url": {
-          "description": "The URL to open.",
+          "description": "The URL to open. HTTP URLs are converted to HTTPS.",
           "type": "string"
         }
       },
