@@ -2238,40 +2238,6 @@
                             "https://www.googleapis.com/auth/discoveryengine.readwrite"
                           ]
                         },
-                        "create": {
-                          "description": "Creates a ServingConfig. Note: The Google Cloud console works only with the default serving config. Additional ServingConfigs can be created and managed only via the API. A maximum of 100 ServingConfigs are allowed in an Engine, otherwise a RESOURCE_EXHAUSTED error is returned.",
-                          "flatPath": "v1/projects/{projectsId}/locations/{locationsId}/collections/{collectionsId}/dataStores/{dataStoresId}/servingConfigs",
-                          "httpMethod": "POST",
-                          "id": "discoveryengine.projects.locations.collections.dataStores.servingConfigs.create",
-                          "parameterOrder": [
-                            "parent"
-                          ],
-                          "parameters": {
-                            "parent": {
-                              "description": "Required. Full resource name of parent. Format: `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}`",
-                              "location": "path",
-                              "pattern": "^projects/[^/]+/locations/[^/]+/collections/[^/]+/dataStores/[^/]+$",
-                              "required": true,
-                              "type": "string"
-                            },
-                            "servingConfigId": {
-                              "description": "Required. The ID to use for the ServingConfig, which will become the final component of the ServingConfig's resource name. This value should be 4-63 characters, and valid characters are /a-zA-Z0-9+/.",
-                              "location": "query",
-                              "type": "string"
-                            }
-                          },
-                          "path": "v1/{+parent}/servingConfigs",
-                          "request": {
-                            "$ref": "GoogleCloudDiscoveryengineV1ServingConfig"
-                          },
-                          "response": {
-                            "$ref": "GoogleCloudDiscoveryengineV1ServingConfig"
-                          },
-                          "scopes": [
-                            "https://www.googleapis.com/auth/cloud-platform",
-                            "https://www.googleapis.com/auth/discoveryengine.readwrite"
-                          ]
-                        },
                         "delete": {
                           "description": "Deletes a ServingConfig. Returns a NOT_FOUND error if the ServingConfig does not exist.",
                           "flatPath": "v1/projects/{projectsId}/locations/{locationsId}/collections/{collectionsId}/dataStores/{dataStoresId}/servingConfigs/{servingConfigsId}",
@@ -4531,40 +4497,6 @@
                             "https://www.googleapis.com/auth/discoveryengine.readwrite"
                           ]
                         },
-                        "create": {
-                          "description": "Creates a ServingConfig. Note: The Google Cloud console works only with the default serving config. Additional ServingConfigs can be created and managed only via the API. A maximum of 100 ServingConfigs are allowed in an Engine, otherwise a RESOURCE_EXHAUSTED error is returned.",
-                          "flatPath": "v1/projects/{projectsId}/locations/{locationsId}/collections/{collectionsId}/engines/{enginesId}/servingConfigs",
-                          "httpMethod": "POST",
-                          "id": "discoveryengine.projects.locations.collections.engines.servingConfigs.create",
-                          "parameterOrder": [
-                            "parent"
-                          ],
-                          "parameters": {
-                            "parent": {
-                              "description": "Required. Full resource name of parent. Format: `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}`",
-                              "location": "path",
-                              "pattern": "^projects/[^/]+/locations/[^/]+/collections/[^/]+/engines/[^/]+$",
-                              "required": true,
-                              "type": "string"
-                            },
-                            "servingConfigId": {
-                              "description": "Required. The ID to use for the ServingConfig, which will become the final component of the ServingConfig's resource name. This value should be 4-63 characters, and valid characters are /a-zA-Z0-9+/.",
-                              "location": "query",
-                              "type": "string"
-                            }
-                          },
-                          "path": "v1/{+parent}/servingConfigs",
-                          "request": {
-                            "$ref": "GoogleCloudDiscoveryengineV1ServingConfig"
-                          },
-                          "response": {
-                            "$ref": "GoogleCloudDiscoveryengineV1ServingConfig"
-                          },
-                          "scopes": [
-                            "https://www.googleapis.com/auth/cloud-platform",
-                            "https://www.googleapis.com/auth/discoveryengine.readwrite"
-                          ]
-                        },
                         "delete": {
                           "description": "Deletes a ServingConfig. Returns a NOT_FOUND error if the ServingConfig does not exist.",
                           "flatPath": "v1/projects/{projectsId}/locations/{locationsId}/collections/{collectionsId}/engines/{enginesId}/servingConfigs/{servingConfigsId}",
@@ -6617,40 +6549,6 @@
                       },
                       "response": {
                         "$ref": "GoogleCloudDiscoveryengineV1AnswerQueryResponse"
-                      },
-                      "scopes": [
-                        "https://www.googleapis.com/auth/cloud-platform",
-                        "https://www.googleapis.com/auth/discoveryengine.readwrite"
-                      ]
-                    },
-                    "create": {
-                      "description": "Creates a ServingConfig. Note: The Google Cloud console works only with the default serving config. Additional ServingConfigs can be created and managed only via the API. A maximum of 100 ServingConfigs are allowed in an Engine, otherwise a RESOURCE_EXHAUSTED error is returned.",
-                      "flatPath": "v1/projects/{projectsId}/locations/{locationsId}/dataStores/{dataStoresId}/servingConfigs",
-                      "httpMethod": "POST",
-                      "id": "discoveryengine.projects.locations.dataStores.servingConfigs.create",
-                      "parameterOrder": [
-                        "parent"
-                      ],
-                      "parameters": {
-                        "parent": {
-                          "description": "Required. Full resource name of parent. Format: `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}`",
-                          "location": "path",
-                          "pattern": "^projects/[^/]+/locations/[^/]+/dataStores/[^/]+$",
-                          "required": true,
-                          "type": "string"
-                        },
-                        "servingConfigId": {
-                          "description": "Required. The ID to use for the ServingConfig, which will become the final component of the ServingConfig's resource name. This value should be 4-63 characters, and valid characters are /a-zA-Z0-9+/.",
-                          "location": "query",
-                          "type": "string"
-                        }
-                      },
-                      "path": "v1/{+parent}/servingConfigs",
-                      "request": {
-                        "$ref": "GoogleCloudDiscoveryengineV1ServingConfig"
-                      },
-                      "response": {
-                        "$ref": "GoogleCloudDiscoveryengineV1ServingConfig"
                       },
                       "scopes": [
                         "https://www.googleapis.com/auth/cloud-platform",
