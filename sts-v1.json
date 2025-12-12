@@ -99,6 +99,11 @@
     },
     {
       "description": "Regional Endpoint",
+      "endpointUrl": "https://sts.europe-west15.rep.googleapis.com/",
+      "location": "europe-west15"
+    },
+    {
+      "description": "Regional Endpoint",
       "endpointUrl": "https://sts.europe-west2.rep.googleapis.com/",
       "location": "europe-west2"
     },
