@@ -13175,7 +13175,8 @@
             "NATIVE_CLOUD_IDENTITY",
             "THIRD_PARTY_FEDERATED",
             "THIRD_PARTY_EUA",
-            "GCNV"
+            "GCNV",
+            "GOOGLE_CHAT"
           ],
           "enumDescriptions": [
             "Default value.",
@@ -13189,7 +13190,8 @@
             "Native Cloud Identity connector for people search powered by People API.",
             "Federated connector, it is a third party connector that doesn't ingestion data, and search is powered by third party application's API.",
             "Connector utilized for End User Authentication features.",
-            "Google Cloud NetApp Volumes connector."
+            "Google Cloud NetApp Volumes connector.",
+            "Google Chat connector."
           ],
           "readOnly": true,
           "type": "string"
@@ -22030,7 +22032,8 @@
             "NATIVE_CLOUD_IDENTITY",
             "THIRD_PARTY_FEDERATED",
             "THIRD_PARTY_EUA",
-            "GCNV"
+            "GCNV",
+            "GOOGLE_CHAT"
           ],
           "enumDescriptions": [
             "Default value.",
@@ -22044,7 +22047,8 @@
             "Native Cloud Identity connector for people search powered by People API.",
             "Federated connector, it is a third party connector that doesn't ingestion data, and search is powered by third party application's API.",
             "Connector utilized for End User Authentication features.",
-            "Google Cloud NetApp Volumes connector."
+            "Google Cloud NetApp Volumes connector.",
+            "Google Chat connector."
           ],
           "readOnly": true,
           "type": "string"
