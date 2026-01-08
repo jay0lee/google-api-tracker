@@ -4490,6 +4490,10 @@
           "description": "Section of the course. For example, \"Period 2\". If set, this field must be a valid UTF-8 string and no longer than 2800 characters.",
           "type": "string"
         },
+        "subject": {
+          "description": "Optional. The subject of the course.",
+          "type": "string"
+        },
         "teacherFolder": {
           "$ref": "DriveFolder",
           "description": "Information about a Drive Folder that is shared with all teachers of the course. This field will only be set for teachers of the course and domain administrators. Read-only."
