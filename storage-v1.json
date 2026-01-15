@@ -6453,10 +6453,6 @@
           },
           "type": "object"
         },
-        "destinationKmsKeyName": {
-          "description": "Resource name of a Cloud KMS key, of the form projects/my-project/locations/global/keyRings/my-kr/cryptoKeys/my-key. If set, is used to encrypt all objects in the destination bucket.",
-          "type": "string"
-        },
         "destinationLocation": {
           "description": "The new location the bucket will be relocated to.",
           "type": "string"
