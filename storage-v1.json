@@ -1783,6 +1783,50 @@
             "https://www.googleapis.com/auth/devstorage.read_write"
           ]
         },
+        "deleteRecursive": {
+          "description": "Deletes a folder recursively. Only applicable to buckets with hierarchical namespace enabled.",
+          "httpMethod": "POST",
+          "id": "storage.folders.deleteRecursive",
+          "parameterOrder": [
+            "bucket",
+            "folder"
+          ],
+          "parameters": {
+            "bucket": {
+              "description": "Name of the bucket in which the folder resides.",
+              "location": "path",
+              "required": true,
+              "type": "string"
+            },
+            "folder": {
+              "description": "Name of a folder.",
+              "location": "path",
+              "required": true,
+              "type": "string"
+            },
+            "ifMetagenerationMatch": {
+              "description": "If set, only deletes the folder if its metageneration matches this value.",
+              "format": "int64",
+              "location": "query",
+              "type": "string"
+            },
+            "ifMetagenerationNotMatch": {
+              "description": "If set, only deletes the folder if its metageneration does not match this value.",
+              "format": "int64",
+              "location": "query",
+              "type": "string"
+            }
+          },
+          "path": "b/{bucket}/folders/{folder}/deleteRecursive",
+          "response": {
+            "$ref": "GoogleLongrunningOperation"
+          },
+          "scopes": [
+            "https://www.googleapis.com/auth/cloud-platform",
+            "https://www.googleapis.com/auth/devstorage.full_control",
+            "https://www.googleapis.com/auth/devstorage.read_write"
+          ]
+        },
         "get": {
           "description": "Returns metadata for the specified folder. Only applicable to buckets with hierarchical namespace enabled.",
           "httpMethod": "GET",
