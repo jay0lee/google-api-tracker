@@ -4458,6 +4458,10 @@
             "Student chose to \"unsubmit\" the assignment."
           ],
           "type": "string"
+        },
+        "userId": {
+          "description": "Identifier for the student that owns this submission. Requires the user to be a teacher in the course and have permission to read student submissions.",
+          "type": "string"
         }
       },
       "type": "object"
