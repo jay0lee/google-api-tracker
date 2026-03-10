@@ -1945,8 +1945,7 @@
             },
             "enforceExpansiveAccess": {
               "default": "false",
-              "deprecated": true,
-              "description": "Deprecated: All requests use the expansive access rules.",
+              "description": "Whether the request should enforce expansive access rules.",
               "location": "query",
               "type": "boolean"
             },
@@ -2024,8 +2023,7 @@
           "parameters": {
             "enforceExpansiveAccess": {
               "default": "false",
-              "deprecated": true,
-              "description": "Deprecated: All requests use the expansive access rules.",
+              "description": "Whether the request should enforce expansive access rules.",
               "location": "query",
               "type": "boolean"
             },
@@ -2202,8 +2200,7 @@
           "parameters": {
             "enforceExpansiveAccess": {
               "default": "false",
-              "deprecated": true,
-              "description": "Deprecated: All requests use the expansive access rules.",
+              "description": "Whether the request should enforce expansive access rules.",
               "location": "query",
               "type": "boolean"
             },
