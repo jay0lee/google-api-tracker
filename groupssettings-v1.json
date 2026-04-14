@@ -273,6 +273,10 @@
           "description": "Deprecated. This is merged into the new whoCanModerateMembers setting. Permissions to add members. Possible values are:  \n- ALL_MEMBERS_CAN_ADD: Managers and members can directly add new members. \n- ALL_MANAGERS_CAN_ADD: Only managers can directly add new members. this includes the group's owner. \n- ALL_OWNERS_CAN_ADD: Only owners can directly add new members. \n- NONE_CAN_ADD: No one can directly add new members.",
           "type": "string"
         },
+        "whoCanAddExternalMembers": {
+          "description": "Specifies who can add external members. UPDATE and PATCH requests ignore this field if allowExternalMembers is false. Possible values are: \n- ONLY_ADMINS_CAN_ADD_EXTERNAL_MEMBERS \n- END_USERS_CAN_ADD_EXTERNAL_MEMBERS",
+          "type": "string"
+        },
         "whoCanAddReferences": {
           "description": "Deprecated. This functionality is no longer supported in the Google Groups UI. The value is always \"NONE\".",
           "type": "string"
