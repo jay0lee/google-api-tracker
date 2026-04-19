@@ -267,150 +267,6 @@
     },
     "approvals": {
       "methods": {
-        "approve": {
-          "description": "Approves an Approval. This is used to update the ReviewerResponse of the requesting user with a Response of `APPROVED`. If this is the last required reviewer response, this will also complete the Approval and set the Status to `APPROVED`.",
-          "flatPath": "files/{fileId}/approvals/{approvalId}:approve",
-          "httpMethod": "POST",
-          "id": "drive.approvals.approve",
-          "parameterOrder": [
-            "fileId",
-            "approvalId"
-          ],
-          "parameters": {
-            "approvalId": {
-              "description": "Required. The ID of the Approval to approve.",
-              "location": "path",
-              "required": true,
-              "type": "string"
-            },
-            "fileId": {
-              "description": "Required. The ID of the file the Approval is on.",
-              "location": "path",
-              "required": true,
-              "type": "string"
-            }
-          },
-          "path": "files/{fileId}/approvals/{approvalId}:approve",
-          "request": {
-            "$ref": "ApproveApprovalRequest"
-          },
-          "response": {
-            "$ref": "Approval"
-          },
-          "scopes": [
-            "https://www.googleapis.com/auth/drive",
-            "https://www.googleapis.com/auth/drive.file",
-            "https://www.googleapis.com/auth/drive.metadata"
-          ]
-        },
-        "cancel": {
-          "description": "Cancels an Approval. This is used to update the Approval Status to `CANCELLED`. This can only be done by the Approval initiator while the Approval Status is still `IN_PROGRESS`.",
-          "flatPath": "files/{fileId}/approvals/{approvalId}:cancel",
-          "httpMethod": "POST",
-          "id": "drive.approvals.cancel",
-          "parameterOrder": [
-            "fileId",
-            "approvalId"
-          ],
-          "parameters": {
-            "approvalId": {
-              "description": "Required. The ID of the Approval to cancel.",
-              "location": "path",
-              "required": true,
-              "type": "string"
-            },
-            "fileId": {
-              "description": "Required. The ID of the file the Approval is on.",
-              "location": "path",
-              "required": true,
-              "type": "string"
-            }
-          },
-          "path": "files/{fileId}/approvals/{approvalId}:cancel",
-          "request": {
-            "$ref": "CancelApprovalRequest"
-          },
-          "response": {
-            "$ref": "Approval"
-          },
-          "scopes": [
-            "https://www.googleapis.com/auth/drive",
-            "https://www.googleapis.com/auth/drive.file",
-            "https://www.googleapis.com/auth/drive.metadata"
-          ]
-        },
-        "comment": {
-          "description": "Comments on an Approval. This sends a notification to the initiator and reviewers with a message that is also added to the Approval activity log.",
-          "flatPath": "files/{fileId}/approvals/{approvalId}:comment",
-          "httpMethod": "POST",
-          "id": "drive.approvals.comment",
-          "parameterOrder": [
-            "fileId",
-            "approvalId"
-          ],
-          "parameters": {
-            "approvalId": {
-              "description": "Required. The ID of the Approval to comment on.",
-              "location": "path",
-              "required": true,
-              "type": "string"
-            },
-            "fileId": {
-              "description": "Required. The ID of the file the Approval is on.",
-              "location": "path",
-              "required": true,
-              "type": "string"
-            }
-          },
-          "path": "files/{fileId}/approvals/{approvalId}:comment",
-          "request": {
-            "$ref": "CommentApprovalRequest"
-          },
-          "response": {
-            "$ref": "Approval"
-          },
-          "scopes": [
-            "https://www.googleapis.com/auth/drive",
-            "https://www.googleapis.com/auth/drive.file",
-            "https://www.googleapis.com/auth/drive.metadata"
-          ]
-        },
-        "decline": {
-          "description": "Declines an Approval. This is used to update the ReviewerResponse of the requesting user with a Response of `DECLINED`. This will also complete the Approval and set the Approval Status to `DECLINED`.",
-          "flatPath": "files/{fileId}/approvals/{approvalId}:decline",
-          "httpMethod": "POST",
-          "id": "drive.approvals.decline",
-          "parameterOrder": [
-            "fileId",
-            "approvalId"
-          ],
-          "parameters": {
-            "approvalId": {
-              "description": "Required. The ID of the Approval to decline.",
-              "location": "path",
-              "required": true,
-              "type": "string"
-            },
-            "fileId": {
-              "description": "Required. The ID of the file the Approval is on.",
-              "location": "path",
-              "required": true,
-              "type": "string"
-            }
-          },
-          "path": "files/{fileId}/approvals/{approvalId}:decline",
-          "request": {
-            "$ref": "DeclineApprovalRequest"
-          },
-          "response": {
-            "$ref": "Approval"
-          },
-          "scopes": [
-            "https://www.googleapis.com/auth/drive",
-            "https://www.googleapis.com/auth/drive.file",
-            "https://www.googleapis.com/auth/drive.metadata"
-          ]
-        },
         "get": {
           "description": "Gets an Approval by ID.",
           "flatPath": "files/{fileId}/approvals/{approvalId}",
@@ -485,71 +341,6 @@
             "https://www.googleapis.com/auth/drive.metadata",
             "https://www.googleapis.com/auth/drive.metadata.readonly",
             "https://www.googleapis.com/auth/drive.readonly"
-          ]
-        },
-        "reassign": {
-          "description": "Reassigns the reviewers on an Approval. This allows the initiator to add or replace reviewers in the ReviewerResponse of the Approval. Removing a reviewer is not allowed. Reviewers can only be reassigned while the Approval Status is `IN_PROGRESS` and the Response for the reviewer being reassigned is `NO_RESPONSE`.",
-          "flatPath": "files/{fileId}/approvals/{approvalId}:reassign",
-          "httpMethod": "POST",
-          "id": "drive.approvals.reassign",
-          "parameterOrder": [
-            "fileId",
-            "approvalId"
-          ],
-          "parameters": {
-            "approvalId": {
-              "description": "Required. The ID of the Approval to reassign.",
-              "location": "path",
-              "required": true,
-              "type": "string"
-            },
-            "fileId": {
-              "description": "Required. The ID of the file the Approval is on.",
-              "location": "path",
-              "required": true,
-              "type": "string"
-            }
-          },
-          "path": "files/{fileId}/approvals/{approvalId}:reassign",
-          "request": {
-            "$ref": "ReassignApprovalRequest"
-          },
-          "response": {
-            "$ref": "Approval"
-          },
-          "scopes": [
-            "https://www.googleapis.com/auth/drive",
-            "https://www.googleapis.com/auth/drive.file",
-            "https://www.googleapis.com/auth/drive.metadata"
-          ]
-        },
-        "start": {
-          "description": "Starts an Approval on a file.",
-          "flatPath": "files/{fileId}/approvals:start",
-          "httpMethod": "POST",
-          "id": "drive.approvals.start",
-          "parameterOrder": [
-            "fileId"
-          ],
-          "parameters": {
-            "fileId": {
-              "description": "Required. The ID of the file the Approval will be created on.",
-              "location": "path",
-              "required": true,
-              "type": "string"
-            }
-          },
-          "path": "files/{fileId}/approvals:start",
-          "request": {
-            "$ref": "StartApprovalRequest"
-          },
-          "response": {
-            "$ref": "Approval"
-          },
-          "scopes": [
-            "https://www.googleapis.com/auth/drive",
-            "https://www.googleapis.com/auth/drive.file",
-            "https://www.googleapis.com/auth/drive.metadata"
           ]
         }
       }
@@ -3236,17 +3027,6 @@
       },
       "type": "object"
     },
-    "AddReviewer": {
-      "description": "Representation of a reviewer addition.",
-      "id": "AddReviewer",
-      "properties": {
-        "addedReviewerEmail": {
-          "description": "Required. The email of the reviewer to add.",
-          "type": "string"
-        }
-      },
-      "type": "object"
-    },
     "App": {
       "description": "The `apps` resource provides a list of apps that a user has installed, with information about each app's supported MIME types, file extensions, and other details. Some resource methods (such as `apps.get`) require an `appId`. Use the `apps.list` method to retrieve the ID for an installed application.",
       "id": "App",
@@ -3509,28 +3289,6 @@
       },
       "type": "object"
     },
-    "ApproveApprovalRequest": {
-      "description": "Request for approving an Approval as a reviewer.",
-      "id": "ApproveApprovalRequest",
-      "properties": {
-        "message": {
-          "description": "Optional. A message to accompany the reviewer response on the Approval. This message will be included in notifications for the action and in the Approval activity log.",
-          "type": "string"
-        }
-      },
-      "type": "object"
-    },
-    "CancelApprovalRequest": {
-      "description": "Request for cancelling an Approval as an initiator.",
-      "id": "CancelApprovalRequest",
-      "properties": {
-        "message": {
-          "description": "Optional. A message to accompany the cancellation of the Approval. This message will be included in notifications for the action and in the Approval activity log.",
-          "type": "string"
-        }
-      },
-      "type": "object"
-    },
     "Change": {
       "description": "A change to a file or shared drive.",
       "id": "Change",
@@ -3771,17 +3529,6 @@
       },
       "type": "object"
     },
-    "CommentApprovalRequest": {
-      "description": "Request for commenting on an Approval.",
-      "id": "CommentApprovalRequest",
-      "properties": {
-        "message": {
-          "description": "Required. A message to comment on the Approval. This message will be included in notifications for the action and in the Approval activity log.",
-          "type": "string"
-        }
-      },
-      "type": "object"
-    },
     "CommentList": {
       "description": "A list of comments on a file.",
       "id": "CommentList",
@@ -3841,17 +3588,6 @@
       },
       "type": "object"
     },
-    "DeclineApprovalRequest": {
-      "description": "Request for declining an Approval as a reviewer.",
-      "id": "DeclineApprovalRequest",
-      "properties": {
-        "message": {
-          "description": "Optional. A message to accompany the reviewer response on the Approval. This message will be included in notifications for the action and in the Approval activity log.",
-          "type": "string"
-        }
-      },
-      "type": "object"
-    },
     "DecryptionMetadata": {
       "description": "Representation of the CSE DecryptionMetadata.",
       "id": "DecryptionMetadata",
@@ -3897,7 +3633,7 @@
           "type": "boolean"
         },
         "restrictedForWriters": {
-          "description": "Whether download and copy is restricted for writers. If true, download is also restricted for readers.",
+          "description": "Whether download and copy is restricted for writers. If `true`, download is also restricted for readers.",
           "type": "boolean"
         }
       },
@@ -4316,10 +4052,6 @@
             },
             "canShare": {
               "description": "Output only. Whether the current user can modify the sharing settings for this file.",
-              "type": "boolean"
-            },
-            "canStartApproval": {
-              "description": "Whether the current user can start an approval on the file.",
               "type": "boolean"
             },
             "canTrash": {
@@ -5173,7 +4905,7 @@
       "type": "object"
     },
     "Permission": {
-      "description": "LINT.IfChange A permission for a file. A permission grants a user, group, domain, or the world access to a file or a folder hierarchy. For more information, see [Share files, folders, and drives](https://developers.google.com/workspace/drive/api/guides/manage-sharing). By default, permission requests only return a subset of fields. Permission `kind`, `ID`, `type`, and `role` are always returned. To retrieve specific fields, see [Return specific fields](https://developers.google.com/workspace/drive/api/guides/fields-parameter). Some resource methods (such as `permissions.update`) require a `permissionId`. Use the `permissions.list` method to retrieve the ID for a file, folder, or shared drive.",
+      "description": "A permission for a file. A permission grants a user, group, domain, or the world access to a file or a folder hierarchy. For more information, see [Share files, folders, and drives](https://developers.google.com/workspace/drive/api/guides/manage-sharing). By default, permission requests only return a subset of fields. Permission `kind`, `ID`, `type`, and `role` are always returned. To retrieve specific fields, see [Return specific fields](https://developers.google.com/workspace/drive/api/guides/fields-parameter). Some resource methods (such as `permissions.update`) require a `permissionId`. Use the `permissions.list` method to retrieve the ID for a file, folder, or shared drive.",
       "id": "Permission",
       "properties": {
         "allowFileDiscovery": {
@@ -5189,13 +4921,11 @@
           "type": "string"
         },
         "domain": {
-          "description": "Output only. The domain to which this permission refers.",
-          "readOnly": true,
+          "description": "The domain to which this permission refers.",
           "type": "string"
         },
         "emailAddress": {
-          "description": "Output only. The email address of the user or group to which this permission refers.",
-          "readOnly": true,
+          "description": "The email address of the user or group to which this permission refers.",
           "type": "string"
         },
         "expirationTime": {
@@ -5230,7 +4960,6 @@
               },
               "inheritedFrom": {
                 "description": "Output only. The ID of the item from which this permission is inherited. This is only populated for items in shared drives.",
-                "readOnly": true,
                 "type": "string"
               },
               "permissionType": {
@@ -5326,46 +5055,6 @@
             "$ref": "Permission"
           },
           "type": "array"
-        }
-      },
-      "type": "object"
-    },
-    "ReassignApprovalRequest": {
-      "description": "Request for reassigning an Approval. Reviewers can be added or replaced, but not removed.",
-      "id": "ReassignApprovalRequest",
-      "properties": {
-        "addReviewers": {
-          "description": "Optional. The list of reviewers to add.",
-          "items": {
-            "$ref": "AddReviewer"
-          },
-          "type": "array"
-        },
-        "message": {
-          "description": "Optional. A message to send to the new reviewers. This message will be included in notifications for the action and in the Approval activity log.",
-          "type": "string"
-        },
-        "replaceReviewers": {
-          "description": "Optional. The list of reviewer replacements.",
-          "items": {
-            "$ref": "ReplaceReviewer"
-          },
-          "type": "array"
-        }
-      },
-      "type": "object"
-    },
-    "ReplaceReviewer": {
-      "description": "Representation of a reviewer replacement.",
-      "id": "ReplaceReviewer",
-      "properties": {
-        "addedReviewerEmail": {
-          "description": "Required. The email of the reviewer to add.",
-          "type": "string"
-        },
-        "removedReviewerEmail": {
-          "description": "Required. The email of the reviewer to remove.",
-          "type": "string"
         }
       },
       "type": "object"
@@ -5616,33 +5305,6 @@
       },
       "type": "object"
     },
-    "StartApprovalRequest": {
-      "description": "Allows creating an Approval on a file.",
-      "id": "StartApprovalRequest",
-      "properties": {
-        "dueTime": {
-          "description": "Optional. The time that the Approval is due.",
-          "format": "google-datetime",
-          "type": "string"
-        },
-        "lockFile": {
-          "description": "Optional. Whether to lock the file when starting the Approval.",
-          "type": "boolean"
-        },
-        "message": {
-          "description": "Optional. A message to send to reviewers when notifying them of the Approval request.",
-          "type": "string"
-        },
-        "reviewerEmails": {
-          "description": "Required. The emails of the users who are set to review the approval.",
-          "items": {
-            "type": "string"
-          },
-          "type": "array"
-        }
-      },
-      "type": "object"
-    },
     "StartPageToken": {
       "id": "StartPageToken",
       "properties": {
@@ -5686,11 +5348,11 @@
       "type": "object"
     },
     "TeamDrive": {
-      "description": "Deprecated: use the drive collection instead. Next ID: 33",
+      "description": "Deprecated: use the drive collection instead.",
       "id": "TeamDrive",
       "properties": {
         "backgroundImageFile": {
-          "description": "The background image file for a Team Drive.",
+          "description": "An image file and cropping parameters from which a background image for this Team Drive is set. This is a write only field; it can only be set on `drive.teamdrives.update` requests that don't set `themeId`. When specified, all fields of the `backgroundImageFile` must be set.",
           "properties": {
             "id": {
               "description": "The ID of an image file in Drive to use for the background image.",
@@ -5734,8 +5396,7 @@
               "type": "boolean"
             },
             "canChangeDownloadRestriction": {
-              "description": "Output only. Whether the current user can change organizer-applied download restrictions of this shared drive.",
-              "readOnly": true,
+              "description": "Whether the current user can change organizer-applied download restrictions of this shared drive.",
               "type": "boolean"
             },
             "canChangeSharingFoldersRequiresOrganizerPermissionRestriction": {
