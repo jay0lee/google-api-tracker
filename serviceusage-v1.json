@@ -3438,8 +3438,7 @@
             "STREET_VIEW",
             "SHOPPING",
             "GEO",
-            "GENERATIVE_AI",
-            "HEALTH"
+            "GENERATIVE_AI"
           ],
           "enumDescriptions": [
             "Not useful.",
@@ -3449,8 +3448,7 @@
             "Street View Org.",
             "Shopping Org.",
             "Geo Org.",
-            "Generative AI - https://developers.generativeai.google",
-            "Health Org."
+            "Generative AI - https://developers.generativeai.google"
           ],
           "type": "string"
         },
