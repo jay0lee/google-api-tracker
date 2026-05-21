@@ -2849,6 +2849,11 @@
           "format": "int32",
           "type": "integer"
         },
+        "asyncOperation": {
+          "default": "",
+          "description": "If present, indicates the status of an asynchronous operation ongoing for this attendee (e.g. listing of members of large attendee groups). Read-only. The default is to not be present.\nPossible values are:  \n- \"inProgress\" - The asynchronous operation is in progress. \n- (not present) - Otherwise.",
+          "type": "string"
+        },
         "comment": {
           "description": "The attendee's response comment. Optional.",
           "type": "string"
