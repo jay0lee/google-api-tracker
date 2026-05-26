@@ -5117,6 +5117,16 @@
                         "description": "Relevant only for versioned objects. If the value is N, this condition is satisfied when there are at least N versions (including the live version) newer than this version of the object.",
                         "format": "int32",
                         "type": "integer"
+                      },
+                      "sizeAboveBytes": {
+                        "description": "Objects having a size greater than this value in bytes will be matched.",
+                        "format": "int64",
+                        "type": "string"
+                      },
+                      "sizeBelowBytes": {
+                        "description": "Objects having a size less than this value in bytes will be matched.",
+                        "format": "int64",
+                        "type": "string"
                       }
                     },
                     "type": "object"
