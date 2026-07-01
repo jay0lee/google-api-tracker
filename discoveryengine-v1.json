@@ -16550,8 +16550,7 @@
           "type": "string"
         },
         "associatedAgentRegistry": {
-          "description": "Output only. The Agent registry containing the agents, MCP servers and tools associated with this engine. Derived server-side from the linked Agent Gateway's registry.",
-          "readOnly": true,
+          "description": "Optional. The Agent registry containing the agents, MCP servers and tools associated with this engine. Field is required if the engine has an Agent Gateway setting.",
           "type": "string"
         },
         "chatEngineConfig": {
@@ -16626,7 +16625,7 @@
             ],
             "type": "string"
           },
-          "description": "Optional. Feature config for the engine to opt in or opt out of features. Supported keys: * `*`: all features, if it's present, all other feature state settings are ignored. * `agent-gallery` * `no-code-agent-builder` * `prompt-gallery` * `model-selector` * `notebook-lm` * `people-search` * `people-search-org-chart` * `bi-directional-audio` * `feedback` * `session-sharing` * `personalization-memory` * `personalization-suggested-highlights` * `mobile-app-access` * `disable-agent-sharing` * `disable-image-generation` * `disable-video-generation` * `disable-onedrive-upload` * `disable-talk-to-content` * `disable-google-drive-upload` * `disable-welcome-emails` * `disable-canvas` * `canvas-workspace` * `disable-skills` * `disable-projects` * `enable-end-user-sharing-with-groups` * `single-agent-orchestration` * `multi-agent-orchestration` * `cross-product-intelligence` * `deep-research`",
+          "description": "Optional. Feature config for the engine to opt in or opt out of features. Supported keys: * `*`: all features, if it's present, all other feature state settings are ignored. * `agent-gallery` * `no-code-agent-builder` * `prompt-gallery` * `model-selector` * `notebook-lm` * `people-search` * `people-search-org-chart` * `bi-directional-audio` * `feedback` * `session-sharing` * `personalization-memory` * `personalization-suggested-highlights` * `mobile-app-access` * `disable-agent-sharing` * `disable-image-generation` * `disable-video-generation` * `disable-onedrive-upload` * `disable-talk-to-content` * `disable-google-drive-upload` * `disable-welcome-emails` * `disable-canvas` * `canvas-workspace` * `disable-skills` * `enable-end-user-sharing-with-groups` * `single-agent-orchestration` * `multi-agent-orchestration` * `cross-product-intelligence` * `deep-research`",
           "type": "object"
         },
         "industryVertical": {
@@ -16952,7 +16951,7 @@
       "id": "GoogleCloudDiscoveryengineV1EngineSearchEngineConfig",
       "properties": {
         "requiredSubscriptionTier": {
-          "description": "Optional. The required subscription tier of this engine. If the required subscription tier is search, user with higher license tier like assist can still access the standalone app associated with this engine. Web grounding feature is only available on the app if it is set as SubscriptionTier.SUBSCRIPTION_TIER_SEARCH_AND_ASSISTANT.",
+          "description": "Optional. The required subscription tier of this engine. They cannot be modified after engine creation. If the required subscription tier is search, user with higher license tier like assist can still access the standalone app associated with this engine.",
           "enum": [
             "SUBSCRIPTION_TIER_UNSPECIFIED",
             "SUBSCRIPTION_TIER_SEARCH",
@@ -22750,18 +22749,13 @@
             ],
             "type": "string"
           },
-          "description": "Output only. Feature config for the engine to opt in or opt out of features. Supported keys: * `agent-gallery` * `no-code-agent-builder` * `prompt-gallery` * `model-selector` * `notebook-lm` * `people-search` * `people-search-org-chart` * `bi-directional-audio` * `feedback` * `session-sharing` * `personalization-memory` * `personalization-suggested-highlights` * `mobile-app-access` * `disable-agent-sharing` * `disable-image-generation` * `disable-video-generation` * `disable-onedrive-upload` * `disable-talk-to-content` * `disable-google-drive-upload` * `disable-welcome-emails` * `disable-canvas` * `canvas-workspace` * `disable-skills` * `disable-projects` * `enable-end-user-sharing-with-groups` * `single-agent-orchestration` * `multi-agent-orchestration` * `cross-product-intelligence` * `deep-research`",
+          "description": "Output only. Feature config for the engine to opt in or opt out of features. Supported keys: * `agent-gallery` * `no-code-agent-builder` * `prompt-gallery` * `model-selector` * `notebook-lm` * `people-search` * `people-search-org-chart` * `bi-directional-audio` * `feedback` * `session-sharing` * `personalization-memory` * `personalization-suggested-highlights` * `mobile-app-access` * `disable-agent-sharing` * `disable-image-generation` * `disable-video-generation` * `disable-onedrive-upload` * `disable-talk-to-content` * `disable-google-drive-upload` * `disable-welcome-emails` * `disable-canvas` * `canvas-workspace` * `disable-skills` * `enable-end-user-sharing-with-groups` * `single-agent-orchestration` * `multi-agent-orchestration` * `cross-product-intelligence` * `deep-research`",
           "readOnly": true,
           "type": "object"
         },
         "generativeAnswerConfig": {
           "$ref": "GoogleCloudDiscoveryengineV1WidgetConfigUiSettingsGenerativeAnswerConfig",
           "description": "Describes generative answer configuration."
-        },
-        "googleDrivePickerEnabled": {
-          "description": "Output only. Whether the Google Drive file picker is available to end-users. Declared `optional` for the same field-presence reason as `onedrive_picker_enabled` above.",
-          "readOnly": true,
-          "type": "boolean"
         },
         "interactionType": {
           "description": "Describes widget (or web app) interaction type",
@@ -22801,11 +22795,6 @@
           "description": "Output only. Maps a model name to its specific configuration for this engine. This allows admin users to turn on/off individual models. This only stores models whose states are overridden by the admin. When the state is unspecified, or model_configs is empty for this model, the system will decide if this model should be available or not based on the default configuration. For example, a preview model should be disabled by default if the admin has not chosen to enable it.",
           "readOnly": true,
           "type": "object"
-        },
-        "onedrivePickerEnabled": {
-          "description": "Output only. Whether the OneDrive file picker is available to end-users. Computed by the backend from admin connector enablement (Business edition) or attached OneDrive connectors (Enterprise edition), combined with the existing `disable-onedrive-upload` admin feature. Declared `optional` so an explicitly-computed `false` is serialized with field presence. A plain proto3 `bool` drops a default `false` on the wire, which prevented clients from distinguishing \"picker disabled\" (`false`) from \"field not populated\" (unset).",
-          "readOnly": true,
-          "type": "boolean"
         },
         "resultDescriptionType": {
           "description": "Controls whether result extract is display and how (snippet or extractive answer). Default to no result if unspecified.",
@@ -22965,8 +22954,7 @@
             "GOOGLE_CHAT",
             "GOOGLE_GROUPS",
             "GOOGLE_KEEP",
-            "GOOGLE_PEOPLE",
-            "GOOGLE_WORKSPACE"
+            "GOOGLE_PEOPLE"
           ],
           "enumDescriptions": [
             "Defaults to an unspecified Workspace type.",
@@ -22977,8 +22965,7 @@
             "Workspace Data Store contains Chat data",
             "Workspace Data Store contains Groups data",
             "Workspace Data Store contains Keep data",
-            "Workspace Data Store contains People data",
-            "Workspace Data Store contains all Workspace apps data"
+            "Workspace Data Store contains People data"
           ],
           "type": "string"
         }
@@ -26604,8 +26591,7 @@
           "type": "string"
         },
         "associatedAgentRegistry": {
-          "description": "Output only. The Agent registry containing the agents, MCP servers and tools associated with this engine. Derived server-side from the linked Agent Gateway's registry.",
-          "readOnly": true,
+          "description": "Optional. The Agent registry containing the agents, MCP servers and tools associated with this engine. Field is required if the engine has an Agent Gateway setting.",
           "type": "string"
         },
         "chatEngineConfig": {
@@ -26680,7 +26666,7 @@
             ],
             "type": "string"
           },
-          "description": "Optional. Feature config for the engine to opt in or opt out of features. Supported keys: * `*`: all features, if it's present, all other feature state settings are ignored. * `agent-gallery` * `no-code-agent-builder` * `prompt-gallery` * `model-selector` * `notebook-lm` * `people-search` * `people-search-org-chart` * `bi-directional-audio` * `feedback` * `session-sharing` * `personalization-memory` * `personalization-suggested-highlights` * `mobile-app-access` * `disable-agent-sharing` * `disable-image-generation` * `disable-video-generation` * `disable-onedrive-upload` * `disable-talk-to-content` * `disable-google-drive-upload` * `disable-welcome-emails` * `disable-canvas` * `canvas-workspace` * `disable-skills` * `disable-projects` * `enable-end-user-sharing-with-groups` * `single-agent-orchestration` * `multi-agent-orchestration` * `cross-product-intelligence` * `deep-research`",
+          "description": "Optional. Feature config for the engine to opt in or opt out of features. Supported keys: * `*`: all features, if it's present, all other feature state settings are ignored. * `agent-gallery` * `no-code-agent-builder` * `prompt-gallery` * `model-selector` * `notebook-lm` * `people-search` * `people-search-org-chart` * `bi-directional-audio` * `feedback` * `session-sharing` * `personalization-memory` * `personalization-suggested-highlights` * `mobile-app-access` * `disable-agent-sharing` * `disable-image-generation` * `disable-video-generation` * `disable-onedrive-upload` * `disable-talk-to-content` * `disable-google-drive-upload` * `disable-welcome-emails` * `disable-canvas` * `canvas-workspace` * `disable-skills` * `enable-end-user-sharing-with-groups` * `single-agent-orchestration` * `multi-agent-orchestration` * `cross-product-intelligence` * `deep-research`",
           "type": "object"
         },
         "industryVertical": {
@@ -27071,7 +27057,7 @@
       "id": "GoogleCloudDiscoveryengineV1alphaEngineSearchEngineConfig",
       "properties": {
         "requiredSubscriptionTier": {
-          "description": "Optional. The required subscription tier of this engine. If the required subscription tier is search, user with higher license tier like assist can still access the standalone app associated with this engine. Web grounding feature is only available on the app if it is set as SubscriptionTier.SUBSCRIPTION_TIER_SEARCH_AND_ASSISTANT.",
+          "description": "Optional. The required subscription tier of this engine. They cannot be modified after engine creation. If the required subscription tier is search, user with higher license tier like assist can still access the standalone app associated with this engine.",
           "enum": [
             "SUBSCRIPTION_TIER_UNSPECIFIED",
             "SUBSCRIPTION_TIER_SEARCH",
@@ -30832,8 +30818,7 @@
             "GOOGLE_CHAT",
             "GOOGLE_GROUPS",
             "GOOGLE_KEEP",
-            "GOOGLE_PEOPLE",
-            "GOOGLE_WORKSPACE"
+            "GOOGLE_PEOPLE"
           ],
           "enumDescriptions": [
             "Defaults to an unspecified Workspace type.",
@@ -30844,8 +30829,7 @@
             "Workspace Data Store contains Chat data",
             "Workspace Data Store contains Groups data",
             "Workspace Data Store contains Keep data",
-            "Workspace Data Store contains People data",
-            "Workspace Data Store contains all Workspace apps data"
+            "Workspace Data Store contains People data"
           ],
           "type": "string"
         }
@@ -32130,8 +32114,7 @@
           "type": "string"
         },
         "associatedAgentRegistry": {
-          "description": "Output only. The Agent registry containing the agents, MCP servers and tools associated with this engine. Derived server-side from the linked Agent Gateway's registry.",
-          "readOnly": true,
+          "description": "Optional. The Agent registry containing the agents, MCP servers and tools associated with this engine. Field is required if the engine has an Agent Gateway setting.",
           "type": "string"
         },
         "chatEngineConfig": {
@@ -32206,7 +32189,7 @@
             ],
             "type": "string"
           },
-          "description": "Optional. Feature config for the engine to opt in or opt out of features. Supported keys: * `*`: all features, if it's present, all other feature state settings are ignored. * `agent-gallery` * `no-code-agent-builder` * `prompt-gallery` * `model-selector` * `notebook-lm` * `people-search` * `people-search-org-chart` * `bi-directional-audio` * `feedback` * `session-sharing` * `personalization-memory` * `personalization-suggested-highlights` * `mobile-app-access` * `disable-agent-sharing` * `disable-image-generation` * `disable-video-generation` * `disable-onedrive-upload` * `disable-talk-to-content` * `disable-google-drive-upload` * `disable-welcome-emails` * `disable-canvas` * `canvas-workspace` * `disable-skills` * `disable-projects` * `enable-end-user-sharing-with-groups` * `single-agent-orchestration` * `multi-agent-orchestration` * `cross-product-intelligence` * `deep-research`",
+          "description": "Optional. Feature config for the engine to opt in or opt out of features. Supported keys: * `*`: all features, if it's present, all other feature state settings are ignored. * `agent-gallery` * `no-code-agent-builder` * `prompt-gallery` * `model-selector` * `notebook-lm` * `people-search` * `people-search-org-chart` * `bi-directional-audio` * `feedback` * `session-sharing` * `personalization-memory` * `personalization-suggested-highlights` * `mobile-app-access` * `disable-agent-sharing` * `disable-image-generation` * `disable-video-generation` * `disable-onedrive-upload` * `disable-talk-to-content` * `disable-google-drive-upload` * `disable-welcome-emails` * `disable-canvas` * `canvas-workspace` * `disable-skills` * `enable-end-user-sharing-with-groups` * `single-agent-orchestration` * `multi-agent-orchestration` * `cross-product-intelligence` * `deep-research`",
           "type": "object"
         },
         "industryVertical": {
@@ -32532,7 +32515,7 @@
       "id": "GoogleCloudDiscoveryengineV1betaEngineSearchEngineConfig",
       "properties": {
         "requiredSubscriptionTier": {
-          "description": "Optional. The required subscription tier of this engine. If the required subscription tier is search, user with higher license tier like assist can still access the standalone app associated with this engine. Web grounding feature is only available on the app if it is set as SubscriptionTier.SUBSCRIPTION_TIER_SEARCH_AND_ASSISTANT.",
+          "description": "Optional. The required subscription tier of this engine. They cannot be modified after engine creation. If the required subscription tier is search, user with higher license tier like assist can still access the standalone app associated with this engine.",
           "enum": [
             "SUBSCRIPTION_TIER_UNSPECIFIED",
             "SUBSCRIPTION_TIER_SEARCH",
@@ -35253,8 +35236,7 @@
             "GOOGLE_CHAT",
             "GOOGLE_GROUPS",
             "GOOGLE_KEEP",
-            "GOOGLE_PEOPLE",
-            "GOOGLE_WORKSPACE"
+            "GOOGLE_PEOPLE"
           ],
           "enumDescriptions": [
             "Defaults to an unspecified Workspace type.",
@@ -35265,8 +35247,7 @@
             "Workspace Data Store contains Chat data",
             "Workspace Data Store contains Groups data",
             "Workspace Data Store contains Keep data",
-            "Workspace Data Store contains People data",
-            "Workspace Data Store contains all Workspace apps data"
+            "Workspace Data Store contains People data"
           ],
           "type": "string"
         }
