@@ -784,6 +784,41 @@
             "https://www.googleapis.com/auth/calendar.calendars"
           ]
         },
+        "transferOwnership": {
+          "description": "Transfers a secondary calendar between users within a Google Workspace organization. Requires user authentication with Manage Calendars administrator privilege, and one of the following authorization scopes: \n- https://www.googleapis.com/auth/calendar \n- https://www.googleapis.com/auth/calendar.calendars In the request, set useAdminAccess to true. The secondary calendar must be active to be transferred. Transferring disabled or deleted calendars isn't supported.",
+          "httpMethod": "POST",
+          "id": "calendar.calendars.transferOwnership",
+          "parameterOrder": [
+            "calendarId",
+            "newDataOwner",
+            "useAdminAccess"
+          ],
+          "parameters": {
+            "calendarId": {
+              "description": "Calendar identifier. To retrieve calendar IDs, call the calendarList.list method.",
+              "location": "path",
+              "required": true,
+              "type": "string"
+            },
+            "newDataOwner": {
+              "description": "The email address of a user who will become the data owner of the calendar.",
+              "location": "query",
+              "required": true,
+              "type": "string"
+            },
+            "useAdminAccess": {
+              "description": "When true, the method runs using the user's Google Workspace administrator privileges. The calling user must be a Google Workspace administrator with the Manage Calendars privilege. This method currently only supports admin access, thus only true is accepted for this field.",
+              "location": "query",
+              "required": true,
+              "type": "boolean"
+            }
+          },
+          "path": "calendars/{calendarId}/transferOwnership",
+          "scopes": [
+            "https://www.googleapis.com/auth/calendar",
+            "https://www.googleapis.com/auth/calendar.calendars"
+          ]
+        },
         "update": {
           "description": "Updates metadata for a calendar.",
           "httpMethod": "PUT",
