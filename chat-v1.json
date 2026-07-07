@@ -1463,11 +1463,11 @@
       "resources": {
         "availability": {
           "methods": {
-            "getAvailability": {
+            "get": {
               "description": "Returns availability information for a human user in Google Chat. For example, this can be used to check if a user is online or away, or to retrieve their custom status message. This method only retrieves the authenticated user's availability. Requires [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user) with one of the following [authorization scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes): - `https://www.googleapis.com/auth/chat.users.availability.readonly` - `https://www.googleapis.com/auth/chat.users.availability`",
               "flatPath": "v1/users/{usersId}/availability",
               "httpMethod": "GET",
-              "id": "chat.users.availability.getAvailability",
+              "id": "chat.users.availability.get",
               "parameterOrder": [
                 "name"
               ],
@@ -1549,7 +1549,7 @@
               ]
             },
             "markAsDoNotDisturb": {
-              "description": "Marks user as`DO_NOT_DISTURB` in Google Chat. Sets a user's availability state to `DO_NOT_DISTURB` until a specified expiration time. When in `DO_NOT_DISTURB`, users typically won't receive notifications. This method only updates the authenticated user's availability. Requires [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user) with [authorization scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes): - `https://www.googleapis.com/auth/chat.users.availability`",
+              "description": "Marks user as `DO_NOT_DISTURB` in Google Chat. Sets a user's availability state to `DO_NOT_DISTURB` until a specified expiration time. When in `DO_NOT_DISTURB`, users typically won't receive notifications. This method only updates the authenticated user's availability. Requires [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user) with [authorization scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes): - `https://www.googleapis.com/auth/chat.users.availability`",
               "flatPath": "v1/users/{usersId}/availability:markAsDoNotDisturb",
               "httpMethod": "POST",
               "id": "chat.users.availability.markAsDoNotDisturb",
@@ -1577,11 +1577,11 @@
                 "https://www.googleapis.com/auth/chat.users.readstate"
               ]
             },
-            "updateAvailability": {
+            "patch": {
               "description": "Updates availability information for a human user. Only the `custom_status` field can be updated through this method. This method only updates the authenticated user's availability. Requires [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user) with one of the following [authorization scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes): - `https://www.googleapis.com/auth/chat.users.availability`",
               "flatPath": "v1/users/{usersId}/availability",
               "httpMethod": "PATCH",
-              "id": "chat.users.availability.updateAvailability",
+              "id": "chat.users.availability.patch",
               "parameterOrder": [
                 "name"
               ],
