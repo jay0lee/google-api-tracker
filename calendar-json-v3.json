@@ -3040,7 +3040,7 @@
           "type": "string"
         },
         "id": {
-          "description": "The id of the label. Optional when inserting a new label. If not provided, a unique id will be generated. Required when updating a label.\nIf provided, the id must be unique within the calendar and follow UUID format.",
+          "description": "The ID of the label. Optional when inserting a new label. If not provided, a unique ID will be generated. Required when updating a label.\nIf provided, the ID must be unique within the calendar and follow UUID format.",
           "type": "string"
         },
         "name": {
