@@ -6,8 +6,8 @@ while read line; do
     api=$(echo $line | cut -d' ' -f1);
     ver=$(echo $line | cut -d' ' -f2);
     apifile="${api}-${ver}.json"
-    v2_url="https://${api}.googleapis.com/\$discovery/rest?version=${ver}";
-    v1_url="https://www.googleapis.com/discovery/v1/apis/${api}/${ver}/rest";
+    v2_url="https://${api}.googleapis.com/\$discovery/rest?version=${ver}&key=${googleapikey}";
+    v1_url="https://www.googleapis.com/discovery/v1/apis/${api}/${ver}/rest?key=${googleapikey}";
     echo "Checking v2 URL ${v2_url} for $api $ver...";
     export use_url="${v2_url}"
     curl -s -f --compressed -o ~/$apifile $use_url; result=$?; true;
