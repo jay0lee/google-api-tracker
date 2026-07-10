@@ -1788,7 +1788,7 @@
       }
     }
   },
-  "retrieved_from": "https://analyticsadmin.googleapis.com/$discovery/rest?version=v1beta&key=AIzaSyCbsFJj-fQ7B5qHmAhEYbpZ-gZRaSQPIYM",
+  "retrieved_from": "https://analyticsadmin.googleapis.com/$discovery/rest?version=v1beta&key=****",
   "rootUrl": "https://analyticsadmin.googleapis.com/",
   "schemas": {
     "GoogleAnalyticsAdminV1betaAccessBetweenFilter": {

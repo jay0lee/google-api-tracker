@@ -618,7 +618,7 @@
       }
     }
   },
-  "retrieved_from": "https://cloudidentityscim.googleapis.com/$discovery/rest?version=v1beta1&key=AIzaSyCbsFJj-fQ7B5qHmAhEYbpZ-gZRaSQPIYM",
+  "retrieved_from": "https://cloudidentityscim.googleapis.com/$discovery/rest?version=v1beta1&key=****",
   "rootUrl": "https://cloudidentityscim.googleapis.com/",
   "schemas": {
     "Address": {

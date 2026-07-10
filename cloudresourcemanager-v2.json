@@ -450,7 +450,7 @@
       }
     }
   },
-  "retrieved_from": "https://cloudresourcemanager.googleapis.com/$discovery/rest?version=v2&key=AIzaSyCbsFJj-fQ7B5qHmAhEYbpZ-gZRaSQPIYM",
+  "retrieved_from": "https://cloudresourcemanager.googleapis.com/$discovery/rest?version=v2&key=****",
   "rootUrl": "https://cloudresourcemanager.googleapis.com/",
   "schemas": {
     "AuditConfig": {
