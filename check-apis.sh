@@ -1,6 +1,7 @@
 #!/bin/bash
 
-pyparser="import json, os, sys, collections; disc = json.loads(sys.stdin.read()); disc.pop('etag', None); disc.pop('revision', None); disc['retrieved_from'] = os.getenv('use_url'); print(json.dumps(disc, indent=2, sort_keys=True))"
+# Updated pyparser to redact the API key using regex
+pyparser="import json, os, sys, re; disc = json.loads(sys.stdin.read()); disc.pop('etag', None); disc.pop('revision', None); url = os.getenv('use_url', ''); disc['retrieved_from'] = re.sub(r'key=[^&]*', 'key=****', url); print(json.dumps(disc, indent=2, sort_keys=True))"
 
 while read line; do
     api=$(echo $line | cut -d' ' -f1);
