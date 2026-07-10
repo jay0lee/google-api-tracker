@@ -3,6 +3,7 @@ name: Check for API updates
 on:
   push:
     branches: [ master ]
+  workflow_dispatch:
   schedule:
     - cron: '37 4,18,22 * * *'
 
