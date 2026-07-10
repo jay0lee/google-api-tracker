@@ -1,0 +1,1526 @@
+{
+  "auth": {
+    "oauth2": {
+      "scopes": {
+        "https://www.googleapis.com/auth/cloud-platform": {
+          "description": "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account."
+        }
+      }
+    }
+  },
+  "basePath": "",
+  "baseUrl": "https://iam.googleapis.com/",
+  "batchPath": "batch",
+  "canonicalName": "Iam",
+  "description": "Manages identity and access control for Google Cloud resources, including the creation of service accounts, which you can use to authenticate to Google and make API calls. Enabling this API also enables the IAM Service Account Credentials API (iamcredentials.googleapis.com). However, disabling this API doesn't disable the IAM Service Account Credentials API. ",
+  "discoveryVersion": "v1",
+  "documentationLink": "https://cloud.google.com/iam/",
+  "fullyEncodeReservedExpansion": true,
+  "icons": {
+    "x16": "http://www.google.com/images/icons/product/search-16.gif",
+    "x32": "http://www.google.com/images/icons/product/search-32.gif"
+  },
+  "id": "iam:v3",
+  "kind": "discovery#restDescription",
+  "mtlsRootUrl": "https://iam.mtls.googleapis.com/",
+  "name": "iam",
+  "ownerDomain": "google.com",
+  "ownerName": "Google",
+  "parameters": {
+    "$.xgafv": {
+      "description": "V1 error format.",
+      "enum": [
+        "1",
+        "2"
+      ],
+      "enumDescriptions": [
+        "v1 error format",
+        "v2 error format"
+      ],
+      "location": "query",
+      "type": "string"
+    },
+    "access_token": {
+      "description": "OAuth access token.",
+      "location": "query",
+      "type": "string"
+    },
+    "alt": {
+      "default": "json",
+      "description": "Data format for response.",
+      "enum": [
+        "json",
+        "media",
+        "proto"
+      ],
+      "enumDescriptions": [
+        "Responses with Content-Type of application/json",
+        "Media download with context-dependent Content-Type",
+        "Responses with Content-Type of application/x-protobuf"
+      ],
+      "location": "query",
+      "type": "string"
+    },
+    "callback": {
+      "description": "JSONP",
+      "location": "query",
+      "type": "string"
+    },
+    "fields": {
+      "description": "Selector specifying which fields to include in a partial response.",
+      "location": "query",
+      "type": "string"
+    },
+    "key": {
+      "description": "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.",
+      "location": "query",
+      "type": "string"
+    },
+    "oauth_token": {
+      "description": "OAuth 2.0 token for the current user.",
+      "location": "query",
+      "type": "string"
+    },
+    "prettyPrint": {
+      "default": "true",
+      "description": "Returns response with indentations and line breaks.",
+      "location": "query",
+      "type": "boolean"
+    },
+    "quotaUser": {
+      "description": "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.",
+      "location": "query",
+      "type": "string"
+    },
+    "uploadType": {
+      "description": "Legacy upload protocol for media (e.g. \"media\", \"multipart\").",
+      "location": "query",
+      "type": "string"
+    },
+    "upload_protocol": {
+      "description": "Upload protocol for media (e.g. \"raw\", \"multipart\").",
+      "location": "query",
+      "type": "string"
+    }
+  },
+  "protocol": "rest",
+  "resources": {
+    "folders": {
+      "resources": {
+        "locations": {
+          "resources": {
+            "operations": {
+              "methods": {
+                "get": {
+                  "description": "Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.",
+                  "flatPath": "v3/folders/{foldersId}/locations/{locationsId}/operations/{operationsId}",
+                  "httpMethod": "GET",
+                  "id": "iam.folders.locations.operations.get",
+                  "parameterOrder": [
+                    "name"
+                  ],
+                  "parameters": {
+                    "name": {
+                      "description": "The name of the operation resource.",
+                      "location": "path",
+                      "pattern": "^folders/[^/]+/locations/[^/]+/operations/[^/]+$",
+                      "required": true,
+                      "type": "string"
+                    }
+                  },
+                  "path": "v3/{+name}",
+                  "response": {
+                    "$ref": "GoogleLongrunningOperation"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ]
+                }
+              }
+            },
+            "policyBindings": {
+              "methods": {
+                "create": {
+                  "description": "Creates a policy binding and returns a long-running operation. Callers will need the IAM permissions on both the policy and target. After the binding is created, the policy is applied to the target.",
+                  "flatPath": "v3/folders/{foldersId}/locations/{locationsId}/policyBindings",
+                  "httpMethod": "POST",
+                  "id": "iam.folders.locations.policyBindings.create",
+                  "parameterOrder": [
+                    "parent"
+                  ],
+                  "parameters": {
+                    "parent": {
+                      "description": "Required. The parent resource where this policy binding will be created. The binding parent is the closest Resource Manager resource (project, folder or organization) to the binding target. Format: * `projects/{project_id}/locations/{location}` * `projects/{project_number}/locations/{location}` * `folders/{folder_id}/locations/{location}` * `organizations/{organization_id}/locations/{location}`",
+                      "location": "path",
+                      "pattern": "^folders/[^/]+/locations/[^/]+$",
+                      "required": true,
+                      "type": "string"
+                    },
+                    "policyBindingId": {
+                      "description": "Required. The ID to use for the policy binding, which will become the final component of the policy binding's resource name. This value must start with a lowercase letter followed by up to 62 lowercase letters, numbers, hyphens, or dots. Pattern, /a-z{2,62}/.",
+                      "location": "query",
+                      "type": "string"
+                    },
+                    "validateOnly": {
+                      "description": "Optional. If set, validate the request and preview the creation, but do not actually post it.",
+                      "location": "query",
+                      "type": "boolean"
+                    }
+                  },
+                  "path": "v3/{+parent}/policyBindings",
+                  "request": {
+                    "$ref": "GoogleIamV3PolicyBinding"
+                  },
+                  "response": {
+                    "$ref": "GoogleLongrunningOperation"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ]
+                },
+                "delete": {
+                  "description": "Deletes a policy binding and returns a long-running operation. Callers will need the IAM permissions on both the policy and target. After the binding is deleted, the policy no longer applies to the target.",
+                  "flatPath": "v3/folders/{foldersId}/locations/{locationsId}/policyBindings/{policyBindingsId}",
+                  "httpMethod": "DELETE",
+                  "id": "iam.folders.locations.policyBindings.delete",
+                  "parameterOrder": [
+                    "name"
+                  ],
+                  "parameters": {
+                    "etag": {
+                      "description": "Optional. The etag of the policy binding. If this is provided, it must match the server's etag.",
+                      "location": "query",
+                      "type": "string"
+                    },
+                    "name": {
+                      "description": "Required. The name of the policy binding to delete. Format: * `projects/{project_id}/locations/{location}/policyBindings/{policy_binding_id}` * `projects/{project_number}/locations/{location}/policyBindings/{policy_binding_id}` * `folders/{folder_id}/locations/{location}/policyBindings/{policy_binding_id}` * `organizations/{organization_id}/locations/{location}/policyBindings/{policy_binding_id}`",
+                      "location": "path",
+                      "pattern": "^folders/[^/]+/locations/[^/]+/policyBindings/[^/]+$",
+                      "required": true,
+                      "type": "string"
+                    },
+                    "validateOnly": {
+                      "description": "Optional. If set, validate the request and preview the deletion, but do not actually post it.",
+                      "location": "query",
+                      "type": "boolean"
+                    }
+                  },
+                  "path": "v3/{+name}",
+                  "response": {
+                    "$ref": "GoogleLongrunningOperation"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ]
+                },
+                "get": {
+                  "description": "Gets a policy binding.",
+                  "flatPath": "v3/folders/{foldersId}/locations/{locationsId}/policyBindings/{policyBindingsId}",
+                  "httpMethod": "GET",
+                  "id": "iam.folders.locations.policyBindings.get",
+                  "parameterOrder": [
+                    "name"
+                  ],
+                  "parameters": {
+                    "name": {
+                      "description": "Required. The name of the policy binding to retrieve. Format: * `projects/{project_id}/locations/{location}/policyBindings/{policy_binding_id}` * `projects/{project_number}/locations/{location}/policyBindings/{policy_binding_id}` * `folders/{folder_id}/locations/{location}/policyBindings/{policy_binding_id}` * `organizations/{organization_id}/locations/{location}/policyBindings/{policy_binding_id}`",
+                      "location": "path",
+                      "pattern": "^folders/[^/]+/locations/[^/]+/policyBindings/[^/]+$",
+                      "required": true,
+                      "type": "string"
+                    }
+                  },
+                  "path": "v3/{+name}",
+                  "response": {
+                    "$ref": "GoogleIamV3PolicyBinding"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ]
+                },
+                "list": {
+                  "description": "Lists policy bindings.",
+                  "flatPath": "v3/folders/{foldersId}/locations/{locationsId}/policyBindings",
+                  "httpMethod": "GET",
+                  "id": "iam.folders.locations.policyBindings.list",
+                  "parameterOrder": [
+                    "parent"
+                  ],
+                  "parameters": {
+                    "filter": {
+                      "description": "Optional. An expression for filtering the results of the request. Filter rules are case insensitive. Some eligible fields for filtering are the following: + `target` + `policy` Some examples of filter queries: * `target:ex*`: The binding target's name starts with \"ex\". * `target:example`: The binding target's name is `example`. * `policy:example`: The binding policy's name is `example`.",
+                      "location": "query",
+                      "type": "string"
+                    },
+                    "pageSize": {
+                      "description": "Optional. The maximum number of policy bindings to return. The service may return fewer than this value. The default value is 50. The maximum value is 1000.",
+                      "format": "int32",
+                      "location": "query",
+                      "type": "integer"
+                    },
+                    "pageToken": {
+                      "description": "Optional. A page token, received from a previous `ListPolicyBindings` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListPolicyBindings` must match the call that provided the page token.",
+                      "location": "query",
+                      "type": "string"
+                    },
+                    "parent": {
+                      "description": "Required. The parent resource, which owns the collection of policy bindings. Format: * `projects/{project_id}/locations/{location}` * `projects/{project_number}/locations/{location}` * `folders/{folder_id}/locations/{location}` * `organizations/{organization_id}/locations/{location}`",
+                      "location": "path",
+                      "pattern": "^folders/[^/]+/locations/[^/]+$",
+                      "required": true,
+                      "type": "string"
+                    }
+                  },
+                  "path": "v3/{+parent}/policyBindings",
+                  "response": {
+                    "$ref": "GoogleIamV3ListPolicyBindingsResponse"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ]
+                },
+                "patch": {
+                  "description": "Updates a policy binding and returns a long-running operation. Callers will need the IAM permissions on the policy and target in the binding to update. Target and policy are immutable and cannot be updated.",
+                  "flatPath": "v3/folders/{foldersId}/locations/{locationsId}/policyBindings/{policyBindingsId}",
+                  "httpMethod": "PATCH",
+                  "id": "iam.folders.locations.policyBindings.patch",
+                  "parameterOrder": [
+                    "name"
+                  ],
+                  "parameters": {
+                    "name": {
+                      "description": "Identifier. The name of the policy binding, in the format `{binding_parent/locations/{location}/policyBindings/{policy_binding_id}`. The binding parent is the closest Resource Manager resource (project, folder, or organization) to the binding target. Format: * `projects/{project_id}/locations/{location}/policyBindings/{policy_binding_id}` * `projects/{project_number}/locations/{location}/policyBindings/{policy_binding_id}` * `folders/{folder_id}/locations/{location}/policyBindings/{policy_binding_id}` * `organizations/{organization_id}/locations/{location}/policyBindings/{policy_binding_id}`",
+                      "location": "path",
+                      "pattern": "^folders/[^/]+/locations/[^/]+/policyBindings/[^/]+$",
+                      "required": true,
+                      "type": "string"
+                    },
+                    "updateMask": {
+                      "description": "Optional. The list of fields to update",
+                      "format": "google-fieldmask",
+                      "location": "query",
+                      "type": "string"
+                    },
+                    "validateOnly": {
+                      "description": "Optional. If set, validate the request and preview the update, but do not actually post it.",
+                      "location": "query",
+                      "type": "boolean"
+                    }
+                  },
+                  "path": "v3/{+name}",
+                  "request": {
+                    "$ref": "GoogleIamV3PolicyBinding"
+                  },
+                  "response": {
+                    "$ref": "GoogleLongrunningOperation"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ]
+                },
+                "searchTargetPolicyBindings": {
+                  "description": "Search policy bindings by target. Returns all policy binding objects bound directly to target.",
+                  "flatPath": "v3/folders/{foldersId}/locations/{locationsId}/policyBindings:searchTargetPolicyBindings",
+                  "httpMethod": "GET",
+                  "id": "iam.folders.locations.policyBindings.searchTargetPolicyBindings",
+                  "parameterOrder": [
+                    "parent"
+                  ],
+                  "parameters": {
+                    "pageSize": {
+                      "description": "Optional. The maximum number of policy bindings to return. The service may return fewer than this value. The default value is 50. The maximum value is 1000.",
+                      "format": "int32",
+                      "location": "query",
+                      "type": "integer"
+                    },
+                    "pageToken": {
+                      "description": "Optional. A page token, received from a previous `SearchTargetPolicyBindingsRequest` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `SearchTargetPolicyBindingsRequest` must match the call that provided the page token.",
+                      "location": "query",
+                      "type": "string"
+                    },
+                    "parent": {
+                      "description": "Required. The parent resource where this search will be performed. This should be the nearest Resource Manager resource (project, folder, or organization) to the target. Format: * `projects/{project_id}/locations/{location}` * `projects/{project_number}/locations/{location}` * `folders/{folder_id}/locations/{location}` * `organizations/{organization_id}/locations/{location}`",
+                      "location": "path",
+                      "pattern": "^folders/[^/]+/locations/[^/]+$",
+                      "required": true,
+                      "type": "string"
+                    },
+                    "target": {
+                      "description": "Required. The target resource, which is bound to the policy in the binding. Format: * `//iam.googleapis.com/locations/global/workforcePools/POOL_ID` * `//iam.googleapis.com/projects/PROJECT_NUMBER/locations/global/workloadIdentityPools/POOL_ID` * `//iam.googleapis.com/locations/global/workspace/WORKSPACE_ID` * `//cloudresourcemanager.googleapis.com/projects/{project_number}` * `//cloudresourcemanager.googleapis.com/folders/{folder_id}` * `//cloudresourcemanager.googleapis.com/organizations/{organization_id}`",
+                      "location": "query",
+                      "type": "string"
+                    }
+                  },
+                  "path": "v3/{+parent}/policyBindings:searchTargetPolicyBindings",
+                  "response": {
+                    "$ref": "GoogleIamV3SearchTargetPolicyBindingsResponse"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "organizations": {
+      "resources": {
+        "locations": {
+          "resources": {
+            "operations": {
+              "methods": {
+                "get": {
+                  "description": "Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.",
+                  "flatPath": "v3/organizations/{organizationsId}/locations/{locationsId}/operations/{operationsId}",
+                  "httpMethod": "GET",
+                  "id": "iam.organizations.locations.operations.get",
+                  "parameterOrder": [
+                    "name"
+                  ],
+                  "parameters": {
+                    "name": {
+                      "description": "The name of the operation resource.",
+                      "location": "path",
+                      "pattern": "^organizations/[^/]+/locations/[^/]+/operations/[^/]+$",
+                      "required": true,
+                      "type": "string"
+                    }
+                  },
+                  "path": "v3/{+name}",
+                  "response": {
+                    "$ref": "GoogleLongrunningOperation"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ]
+                }
+              }
+            },
+            "policyBindings": {
+              "methods": {
+                "create": {
+                  "description": "Creates a policy binding and returns a long-running operation. Callers will need the IAM permissions on both the policy and target. After the binding is created, the policy is applied to the target.",
+                  "flatPath": "v3/organizations/{organizationsId}/locations/{locationsId}/policyBindings",
+                  "httpMethod": "POST",
+                  "id": "iam.organizations.locations.policyBindings.create",
+                  "parameterOrder": [
+                    "parent"
+                  ],
+                  "parameters": {
+                    "parent": {
+                      "description": "Required. The parent resource where this policy binding will be created. The binding parent is the closest Resource Manager resource (project, folder or organization) to the binding target. Format: * `projects/{project_id}/locations/{location}` * `projects/{project_number}/locations/{location}` * `folders/{folder_id}/locations/{location}` * `organizations/{organization_id}/locations/{location}`",
+                      "location": "path",
+                      "pattern": "^organizations/[^/]+/locations/[^/]+$",
+                      "required": true,
+                      "type": "string"
+                    },
+                    "policyBindingId": {
+                      "description": "Required. The ID to use for the policy binding, which will become the final component of the policy binding's resource name. This value must start with a lowercase letter followed by up to 62 lowercase letters, numbers, hyphens, or dots. Pattern, /a-z{2,62}/.",
+                      "location": "query",
+                      "type": "string"
+                    },
+                    "validateOnly": {
+                      "description": "Optional. If set, validate the request and preview the creation, but do not actually post it.",
+                      "location": "query",
+                      "type": "boolean"
+                    }
+                  },
+                  "path": "v3/{+parent}/policyBindings",
+                  "request": {
+                    "$ref": "GoogleIamV3PolicyBinding"
+                  },
+                  "response": {
+                    "$ref": "GoogleLongrunningOperation"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ]
+                },
+                "delete": {
+                  "description": "Deletes a policy binding and returns a long-running operation. Callers will need the IAM permissions on both the policy and target. After the binding is deleted, the policy no longer applies to the target.",
+                  "flatPath": "v3/organizations/{organizationsId}/locations/{locationsId}/policyBindings/{policyBindingsId}",
+                  "httpMethod": "DELETE",
+                  "id": "iam.organizations.locations.policyBindings.delete",
+                  "parameterOrder": [
+                    "name"
+                  ],
+                  "parameters": {
+                    "etag": {
+                      "description": "Optional. The etag of the policy binding. If this is provided, it must match the server's etag.",
+                      "location": "query",
+                      "type": "string"
+                    },
+                    "name": {
+                      "description": "Required. The name of the policy binding to delete. Format: * `projects/{project_id}/locations/{location}/policyBindings/{policy_binding_id}` * `projects/{project_number}/locations/{location}/policyBindings/{policy_binding_id}` * `folders/{folder_id}/locations/{location}/policyBindings/{policy_binding_id}` * `organizations/{organization_id}/locations/{location}/policyBindings/{policy_binding_id}`",
+                      "location": "path",
+                      "pattern": "^organizations/[^/]+/locations/[^/]+/policyBindings/[^/]+$",
+                      "required": true,
+                      "type": "string"
+                    },
+                    "validateOnly": {
+                      "description": "Optional. If set, validate the request and preview the deletion, but do not actually post it.",
+                      "location": "query",
+                      "type": "boolean"
+                    }
+                  },
+                  "path": "v3/{+name}",
+                  "response": {
+                    "$ref": "GoogleLongrunningOperation"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ]
+                },
+                "get": {
+                  "description": "Gets a policy binding.",
+                  "flatPath": "v3/organizations/{organizationsId}/locations/{locationsId}/policyBindings/{policyBindingsId}",
+                  "httpMethod": "GET",
+                  "id": "iam.organizations.locations.policyBindings.get",
+                  "parameterOrder": [
+                    "name"
+                  ],
+                  "parameters": {
+                    "name": {
+                      "description": "Required. The name of the policy binding to retrieve. Format: * `projects/{project_id}/locations/{location}/policyBindings/{policy_binding_id}` * `projects/{project_number}/locations/{location}/policyBindings/{policy_binding_id}` * `folders/{folder_id}/locations/{location}/policyBindings/{policy_binding_id}` * `organizations/{organization_id}/locations/{location}/policyBindings/{policy_binding_id}`",
+                      "location": "path",
+                      "pattern": "^organizations/[^/]+/locations/[^/]+/policyBindings/[^/]+$",
+                      "required": true,
+                      "type": "string"
+                    }
+                  },
+                  "path": "v3/{+name}",
+                  "response": {
+                    "$ref": "GoogleIamV3PolicyBinding"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ]
+                },
+                "list": {
+                  "description": "Lists policy bindings.",
+                  "flatPath": "v3/organizations/{organizationsId}/locations/{locationsId}/policyBindings",
+                  "httpMethod": "GET",
+                  "id": "iam.organizations.locations.policyBindings.list",
+                  "parameterOrder": [
+                    "parent"
+                  ],
+                  "parameters": {
+                    "filter": {
+                      "description": "Optional. An expression for filtering the results of the request. Filter rules are case insensitive. Some eligible fields for filtering are the following: + `target` + `policy` Some examples of filter queries: * `target:ex*`: The binding target's name starts with \"ex\". * `target:example`: The binding target's name is `example`. * `policy:example`: The binding policy's name is `example`.",
+                      "location": "query",
+                      "type": "string"
+                    },
+                    "pageSize": {
+                      "description": "Optional. The maximum number of policy bindings to return. The service may return fewer than this value. The default value is 50. The maximum value is 1000.",
+                      "format": "int32",
+                      "location": "query",
+                      "type": "integer"
+                    },
+                    "pageToken": {
+                      "description": "Optional. A page token, received from a previous `ListPolicyBindings` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListPolicyBindings` must match the call that provided the page token.",
+                      "location": "query",
+                      "type": "string"
+                    },
+                    "parent": {
+                      "description": "Required. The parent resource, which owns the collection of policy bindings. Format: * `projects/{project_id}/locations/{location}` * `projects/{project_number}/locations/{location}` * `folders/{folder_id}/locations/{location}` * `organizations/{organization_id}/locations/{location}`",
+                      "location": "path",
+                      "pattern": "^organizations/[^/]+/locations/[^/]+$",
+                      "required": true,
+                      "type": "string"
+                    }
+                  },
+                  "path": "v3/{+parent}/policyBindings",
+                  "response": {
+                    "$ref": "GoogleIamV3ListPolicyBindingsResponse"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ]
+                },
+                "patch": {
+                  "description": "Updates a policy binding and returns a long-running operation. Callers will need the IAM permissions on the policy and target in the binding to update. Target and policy are immutable and cannot be updated.",
+                  "flatPath": "v3/organizations/{organizationsId}/locations/{locationsId}/policyBindings/{policyBindingsId}",
+                  "httpMethod": "PATCH",
+                  "id": "iam.organizations.locations.policyBindings.patch",
+                  "parameterOrder": [
+                    "name"
+                  ],
+                  "parameters": {
+                    "name": {
+                      "description": "Identifier. The name of the policy binding, in the format `{binding_parent/locations/{location}/policyBindings/{policy_binding_id}`. The binding parent is the closest Resource Manager resource (project, folder, or organization) to the binding target. Format: * `projects/{project_id}/locations/{location}/policyBindings/{policy_binding_id}` * `projects/{project_number}/locations/{location}/policyBindings/{policy_binding_id}` * `folders/{folder_id}/locations/{location}/policyBindings/{policy_binding_id}` * `organizations/{organization_id}/locations/{location}/policyBindings/{policy_binding_id}`",
+                      "location": "path",
+                      "pattern": "^organizations/[^/]+/locations/[^/]+/policyBindings/[^/]+$",
+                      "required": true,
+                      "type": "string"
+                    },
+                    "updateMask": {
+                      "description": "Optional. The list of fields to update",
+                      "format": "google-fieldmask",
+                      "location": "query",
+                      "type": "string"
+                    },
+                    "validateOnly": {
+                      "description": "Optional. If set, validate the request and preview the update, but do not actually post it.",
+                      "location": "query",
+                      "type": "boolean"
+                    }
+                  },
+                  "path": "v3/{+name}",
+                  "request": {
+                    "$ref": "GoogleIamV3PolicyBinding"
+                  },
+                  "response": {
+                    "$ref": "GoogleLongrunningOperation"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ]
+                },
+                "searchTargetPolicyBindings": {
+                  "description": "Search policy bindings by target. Returns all policy binding objects bound directly to target.",
+                  "flatPath": "v3/organizations/{organizationsId}/locations/{locationsId}/policyBindings:searchTargetPolicyBindings",
+                  "httpMethod": "GET",
+                  "id": "iam.organizations.locations.policyBindings.searchTargetPolicyBindings",
+                  "parameterOrder": [
+                    "parent"
+                  ],
+                  "parameters": {
+                    "pageSize": {
+                      "description": "Optional. The maximum number of policy bindings to return. The service may return fewer than this value. The default value is 50. The maximum value is 1000.",
+                      "format": "int32",
+                      "location": "query",
+                      "type": "integer"
+                    },
+                    "pageToken": {
+                      "description": "Optional. A page token, received from a previous `SearchTargetPolicyBindingsRequest` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `SearchTargetPolicyBindingsRequest` must match the call that provided the page token.",
+                      "location": "query",
+                      "type": "string"
+                    },
+                    "parent": {
+                      "description": "Required. The parent resource where this search will be performed. This should be the nearest Resource Manager resource (project, folder, or organization) to the target. Format: * `projects/{project_id}/locations/{location}` * `projects/{project_number}/locations/{location}` * `folders/{folder_id}/locations/{location}` * `organizations/{organization_id}/locations/{location}`",
+                      "location": "path",
+                      "pattern": "^organizations/[^/]+/locations/[^/]+$",
+                      "required": true,
+                      "type": "string"
+                    },
+                    "target": {
+                      "description": "Required. The target resource, which is bound to the policy in the binding. Format: * `//iam.googleapis.com/locations/global/workforcePools/POOL_ID` * `//iam.googleapis.com/projects/PROJECT_NUMBER/locations/global/workloadIdentityPools/POOL_ID` * `//iam.googleapis.com/locations/global/workspace/WORKSPACE_ID` * `//cloudresourcemanager.googleapis.com/projects/{project_number}` * `//cloudresourcemanager.googleapis.com/folders/{folder_id}` * `//cloudresourcemanager.googleapis.com/organizations/{organization_id}`",
+                      "location": "query",
+                      "type": "string"
+                    }
+                  },
+                  "path": "v3/{+parent}/policyBindings:searchTargetPolicyBindings",
+                  "response": {
+                    "$ref": "GoogleIamV3SearchTargetPolicyBindingsResponse"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ]
+                }
+              }
+            },
+            "principalAccessBoundaryPolicies": {
+              "methods": {
+                "create": {
+                  "description": "Creates a principal access boundary policy, and returns a long running operation.",
+                  "flatPath": "v3/organizations/{organizationsId}/locations/{locationsId}/principalAccessBoundaryPolicies",
+                  "httpMethod": "POST",
+                  "id": "iam.organizations.locations.principalAccessBoundaryPolicies.create",
+                  "parameterOrder": [
+                    "parent"
+                  ],
+                  "parameters": {
+                    "parent": {
+                      "description": "Required. The parent resource where this principal access boundary policy will be created. Only organizations are supported. Format: `organizations/{organization_id}/locations/{location}`",
+                      "location": "path",
+                      "pattern": "^organizations/[^/]+/locations/[^/]+$",
+                      "required": true,
+                      "type": "string"
+                    },
+                    "principalAccessBoundaryPolicyId": {
+                      "description": "Required. The ID to use for the principal access boundary policy, which will become the final component of the principal access boundary policy's resource name. This value must start with a lowercase letter followed by up to 62 lowercase letters, numbers, hyphens, or dots. Pattern, /a-z{2,62}/.",
+                      "location": "query",
+                      "type": "string"
+                    },
+                    "validateOnly": {
+                      "description": "Optional. If set, validate the request and preview the creation, but do not actually post it.",
+                      "location": "query",
+                      "type": "boolean"
+                    }
+                  },
+                  "path": "v3/{+parent}/principalAccessBoundaryPolicies",
+                  "request": {
+                    "$ref": "GoogleIamV3PrincipalAccessBoundaryPolicy"
+                  },
+                  "response": {
+                    "$ref": "GoogleLongrunningOperation"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ]
+                },
+                "delete": {
+                  "description": "Deletes a principal access boundary policy.",
+                  "flatPath": "v3/organizations/{organizationsId}/locations/{locationsId}/principalAccessBoundaryPolicies/{principalAccessBoundaryPoliciesId}",
+                  "httpMethod": "DELETE",
+                  "id": "iam.organizations.locations.principalAccessBoundaryPolicies.delete",
+                  "parameterOrder": [
+                    "name"
+                  ],
+                  "parameters": {
+                    "etag": {
+                      "description": "Optional. The etag of the principal access boundary policy. If this is provided, it must match the server's etag.",
+                      "location": "query",
+                      "type": "string"
+                    },
+                    "force": {
+                      "description": "Optional. If set to true, the request will force the deletion of the policy even if the policy is referenced in policy bindings.",
+                      "location": "query",
+                      "type": "boolean"
+                    },
+                    "name": {
+                      "description": "Required. The name of the principal access boundary policy to delete. Format: `organizations/{organization_id}/locations/{location}/principalAccessBoundaryPolicies/{principal_access_boundary_policy_id}`",
+                      "location": "path",
+                      "pattern": "^organizations/[^/]+/locations/[^/]+/principalAccessBoundaryPolicies/[^/]+$",
+                      "required": true,
+                      "type": "string"
+                    },
+                    "validateOnly": {
+                      "description": "Optional. If set, validate the request and preview the deletion, but do not actually post it.",
+                      "location": "query",
+                      "type": "boolean"
+                    }
+                  },
+                  "path": "v3/{+name}",
+                  "response": {
+                    "$ref": "GoogleLongrunningOperation"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ]
+                },
+                "get": {
+                  "description": "Gets a principal access boundary policy.",
+                  "flatPath": "v3/organizations/{organizationsId}/locations/{locationsId}/principalAccessBoundaryPolicies/{principalAccessBoundaryPoliciesId}",
+                  "httpMethod": "GET",
+                  "id": "iam.organizations.locations.principalAccessBoundaryPolicies.get",
+                  "parameterOrder": [
+                    "name"
+                  ],
+                  "parameters": {
+                    "name": {
+                      "description": "Required. The name of the principal access boundary policy to retrieve. Format: `organizations/{organization_id}/locations/{location}/principalAccessBoundaryPolicies/{principal_access_boundary_policy_id}`",
+                      "location": "path",
+                      "pattern": "^organizations/[^/]+/locations/[^/]+/principalAccessBoundaryPolicies/[^/]+$",
+                      "required": true,
+                      "type": "string"
+                    }
+                  },
+                  "path": "v3/{+name}",
+                  "response": {
+                    "$ref": "GoogleIamV3PrincipalAccessBoundaryPolicy"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ]
+                },
+                "list": {
+                  "description": "Lists principal access boundary policies.",
+                  "flatPath": "v3/organizations/{organizationsId}/locations/{locationsId}/principalAccessBoundaryPolicies",
+                  "httpMethod": "GET",
+                  "id": "iam.organizations.locations.principalAccessBoundaryPolicies.list",
+                  "parameterOrder": [
+                    "parent"
+                  ],
+                  "parameters": {
+                    "pageSize": {
+                      "description": "Optional. The maximum number of principal access boundary policies to return. The service may return fewer than this value. If unspecified, at most 50 principal access boundary policies will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.",
+                      "format": "int32",
+                      "location": "query",
+                      "type": "integer"
+                    },
+                    "pageToken": {
+                      "description": "Optional. A page token, received from a previous `ListPrincipalAccessBoundaryPolicies` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListPrincipalAccessBoundaryPolicies` must match the call that provided the page token.",
+                      "location": "query",
+                      "type": "string"
+                    },
+                    "parent": {
+                      "description": "Required. The parent resource, which owns the collection of principal access boundary policies. Format: `organizations/{organization_id}/locations/{location}`",
+                      "location": "path",
+                      "pattern": "^organizations/[^/]+/locations/[^/]+$",
+                      "required": true,
+                      "type": "string"
+                    }
+                  },
+                  "path": "v3/{+parent}/principalAccessBoundaryPolicies",
+                  "response": {
+                    "$ref": "GoogleIamV3ListPrincipalAccessBoundaryPoliciesResponse"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ]
+                },
+                "patch": {
+                  "description": "Updates a principal access boundary policy.",
+                  "flatPath": "v3/organizations/{organizationsId}/locations/{locationsId}/principalAccessBoundaryPolicies/{principalAccessBoundaryPoliciesId}",
+                  "httpMethod": "PATCH",
+                  "id": "iam.organizations.locations.principalAccessBoundaryPolicies.patch",
+                  "parameterOrder": [
+                    "name"
+                  ],
+                  "parameters": {
+                    "name": {
+                      "description": "Identifier. The resource name of the principal access boundary policy. The following format is supported: `organizations/{organization_id}/locations/{location}/principalAccessBoundaryPolicies/{policy_id}`",
+                      "location": "path",
+                      "pattern": "^organizations/[^/]+/locations/[^/]+/principalAccessBoundaryPolicies/[^/]+$",
+                      "required": true,
+                      "type": "string"
+                    },
+                    "updateMask": {
+                      "description": "Optional. The list of fields to update",
+                      "format": "google-fieldmask",
+                      "location": "query",
+                      "type": "string"
+                    },
+                    "validateOnly": {
+                      "description": "Optional. If set, validate the request and preview the update, but do not actually post it.",
+                      "location": "query",
+                      "type": "boolean"
+                    }
+                  },
+                  "path": "v3/{+name}",
+                  "request": {
+                    "$ref": "GoogleIamV3PrincipalAccessBoundaryPolicy"
+                  },
+                  "response": {
+                    "$ref": "GoogleLongrunningOperation"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ]
+                },
+                "searchPolicyBindings": {
+                  "description": "Returns all policy bindings that bind a specific policy if a user has searchPolicyBindings permission on that policy.",
+                  "flatPath": "v3/organizations/{organizationsId}/locations/{locationsId}/principalAccessBoundaryPolicies/{principalAccessBoundaryPoliciesId}:searchPolicyBindings",
+                  "httpMethod": "GET",
+                  "id": "iam.organizations.locations.principalAccessBoundaryPolicies.searchPolicyBindings",
+                  "parameterOrder": [
+                    "name"
+                  ],
+                  "parameters": {
+                    "name": {
+                      "description": "Required. The name of the principal access boundary policy. Format: `organizations/{organization_id}/locations/{location}/principalAccessBoundaryPolicies/{principal_access_boundary_policy_id}`",
+                      "location": "path",
+                      "pattern": "^organizations/[^/]+/locations/[^/]+/principalAccessBoundaryPolicies/[^/]+$",
+                      "required": true,
+                      "type": "string"
+                    },
+                    "pageSize": {
+                      "description": "Optional. The maximum number of policy bindings to return. The service may return fewer than this value. If unspecified, at most 50 policy bindings will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.",
+                      "format": "int32",
+                      "location": "query",
+                      "type": "integer"
+                    },
+                    "pageToken": {
+                      "description": "Optional. A page token, received from a previous `SearchPrincipalAccessBoundaryPolicyBindingsRequest` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `SearchPrincipalAccessBoundaryPolicyBindingsRequest` must match the call that provided the page token.",
+                      "location": "query",
+                      "type": "string"
+                    }
+                  },
+                  "path": "v3/{+name}:searchPolicyBindings",
+                  "response": {
+                    "$ref": "GoogleIamV3SearchPrincipalAccessBoundaryPolicyBindingsResponse"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "projects": {
+      "resources": {
+        "locations": {
+          "resources": {
+            "operations": {
+              "methods": {
+                "get": {
+                  "description": "Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.",
+                  "flatPath": "v3/projects/{projectsId}/locations/{locationsId}/operations/{operationsId}",
+                  "httpMethod": "GET",
+                  "id": "iam.projects.locations.operations.get",
+                  "parameterOrder": [
+                    "name"
+                  ],
+                  "parameters": {
+                    "name": {
+                      "description": "The name of the operation resource.",
+                      "location": "path",
+                      "pattern": "^projects/[^/]+/locations/[^/]+/operations/[^/]+$",
+                      "required": true,
+                      "type": "string"
+                    }
+                  },
+                  "path": "v3/{+name}",
+                  "response": {
+                    "$ref": "GoogleLongrunningOperation"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ]
+                }
+              }
+            },
+            "policyBindings": {
+              "methods": {
+                "create": {
+                  "description": "Creates a policy binding and returns a long-running operation. Callers will need the IAM permissions on both the policy and target. After the binding is created, the policy is applied to the target.",
+                  "flatPath": "v3/projects/{projectsId}/locations/{locationsId}/policyBindings",
+                  "httpMethod": "POST",
+                  "id": "iam.projects.locations.policyBindings.create",
+                  "parameterOrder": [
+                    "parent"
+                  ],
+                  "parameters": {
+                    "parent": {
+                      "description": "Required. The parent resource where this policy binding will be created. The binding parent is the closest Resource Manager resource (project, folder or organization) to the binding target. Format: * `projects/{project_id}/locations/{location}` * `projects/{project_number}/locations/{location}` * `folders/{folder_id}/locations/{location}` * `organizations/{organization_id}/locations/{location}`",
+                      "location": "path",
+                      "pattern": "^projects/[^/]+/locations/[^/]+$",
+                      "required": true,
+                      "type": "string"
+                    },
+                    "policyBindingId": {
+                      "description": "Required. The ID to use for the policy binding, which will become the final component of the policy binding's resource name. This value must start with a lowercase letter followed by up to 62 lowercase letters, numbers, hyphens, or dots. Pattern, /a-z{2,62}/.",
+                      "location": "query",
+                      "type": "string"
+                    },
+                    "validateOnly": {
+                      "description": "Optional. If set, validate the request and preview the creation, but do not actually post it.",
+                      "location": "query",
+                      "type": "boolean"
+                    }
+                  },
+                  "path": "v3/{+parent}/policyBindings",
+                  "request": {
+                    "$ref": "GoogleIamV3PolicyBinding"
+                  },
+                  "response": {
+                    "$ref": "GoogleLongrunningOperation"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ]
+                },
+                "delete": {
+                  "description": "Deletes a policy binding and returns a long-running operation. Callers will need the IAM permissions on both the policy and target. After the binding is deleted, the policy no longer applies to the target.",
+                  "flatPath": "v3/projects/{projectsId}/locations/{locationsId}/policyBindings/{policyBindingsId}",
+                  "httpMethod": "DELETE",
+                  "id": "iam.projects.locations.policyBindings.delete",
+                  "parameterOrder": [
+                    "name"
+                  ],
+                  "parameters": {
+                    "etag": {
+                      "description": "Optional. The etag of the policy binding. If this is provided, it must match the server's etag.",
+                      "location": "query",
+                      "type": "string"
+                    },
+                    "name": {
+                      "description": "Required. The name of the policy binding to delete. Format: * `projects/{project_id}/locations/{location}/policyBindings/{policy_binding_id}` * `projects/{project_number}/locations/{location}/policyBindings/{policy_binding_id}` * `folders/{folder_id}/locations/{location}/policyBindings/{policy_binding_id}` * `organizations/{organization_id}/locations/{location}/policyBindings/{policy_binding_id}`",
+                      "location": "path",
+                      "pattern": "^projects/[^/]+/locations/[^/]+/policyBindings/[^/]+$",
+                      "required": true,
+                      "type": "string"
+                    },
+                    "validateOnly": {
+                      "description": "Optional. If set, validate the request and preview the deletion, but do not actually post it.",
+                      "location": "query",
+                      "type": "boolean"
+                    }
+                  },
+                  "path": "v3/{+name}",
+                  "response": {
+                    "$ref": "GoogleLongrunningOperation"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ]
+                },
+                "get": {
+                  "description": "Gets a policy binding.",
+                  "flatPath": "v3/projects/{projectsId}/locations/{locationsId}/policyBindings/{policyBindingsId}",
+                  "httpMethod": "GET",
+                  "id": "iam.projects.locations.policyBindings.get",
+                  "parameterOrder": [
+                    "name"
+                  ],
+                  "parameters": {
+                    "name": {
+                      "description": "Required. The name of the policy binding to retrieve. Format: * `projects/{project_id}/locations/{location}/policyBindings/{policy_binding_id}` * `projects/{project_number}/locations/{location}/policyBindings/{policy_binding_id}` * `folders/{folder_id}/locations/{location}/policyBindings/{policy_binding_id}` * `organizations/{organization_id}/locations/{location}/policyBindings/{policy_binding_id}`",
+                      "location": "path",
+                      "pattern": "^projects/[^/]+/locations/[^/]+/policyBindings/[^/]+$",
+                      "required": true,
+                      "type": "string"
+                    }
+                  },
+                  "path": "v3/{+name}",
+                  "response": {
+                    "$ref": "GoogleIamV3PolicyBinding"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ]
+                },
+                "list": {
+                  "description": "Lists policy bindings.",
+                  "flatPath": "v3/projects/{projectsId}/locations/{locationsId}/policyBindings",
+                  "httpMethod": "GET",
+                  "id": "iam.projects.locations.policyBindings.list",
+                  "parameterOrder": [
+                    "parent"
+                  ],
+                  "parameters": {
+                    "filter": {
+                      "description": "Optional. An expression for filtering the results of the request. Filter rules are case insensitive. Some eligible fields for filtering are the following: + `target` + `policy` Some examples of filter queries: * `target:ex*`: The binding target's name starts with \"ex\". * `target:example`: The binding target's name is `example`. * `policy:example`: The binding policy's name is `example`.",
+                      "location": "query",
+                      "type": "string"
+                    },
+                    "pageSize": {
+                      "description": "Optional. The maximum number of policy bindings to return. The service may return fewer than this value. The default value is 50. The maximum value is 1000.",
+                      "format": "int32",
+                      "location": "query",
+                      "type": "integer"
+                    },
+                    "pageToken": {
+                      "description": "Optional. A page token, received from a previous `ListPolicyBindings` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListPolicyBindings` must match the call that provided the page token.",
+                      "location": "query",
+                      "type": "string"
+                    },
+                    "parent": {
+                      "description": "Required. The parent resource, which owns the collection of policy bindings. Format: * `projects/{project_id}/locations/{location}` * `projects/{project_number}/locations/{location}` * `folders/{folder_id}/locations/{location}` * `organizations/{organization_id}/locations/{location}`",
+                      "location": "path",
+                      "pattern": "^projects/[^/]+/locations/[^/]+$",
+                      "required": true,
+                      "type": "string"
+                    }
+                  },
+                  "path": "v3/{+parent}/policyBindings",
+                  "response": {
+                    "$ref": "GoogleIamV3ListPolicyBindingsResponse"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ]
+                },
+                "patch": {
+                  "description": "Updates a policy binding and returns a long-running operation. Callers will need the IAM permissions on the policy and target in the binding to update. Target and policy are immutable and cannot be updated.",
+                  "flatPath": "v3/projects/{projectsId}/locations/{locationsId}/policyBindings/{policyBindingsId}",
+                  "httpMethod": "PATCH",
+                  "id": "iam.projects.locations.policyBindings.patch",
+                  "parameterOrder": [
+                    "name"
+                  ],
+                  "parameters": {
+                    "name": {
+                      "description": "Identifier. The name of the policy binding, in the format `{binding_parent/locations/{location}/policyBindings/{policy_binding_id}`. The binding parent is the closest Resource Manager resource (project, folder, or organization) to the binding target. Format: * `projects/{project_id}/locations/{location}/policyBindings/{policy_binding_id}` * `projects/{project_number}/locations/{location}/policyBindings/{policy_binding_id}` * `folders/{folder_id}/locations/{location}/policyBindings/{policy_binding_id}` * `organizations/{organization_id}/locations/{location}/policyBindings/{policy_binding_id}`",
+                      "location": "path",
+                      "pattern": "^projects/[^/]+/locations/[^/]+/policyBindings/[^/]+$",
+                      "required": true,
+                      "type": "string"
+                    },
+                    "updateMask": {
+                      "description": "Optional. The list of fields to update",
+                      "format": "google-fieldmask",
+                      "location": "query",
+                      "type": "string"
+                    },
+                    "validateOnly": {
+                      "description": "Optional. If set, validate the request and preview the update, but do not actually post it.",
+                      "location": "query",
+                      "type": "boolean"
+                    }
+                  },
+                  "path": "v3/{+name}",
+                  "request": {
+                    "$ref": "GoogleIamV3PolicyBinding"
+                  },
+                  "response": {
+                    "$ref": "GoogleLongrunningOperation"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ]
+                },
+                "searchTargetPolicyBindings": {
+                  "description": "Search policy bindings by target. Returns all policy binding objects bound directly to target.",
+                  "flatPath": "v3/projects/{projectsId}/locations/{locationsId}/policyBindings:searchTargetPolicyBindings",
+                  "httpMethod": "GET",
+                  "id": "iam.projects.locations.policyBindings.searchTargetPolicyBindings",
+                  "parameterOrder": [
+                    "parent"
+                  ],
+                  "parameters": {
+                    "pageSize": {
+                      "description": "Optional. The maximum number of policy bindings to return. The service may return fewer than this value. The default value is 50. The maximum value is 1000.",
+                      "format": "int32",
+                      "location": "query",
+                      "type": "integer"
+                    },
+                    "pageToken": {
+                      "description": "Optional. A page token, received from a previous `SearchTargetPolicyBindingsRequest` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `SearchTargetPolicyBindingsRequest` must match the call that provided the page token.",
+                      "location": "query",
+                      "type": "string"
+                    },
+                    "parent": {
+                      "description": "Required. The parent resource where this search will be performed. This should be the nearest Resource Manager resource (project, folder, or organization) to the target. Format: * `projects/{project_id}/locations/{location}` * `projects/{project_number}/locations/{location}` * `folders/{folder_id}/locations/{location}` * `organizations/{organization_id}/locations/{location}`",
+                      "location": "path",
+                      "pattern": "^projects/[^/]+/locations/[^/]+$",
+                      "required": true,
+                      "type": "string"
+                    },
+                    "target": {
+                      "description": "Required. The target resource, which is bound to the policy in the binding. Format: * `//iam.googleapis.com/locations/global/workforcePools/POOL_ID` * `//iam.googleapis.com/projects/PROJECT_NUMBER/locations/global/workloadIdentityPools/POOL_ID` * `//iam.googleapis.com/locations/global/workspace/WORKSPACE_ID` * `//cloudresourcemanager.googleapis.com/projects/{project_number}` * `//cloudresourcemanager.googleapis.com/folders/{folder_id}` * `//cloudresourcemanager.googleapis.com/organizations/{organization_id}`",
+                      "location": "query",
+                      "type": "string"
+                    }
+                  },
+                  "path": "v3/{+parent}/policyBindings:searchTargetPolicyBindings",
+                  "response": {
+                    "$ref": "GoogleIamV3SearchTargetPolicyBindingsResponse"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "retrieved_from": "https://iam.googleapis.com/$discovery/rest?version=v3&key=****",
+  "rootUrl": "https://iam.googleapis.com/",
+  "schemas": {
+    "GoogleIamAdminV1AuditData": {
+      "description": "Audit log information specific to Cloud IAM admin APIs. This message is serialized as an `Any` type in the `ServiceData` message of an `AuditLog` message.",
+      "id": "GoogleIamAdminV1AuditData",
+      "properties": {
+        "permissionDelta": {
+          "$ref": "GoogleIamAdminV1AuditDataPermissionDelta",
+          "description": "The permission_delta when when creating or updating a Role."
+        }
+      },
+      "type": "object"
+    },
+    "GoogleIamAdminV1AuditDataPermissionDelta": {
+      "description": "A PermissionDelta message to record the added_permissions and removed_permissions inside a role.",
+      "id": "GoogleIamAdminV1AuditDataPermissionDelta",
+      "properties": {
+        "addedPermissions": {
+          "description": "Added permissions.",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "removedPermissions": {
+          "description": "Removed permissions.",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "GoogleIamV3ListPolicyBindingsResponse": {
+      "description": "Response message for ListPolicyBindings method.",
+      "id": "GoogleIamV3ListPolicyBindingsResponse",
+      "properties": {
+        "nextPageToken": {
+          "description": "Optional. A token, which can be sent as `page_token` to retrieve the next page. If this field is omitted, there are no subsequent pages.",
+          "type": "string"
+        },
+        "policyBindings": {
+          "description": "The policy bindings from the specified parent.",
+          "items": {
+            "$ref": "GoogleIamV3PolicyBinding"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "GoogleIamV3ListPrincipalAccessBoundaryPoliciesResponse": {
+      "description": "Response message for ListPrincipalAccessBoundaryPolicies method.",
+      "id": "GoogleIamV3ListPrincipalAccessBoundaryPoliciesResponse",
+      "properties": {
+        "nextPageToken": {
+          "description": "Optional. A token, which can be sent as `page_token` to retrieve the next page. If this field is omitted, there are no subsequent pages.",
+          "type": "string"
+        },
+        "principalAccessBoundaryPolicies": {
+          "description": "The principal access boundary policies from the specified parent.",
+          "items": {
+            "$ref": "GoogleIamV3PrincipalAccessBoundaryPolicy"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "GoogleIamV3OperationMetadata": {
+      "description": "Represents the metadata of the long-running operation.",
+      "id": "GoogleIamV3OperationMetadata",
+      "properties": {
+        "apiVersion": {
+          "description": "Output only. API version used to start the operation.",
+          "readOnly": true,
+          "type": "string"
+        },
+        "createTime": {
+          "description": "Output only. The time the operation was created.",
+          "format": "google-datetime",
+          "readOnly": true,
+          "type": "string"
+        },
+        "endTime": {
+          "description": "Output only. The time the operation finished running.",
+          "format": "google-datetime",
+          "readOnly": true,
+          "type": "string"
+        },
+        "requestedCancellation": {
+          "description": "Output only. Identifies whether the user has requested cancellation of the operation. Operations that have successfully been cancelled have Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`.",
+          "readOnly": true,
+          "type": "boolean"
+        },
+        "statusMessage": {
+          "description": "Output only. Human-readable status of the operation, if any.",
+          "readOnly": true,
+          "type": "string"
+        },
+        "target": {
+          "description": "Output only. Server-defined resource path for the target of the",
+          "readOnly": true,
+          "type": "string"
+        },
+        "verb": {
+          "description": "Output only. Name of the verb executed by the operation.",
+          "readOnly": true,
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "GoogleIamV3PolicyBinding": {
+      "description": "IAM policy binding resource.",
+      "id": "GoogleIamV3PolicyBinding",
+      "properties": {
+        "annotations": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "Optional. User-defined annotations. See https://google.aip.dev/148#annotations for more details such as format and size limitations",
+          "type": "object"
+        },
+        "condition": {
+          "$ref": "GoogleTypeExpr",
+          "description": "Optional. The condition to apply to the policy binding. When set, the `expression` field in the `Expr` must include from 1 to 10 subexpressions, joined by the \"||\"(Logical OR), \"&&\"(Logical AND) or \"!\"(Logical NOT) operators and cannot contain more than 250 characters. The condition is currently only supported when bound to policies of kind principal access boundary. When the bound policy is a principal access boundary policy, the only supported attributes in any subexpression are `principal.type` and `principal.subject`. An example expression is: \"principal.type == 'iam.googleapis.com/ServiceAccount'\" or \"principal.subject == 'bob@example.com'\". Allowed operations for `principal.subject`: - `principal.subject == ` - `principal.subject != ` - `principal.subject in []` - `principal.subject.startsWith()` - `principal.subject.endsWith()` Allowed operations for `principal.type`: - `principal.type == ` - `principal.type != ` - `principal.type in []` Supported principal types are workspace, workforce pool, workload pool, service account, and agent identity. Allowed string must be one of: - `iam.googleapis.com/WorkspaceIdentity` - `iam.googleapis.com/WorkforcePoolIdentity` - `iam.googleapis.com/WorkloadPoolIdentity` - `iam.googleapis.com/ServiceAccount` - `iam.googleapis.com/AgentPoolIdentity` (available in Preview)"
+        },
+        "createTime": {
+          "description": "Output only. The time when the policy binding was created.",
+          "format": "google-datetime",
+          "readOnly": true,
+          "type": "string"
+        },
+        "displayName": {
+          "description": "Optional. The description of the policy binding. Must be less than or equal to 63 characters.",
+          "type": "string"
+        },
+        "etag": {
+          "description": "Optional. The etag for the policy binding. If this is provided on update, it must match the server's etag.",
+          "type": "string"
+        },
+        "name": {
+          "description": "Identifier. The name of the policy binding, in the format `{binding_parent/locations/{location}/policyBindings/{policy_binding_id}`. The binding parent is the closest Resource Manager resource (project, folder, or organization) to the binding target. Format: * `projects/{project_id}/locations/{location}/policyBindings/{policy_binding_id}` * `projects/{project_number}/locations/{location}/policyBindings/{policy_binding_id}` * `folders/{folder_id}/locations/{location}/policyBindings/{policy_binding_id}` * `organizations/{organization_id}/locations/{location}/policyBindings/{policy_binding_id}`",
+          "type": "string"
+        },
+        "policy": {
+          "description": "Required. Immutable. The resource name of the policy to be bound. The binding parent and policy must belong to the same organization.",
+          "type": "string"
+        },
+        "policyKind": {
+          "description": "Immutable. The kind of the policy to attach in this binding. This field must be one of the following: - Left empty (will be automatically set to the policy kind) - The input policy kind",
+          "enum": [
+            "POLICY_KIND_UNSPECIFIED",
+            "PRINCIPAL_ACCESS_BOUNDARY"
+          ],
+          "enumDescriptions": [
+            "Unspecified policy kind; Not a valid state",
+            "Principal access boundary policy kind"
+          ],
+          "type": "string"
+        },
+        "policyUid": {
+          "description": "Output only. The globally unique ID of the policy to be bound.",
+          "readOnly": true,
+          "type": "string"
+        },
+        "target": {
+          "$ref": "GoogleIamV3PolicyBindingTarget",
+          "description": "Required. Immutable. The full resource name of the resource to which the policy will be bound. Immutable once set."
+        },
+        "uid": {
+          "description": "Output only. The globally unique ID of the policy binding. Assigned when the policy binding is created.",
+          "readOnly": true,
+          "type": "string"
+        },
+        "updateTime": {
+          "description": "Output only. The time when the policy binding was most recently updated.",
+          "format": "google-datetime",
+          "readOnly": true,
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "GoogleIamV3PolicyBindingTarget": {
+      "description": "The full resource name of the resource to which the policy will be bound. Immutable once set.",
+      "id": "GoogleIamV3PolicyBindingTarget",
+      "properties": {
+        "principalSet": {
+          "description": "Immutable. The full resource name that's used for principal access boundary policy bindings. The principal set must be directly parented by the policy binding's parent or same as the parent if the target is a project, folder, or organization. Examples: * For bindings parented by an organization: * Organization: `//cloudresourcemanager.googleapis.com/organizations/ORGANIZATION_ID` * Workforce Identity: `//iam.googleapis.com/locations/global/workforcePools/WORKFORCE_POOL_ID` * Workspace Identity: `//iam.googleapis.com/locations/global/workspace/WORKSPACE_ID` * For bindings parented by a folder: * Folder: `//cloudresourcemanager.googleapis.com/folders/FOLDER_ID` * For bindings parented by a project: * Project: * `//cloudresourcemanager.googleapis.com/projects/PROJECT_NUMBER` * `//cloudresourcemanager.googleapis.com/projects/PROJECT_ID` * Workload Identity Pool: `//iam.googleapis.com/projects/PROJECT_NUMBER/locations/LOCATION/workloadIdentityPools/WORKLOAD_POOL_ID`",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "GoogleIamV3PrincipalAccessBoundaryPolicy": {
+      "description": "An IAM principal access boundary policy resource.",
+      "id": "GoogleIamV3PrincipalAccessBoundaryPolicy",
+      "properties": {
+        "annotations": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "Optional. User defined annotations. See https://google.aip.dev/148#annotations for more details such as format and size limitations",
+          "type": "object"
+        },
+        "createTime": {
+          "description": "Output only. The time when the principal access boundary policy was created.",
+          "format": "google-datetime",
+          "readOnly": true,
+          "type": "string"
+        },
+        "details": {
+          "$ref": "GoogleIamV3PrincipalAccessBoundaryPolicyDetails",
+          "description": "Optional. The details for the principal access boundary policy."
+        },
+        "displayName": {
+          "description": "Optional. The description of the principal access boundary policy. Must be less than or equal to 63 characters.",
+          "type": "string"
+        },
+        "etag": {
+          "description": "Optional. The etag for the principal access boundary. If this is provided on update, it must match the server's etag.",
+          "type": "string"
+        },
+        "name": {
+          "description": "Identifier. The resource name of the principal access boundary policy. The following format is supported: `organizations/{organization_id}/locations/{location}/principalAccessBoundaryPolicies/{policy_id}`",
+          "type": "string"
+        },
+        "uid": {
+          "description": "Output only. The globally unique ID of the principal access boundary policy.",
+          "readOnly": true,
+          "type": "string"
+        },
+        "updateTime": {
+          "description": "Output only. The time when the principal access boundary policy was most recently updated.",
+          "format": "google-datetime",
+          "readOnly": true,
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "GoogleIamV3PrincipalAccessBoundaryPolicyDetails": {
+      "description": "Principal access boundary policy details",
+      "id": "GoogleIamV3PrincipalAccessBoundaryPolicyDetails",
+      "properties": {
+        "enforcementVersion": {
+          "description": "Optional. The version number (for example, `1` or `latest`) that indicates which permissions are able to be blocked by the policy. If empty, the PAB policy version will be set to the most recent version number at the time of the policy's creation.",
+          "type": "string"
+        },
+        "rules": {
+          "description": "Required. A list of principal access boundary policy rules. The number of rules in a policy is limited to 500.",
+          "items": {
+            "$ref": "GoogleIamV3PrincipalAccessBoundaryPolicyRule"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "GoogleIamV3PrincipalAccessBoundaryPolicyRule": {
+      "description": "Principal access boundary policy rule that defines the resource boundary.",
+      "id": "GoogleIamV3PrincipalAccessBoundaryPolicyRule",
+      "properties": {
+        "description": {
+          "description": "Optional. The description of the principal access boundary policy rule. Must be less than or equal to 256 characters.",
+          "type": "string"
+        },
+        "effect": {
+          "description": "Required. The access relationship of principals to the resources in this rule.",
+          "enum": [
+            "EFFECT_UNSPECIFIED",
+            "ALLOW"
+          ],
+          "enumDescriptions": [
+            "Effect unspecified.",
+            "Allows access to the resources in this rule."
+          ],
+          "type": "string"
+        },
+        "resources": {
+          "description": "Required. A list of Resource Manager resources. If a resource is listed in the rule, then the rule applies for that resource and its descendants. The number of resources in a policy is limited to 500 across all rules in the policy. The following resource types are supported: * Organizations, such as `//cloudresourcemanager.googleapis.com/organizations/123`. * Folders, such as `//cloudresourcemanager.googleapis.com/folders/123`. * Projects, such as `//cloudresourcemanager.googleapis.com/projects/123` or `//cloudresourcemanager.googleapis.com/projects/my-project-id`.",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "GoogleIamV3SearchPrincipalAccessBoundaryPolicyBindingsResponse": {
+      "description": "Response message for SearchPrincipalAccessBoundaryPolicyBindings rpc.",
+      "id": "GoogleIamV3SearchPrincipalAccessBoundaryPolicyBindingsResponse",
+      "properties": {
+        "nextPageToken": {
+          "description": "Optional. A token, which can be sent as `page_token` to retrieve the next page. If this field is omitted, there are no subsequent pages.",
+          "type": "string"
+        },
+        "policyBindings": {
+          "description": "The policy bindings that reference the specified policy.",
+          "items": {
+            "$ref": "GoogleIamV3PolicyBinding"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "GoogleIamV3SearchTargetPolicyBindingsResponse": {
+      "description": "Response message for SearchTargetPolicyBindings method.",
+      "id": "GoogleIamV3SearchTargetPolicyBindingsResponse",
+      "properties": {
+        "nextPageToken": {
+          "description": "Optional. A token, which can be sent as `page_token` to retrieve the next page. If this field is omitted, there are no subsequent pages.",
+          "type": "string"
+        },
+        "policyBindings": {
+          "description": "The policy bindings bound to the specified target.",
+          "items": {
+            "$ref": "GoogleIamV3PolicyBinding"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "GoogleLongrunningOperation": {
+      "description": "This resource represents a long-running operation that is the result of a network API call.",
+      "id": "GoogleLongrunningOperation",
+      "properties": {
+        "done": {
+          "description": "If the value is `false`, it means the operation is still in progress. If `true`, the operation is completed, and either `error` or `response` is available.",
+          "type": "boolean"
+        },
+        "error": {
+          "$ref": "GoogleRpcStatus",
+          "description": "The error result of the operation in case of failure or cancellation."
+        },
+        "metadata": {
+          "additionalProperties": {
+            "description": "Properties of the object. Contains field @type with type URL.",
+            "type": "any"
+          },
+          "description": "Service-specific metadata associated with the operation. It typically contains progress information and common metadata such as create time. Some services might not provide such metadata. Any method that returns a long-running operation should document the metadata type, if any.",
+          "type": "object"
+        },
+        "name": {
+          "description": "The server-assigned name, which is only unique within the same service that originally returns it. If you use the default HTTP mapping, the `name` should be a resource name ending with `operations/{unique_id}`.",
+          "type": "string"
+        },
+        "response": {
+          "additionalProperties": {
+            "description": "Properties of the object. Contains field @type with type URL.",
+            "type": "any"
+          },
+          "description": "The normal, successful response of the operation. If the original method returns no data on success, such as `Delete`, the response is `google.protobuf.Empty`. If the original method is standard `Get`/`Create`/`Update`, the response should be the resource. For other methods, the response should have the type `XxxResponse`, where `Xxx` is the original method name. For example, if the original method name is `TakeSnapshot()`, the inferred response type is `TakeSnapshotResponse`.",
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
+    "GoogleRpcStatus": {
+      "description": "The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).",
+      "id": "GoogleRpcStatus",
+      "properties": {
+        "code": {
+          "description": "The status code, which should be an enum value of google.rpc.Code.",
+          "format": "int32",
+          "type": "integer"
+        },
+        "details": {
+          "description": "A list of messages that carry the error details. There is a common set of message types for APIs to use.",
+          "items": {
+            "additionalProperties": {
+              "description": "Properties of the object. Contains field @type with type URL.",
+              "type": "any"
+            },
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "message": {
+          "description": "A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client.",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "GoogleTypeExpr": {
+      "description": "Represents a textual expression in the Common Expression Language (CEL) syntax. CEL is a C-like expression language. The syntax and semantics of CEL are documented at https://github.com/google/cel-spec. Example (Comparison): title: \"Summary size limit\" description: \"Determines if a summary is less than 100 chars\" expression: \"document.summary.size() < 100\" Example (Equality): title: \"Requestor is owner\" description: \"Determines if requestor is the document owner\" expression: \"document.owner == request.auth.claims.email\" Example (Logic): title: \"Public documents\" description: \"Determine whether the document should be publicly visible\" expression: \"document.type != 'private' && document.type != 'internal'\" Example (Data Manipulation): title: \"Notification string\" description: \"Create a notification string with a timestamp.\" expression: \"'New message received at ' + string(document.create_time)\" The exact variables and functions that may be referenced within an expression are determined by the service that evaluates it. See the service documentation for additional information.",
+      "id": "GoogleTypeExpr",
+      "properties": {
+        "description": {
+          "description": "Optional. Description of the expression. This is a longer text which describes the expression, e.g. when hovered over it in a UI.",
+          "type": "string"
+        },
+        "expression": {
+          "description": "Textual representation of an expression in Common Expression Language syntax.",
+          "type": "string"
+        },
+        "location": {
+          "description": "Optional. String indicating the location of the expression for error reporting, e.g. a file name and a position in the file.",
+          "type": "string"
+        },
+        "title": {
+          "description": "Optional. Title for the expression, i.e. a short string describing its purpose. This can be used e.g. in UIs which allow to enter the expression.",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    }
+  },
+  "servicePath": "",
+  "title": "Identity and Access Management (IAM) API",
+  "version": "v3",
+  "version_module": true
+}
