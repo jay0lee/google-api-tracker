@@ -16,6 +16,8 @@ jobs:
           fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
 
       - name: Check for updates
+        env:
+          googleapikey: ${{ secrets.googleapikey }}
         run: bash check-apis.sh
 
       - name: Commit files
