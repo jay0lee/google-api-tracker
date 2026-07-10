@@ -32,7 +32,11 @@ gmail v1
 groupsmigration v1
 groupssettings v1
 iam v1
+iam v1beta
 iam v2
+iam v2beta
+iam v3
+iam v3beta
 iamcredentials v1
 iap v1
 licensing v1
