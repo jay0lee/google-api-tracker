@@ -16,6 +16,9 @@ chromewebstore v1.1
 classroom v1
 cloudidentity v1
 cloudidentity v1beta1
+cloudidentityscim v1
+cloudidentityscim v1beta1
+cloudidentityscim v1alpha1
 cloudresourcemanager v3
 cloudresourcemanager v2
 cloudresourcemanager v1
