@@ -36,6 +36,7 @@ iam v2
 iamcredentials v1
 iap v1
 licensing v1
+oauth2 v1
 oauth2 v2
 orgpolicy v2
 people v1
