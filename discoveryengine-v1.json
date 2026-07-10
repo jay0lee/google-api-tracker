@@ -9667,7 +9667,7 @@
       }
     }
   },
-  "retrieved_from": "https://discoveryengine.googleapis.com/$discovery/rest?version=v1",
+  "retrieved_from": "https://discoveryengine.googleapis.com/$discovery/rest?version=v1&key=AIzaSyCbsFJj-fQ7B5qHmAhEYbpZ-gZRaSQPIYM",
   "rootUrl": "https://discoveryengine.googleapis.com/",
   "schemas": {
     "A2aV1APIKeySecurityScheme": {

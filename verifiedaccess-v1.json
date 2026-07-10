@@ -146,7 +146,7 @@
       }
     }
   },
-  "retrieved_from": "https://verifiedaccess.googleapis.com/$discovery/rest?version=v1",
+  "retrieved_from": "https://verifiedaccess.googleapis.com/$discovery/rest?version=v1&key=AIzaSyCbsFJj-fQ7B5qHmAhEYbpZ-gZRaSQPIYM",
   "rootUrl": "https://verifiedaccess.googleapis.com/",
   "schemas": {
     "Challenge": {

@@ -1057,7 +1057,7 @@
       }
     }
   },
-  "retrieved_from": "https://drivelabels.googleapis.com/$discovery/rest?version=v2",
+  "retrieved_from": "https://drivelabels.googleapis.com/$discovery/rest?version=v2&key=AIzaSyCbsFJj-fQ7B5qHmAhEYbpZ-gZRaSQPIYM",
   "rootUrl": "https://drivelabels.googleapis.com/",
   "schemas": {
     "GoogleAppsDriveLabelsV2BadgeColors": {

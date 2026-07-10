@@ -353,7 +353,7 @@
       }
     }
   },
-  "retrieved_from": "https://sts.googleapis.com/$discovery/rest?version=v1beta",
+  "retrieved_from": "https://sts.googleapis.com/$discovery/rest?version=v1beta&key=AIzaSyCbsFJj-fQ7B5qHmAhEYbpZ-gZRaSQPIYM",
   "rootUrl": "https://sts.googleapis.com/",
   "schemas": {
     "GoogleIamV1Binding": {
