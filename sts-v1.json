@@ -631,7 +631,7 @@
           "type": "string"
         },
         "use": {
-          "description": "Public key use. Currently \"jwt-svid\".",
+          "description": "Public key use. Currently \"sig\".",
           "type": "string"
         }
       },
