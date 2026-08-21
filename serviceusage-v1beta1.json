@@ -4537,7 +4537,7 @@
         },
         "removedValues": {
           "deprecated": true,
-          "description": "Deprecated: This field is no longer populated. Use GetConsumerPolicy to verify the remaining enabled values.",
+          "description": "The values removed from the parent consumer policy.",
           "items": {
             "type": "string"
           },
