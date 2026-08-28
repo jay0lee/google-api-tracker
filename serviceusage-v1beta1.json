@@ -2156,8 +2156,7 @@
       "id": "EnableRule",
       "properties": {
         "enableType": {
-          "deprecated": true,
-          "description": "Deprecated: EnableType is not supported.",
+          "description": "Client and resource project enable type.",
           "enum": [
             "ENABLE_TYPE_UNSPECIFIED",
             "CLIENT",
