@@ -556,7 +556,7 @@
       }
     }
   },
-  "retrieved_from": "https://iam.googleapis.com/$discovery/rest?version=v1beta&key=****",
+  "retrieved_from": "https://iam.googleapis.com/$discovery/rest?version=v1beta",
   "rootUrl": "https://iam.googleapis.com/",
   "schemas": {
     "CloudControl2SharedOperationsReconciliationOperationMetadata": {

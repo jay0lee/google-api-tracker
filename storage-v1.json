@@ -4730,7 +4730,7 @@
       }
     }
   },
-  "retrieved_from": "https://storage.googleapis.com/$discovery/rest?version=v1&key=****",
+  "retrieved_from": "https://www.googleapis.com/discovery/v1/apis/storage/v1/rest?key=****",
   "rootUrl": "https://storage.googleapis.com/",
   "schemas": {
     "AdvanceRelocateBucketOperationRequest": {
