@@ -5352,7 +5352,7 @@
       "id": "OauthClient",
       "properties": {
         "allowedGrantTypes": {
-          "description": "Required. The list of OAuth grant types is allowed for the OauthClient.",
+          "description": "Optional. The list of OAuth grant types is allowed for the OauthClient.",
           "items": {
             "enum": [
               "GRANT_TYPE_UNSPECIFIED",
