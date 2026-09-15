@@ -6523,10 +6523,6 @@
           "format": "date-time",
           "type": "string"
         },
-        "extendedDataTypeUrl": {
-          "description": "The type URL of the object context's extended data.",
-          "type": "string"
-        },
         "updateTime": {
           "description": "The time at which the object context was last updated in RFC 3339 format.",
           "format": "date-time",
