@@ -146,7 +146,7 @@
       }
     }
   },
-  "retrieved_from": "https://verifiedaccess.googleapis.com/$discovery/rest?version=v2&key=****",
+  "retrieved_from": "https://verifiedaccess.googleapis.com/$discovery/rest?version=v2",
   "rootUrl": "https://verifiedaccess.googleapis.com/",
   "schemas": {
     "Antivirus": {
