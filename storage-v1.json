@@ -5425,6 +5425,21 @@
               "format": "date-time",
               "type": "string"
             },
+            "hardDeletePause": {
+              "description": "The bucket's hard delete pause configuration. If set, soft-deleted objects in the bucket will not be permanently deleted until the hard delete pause is disabled.",
+              "properties": {
+                "effectiveTime": {
+                  "description": "Server-determined value that indicates the time from which the hard delete pause became effective. This value is in RFC 3339 format.",
+                  "format": "date-time",
+                  "type": "string"
+                },
+                "enabled": {
+                  "description": "Whether hard deletions are paused.",
+                  "type": "boolean"
+                }
+              },
+              "type": "object"
+            },
             "retentionDurationSeconds": {
               "description": "The duration in seconds that soft-deleted objects in the bucket will be retained and cannot be permanently deleted.",
               "format": "int64",
