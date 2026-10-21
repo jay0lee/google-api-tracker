@@ -6582,6 +6582,34 @@
           ],
           "readOnly": true,
           "type": "string"
+        },
+        "vendorType": {
+          "description": "Optional. The vendor type of the third-party identity provider.",
+          "enum": [
+            "VENDOR_TYPE_UNSPECIFIED",
+            "ENTRA_ID",
+            "OKTA",
+            "PING_FEDERATE",
+            "ADFS",
+            "KEYCLOAK",
+            "FORGE_ROCK",
+            "JUMP_CLOUD",
+            "ONE_LOGIN",
+            "GENERIC"
+          ],
+          "enumDescriptions": [
+            "Default value, no vendor specified, backfilled to existing providers.",
+            "Microsoft Entra ID",
+            "Okta",
+            "Ping Federate",
+            "Microsoft Active Directory Federation Services",
+            "Keycloak",
+            "ForgeRock",
+            "JumpCloud",
+            "OneLogin",
+            "Other Generic Identity Providers"
+          ],
+          "type": "string"
         }
       },
       "type": "object"
