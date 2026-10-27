@@ -112,7 +112,7 @@
             "accessPolicies": {
               "methods": {
                 "create": {
-                  "description": "Creates a Unified Access Policy, and returns a long running operation.",
+                  "description": "Creates an access policy, and returns a long running operation.",
                   "flatPath": "v3/folders/{foldersId}/locations/{locationsId}/accessPolicies",
                   "httpMethod": "POST",
                   "id": "iam.folders.locations.accessPolicies.create",
@@ -121,12 +121,12 @@
                   ],
                   "parameters": {
                     "accessPolicyId": {
-                      "description": "Required. The ID to use for the Unified Access Policy, which will become the final component of the Unified Access Policy's resource name. This value must start with a lowercase letter followed by up to 62 lowercase letters, numbers, hyphens, or dots (/a-z{2,62}/). This value must be unique among all Unified Access Policies with the same parent.",
+                      "description": "Required. The ID to use for the access policy, which will become the final component of the access policy's resource name. This value must start with a lowercase letter followed by up to 62 lowercase letters, numbers, hyphens, or dots. Pattern, /a-z{2,62}/. This value must be unique among all access policies with the same parent.",
                       "location": "query",
                       "type": "string"
                     },
                     "parent": {
-                      "description": "Required. The parent resource where this Unified Access Policy is created. Format: * `projects/{project_id}/locations/{location}` * `projects/{project_number}/locations/{location}` * `folders/{folder_id}/locations/{location}` * `organizations/{organization_id}/locations/{location}`",
+                      "description": "Required. The parent resource where this access policy will be created. Format: `projects/{project_id}/locations/{location}` `projects/{project_number}/locations/{location}` `folders/{folder_id}/locations/{location}` `organizations/{organization_id}/locations/{location}`",
                       "location": "path",
                       "pattern": "^folders/[^/]+/locations/[^/]+$",
                       "required": true,
@@ -150,7 +150,7 @@
                   ]
                 },
                 "delete": {
-                  "description": "Deletes a Unified Access Policy.",
+                  "description": "Deletes an access policy.",
                   "flatPath": "v3/folders/{foldersId}/locations/{locationsId}/accessPolicies/{accessPoliciesId}",
                   "httpMethod": "DELETE",
                   "id": "iam.folders.locations.accessPolicies.delete",
@@ -159,17 +159,17 @@
                   ],
                   "parameters": {
                     "etag": {
-                      "description": "Optional. The etag of the Unified Access Policy. If this is provided, it must match the server's etag.",
+                      "description": "Optional. The etag of the access policy. If this is provided, it must match the server's etag.",
                       "location": "query",
                       "type": "string"
                     },
                     "force": {
-                      "description": "Optional. If set to true, the request will force the deletion of the Unified Access Policy even if it's referenced in existing bindings. If this value is set to false and the Unified Access Policy is referenced in existing bindings, then the request fails.",
+                      "description": "Optional. If set to true, the request will force the deletion of the Policy even if the Policy references PolicyBindings.",
                       "location": "query",
                       "type": "boolean"
                     },
                     "name": {
-                      "description": "Required. The name of the Unified Access Policy to delete. Format: * `projects/{project_id}/locations/{location}/accessPolicies/{unified_access_policy_id}` * `projects/{project_number}/locations/{location}/accessPolicies/{unified_access_policy_id}` * `folders/{folder_id}/locations/{location}/accessPolicies/{unified_access_policy_id}` * `organizations/{organization_id}/locations/{location}/accessPolicies/{unified_access_policy_id}`",
+                      "description": "Required. The name of the access policy to delete. Format: `projects/{project_id}/locations/{location}/accessPolicies/{access_policy_id}` `projects/{project_number}/locations/{location}/accessPolicies/{access_policy_id}` `folders/{folder_id}/locations/{location}/accessPolicies/{access_policy_id}` `organizations/{organization_id}/locations/{location}/accessPolicies/{access_policy_id}`",
                       "location": "path",
                       "pattern": "^folders/[^/]+/locations/[^/]+/accessPolicies/[^/]+$",
                       "required": true,
@@ -190,7 +190,7 @@
                   ]
                 },
                 "get": {
-                  "description": "Gets a Unified Access Policy.",
+                  "description": "Gets an access policy.",
                   "flatPath": "v3/folders/{foldersId}/locations/{locationsId}/accessPolicies/{accessPoliciesId}",
                   "httpMethod": "GET",
                   "id": "iam.folders.locations.accessPolicies.get",
@@ -199,7 +199,7 @@
                   ],
                   "parameters": {
                     "name": {
-                      "description": "Required. The name of the Unified Access Policy to retrieve. Format: * `projects/{project_id}/locations/{location}/accessPolicies/{unified_access_policy_id}` * `projects/{project_number}/locations/{location}/accessPolicies/{unified_access_policy_id}` * `folders/{folder_id}/locations/{location}/accessPolicies/{unified_access_policy_id}` * `organizations/{organization_id}/locations/{location}/accessPolicies/{unified_access_policy_id}`",
+                      "description": "Required. The name of the access policy to retrieve. Format: `projects/{project_id}/locations/{location}/accessPolicies/{access_policy_id}` `projects/{project_number}/locations/{location}/accessPolicies/{access_policy_id}` `folders/{folder_id}/locations/{location}/accessPolicies/{access_policy_id}` `organizations/{organization_id}/locations/{location}/accessPolicies/{access_policy_id}`",
                       "location": "path",
                       "pattern": "^folders/[^/]+/locations/[^/]+/accessPolicies/[^/]+$",
                       "required": true,
@@ -215,7 +215,7 @@
                   ]
                 },
                 "list": {
-                  "description": "Lists Unified Access Policies.",
+                  "description": "Lists access policies.",
                   "flatPath": "v3/folders/{foldersId}/locations/{locationsId}/accessPolicies",
                   "httpMethod": "GET",
                   "id": "iam.folders.locations.accessPolicies.list",
@@ -224,12 +224,12 @@
                   ],
                   "parameters": {
                     "filter": {
-                      "description": "Optional. An expression for filtering the results of the request. Example filter query: `display_name:example*` matches Unified Access Policies whose display name starts with \"example\".",
+                      "description": "Optional. An expression for filtering the results of the request. Example filter query: `display_name:example*` matches access policies whose display name starts with \"example\".",
                       "location": "query",
                       "type": "string"
                     },
                     "pageSize": {
-                      "description": "Optional. The maximum number of Unified Access Policies to return. The service might return a smaller number of bindings. If unspecified, at most 50 Unified Access Policies are returned. Valid value ranges from 1 to 1000; values above 1000 are reduced to 1000.",
+                      "description": "Optional. The maximum number of access policies to return. The service may return fewer than this value. If unspecified, at most 50 access policies will be returned. Valid value ranges from 1 to 1000; values above 1000 will be coerced to 1000.",
                       "format": "int32",
                       "location": "query",
                       "type": "integer"
@@ -240,7 +240,7 @@
                       "type": "string"
                     },
                     "parent": {
-                      "description": "Required. The parent resource, which owns the collection of Unified Access Policy resources. Format: * `projects/{project_id}/locations/{location}` * `projects/{project_number}/locations/{location}` * `folders/{folder_id}/locations/{location}` * `organizations/{organization_id}/locations/{location}`",
+                      "description": "Required. The parent resource, which owns the collection of access policy resources. Format: `projects/{project_id}/locations/{location}` `projects/{project_number}/locations/{location}` `folders/{folder_id}/locations/{location}` `organizations/{organization_id}/locations/{location}`",
                       "location": "path",
                       "pattern": "^folders/[^/]+/locations/[^/]+$",
                       "required": true,
@@ -256,7 +256,7 @@
                   ]
                 },
                 "patch": {
-                  "description": "Updates a Unified Access Policy.",
+                  "description": "Updates an access policy.",
                   "flatPath": "v3/folders/{foldersId}/locations/{locationsId}/accessPolicies/{accessPoliciesId}",
                   "httpMethod": "PATCH",
                   "id": "iam.folders.locations.accessPolicies.patch",
@@ -265,7 +265,7 @@
                   ],
                   "parameters": {
                     "name": {
-                      "description": "Identifier. The resource name of the Unified Access Policy. The following formats are supported: * `projects/{project_id}/locations/{location}/accessPolicies/{unified_access_policy_id}` * `projects/{project_number}/locations/{location}/accessPolicies/{unified_access_policy_id}` * `folders/{folder_id}/locations/{location}/accessPolicies/{unified_access_policy_id}` * `organizations/{organization_id}/locations/{location}/accessPolicies/{unified_access_policy_id}`",
+                      "description": "Identifier. The resource name of the access policy. The following formats are supported: * `projects/{project_id}/locations/{location}/accessPolicies/{policy_id}` * `projects/{project_number}/locations/{location}/accessPolicies/{policy_id}` * `folders/{folder_id}/locations/{location}/accessPolicies/{policy_id}` * `organizations/{organization_id}/locations/{location}/accessPolicies/{policy_id}`",
                       "location": "path",
                       "pattern": "^folders/[^/]+/locations/[^/]+/accessPolicies/[^/]+$",
                       "required": true,
@@ -298,14 +298,14 @@
                   ],
                   "parameters": {
                     "name": {
-                      "description": "Required. The name of the Unified Access Policy. Format: * `organizations/{organization_id}/locations/{location}/accessPolicies/{unified_access_policy_id}` * `folders/{folder_id}/locations/{location}/accessPolicies/{unified_access_policy_id}` * `projects/{project_id}/locations/{location}/accessPolicies/{unified_access_policy_id}` * `projects/{project_number}/locations/{location}/accessPolicies/{unified_access_policy_id}`",
+                      "description": "Required. The name of the access policy. Format: `organizations/{organization_id}/locations/{location}/accessPolicies/{access_policy_id}` `folders/{folder_id}/locations/{location}/accessPolicies/{access_policy_id}` `projects/{project_id}/locations/{location}/accessPolicies/{access_policy_id}` `projects/{project_number}/locations/{location}/accessPolicies/{access_policy_id}`",
                       "location": "path",
                       "pattern": "^folders/[^/]+/locations/[^/]+/accessPolicies/[^/]+$",
                       "required": true,
                       "type": "string"
                     },
                     "pageSize": {
-                      "description": "Optional. The maximum number of Unified Access Policy bindings to return. The service might return a smaller number of bindings. If unspecified, at most 50 bindings are returned. The maximum value is 1000; values above 1000 are reduced to 1000.",
+                      "description": "Optional. The maximum number of policy bindings to return. The service may return fewer than this value. If unspecified, at most 50 policy bindings will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.",
                       "format": "int32",
                       "location": "query",
                       "type": "integer"
@@ -594,7 +594,7 @@
             "accessPolicies": {
               "methods": {
                 "create": {
-                  "description": "Creates a Unified Access Policy, and returns a long running operation.",
+                  "description": "Creates an access policy, and returns a long running operation.",
                   "flatPath": "v3/organizations/{organizationsId}/locations/{locationsId}/accessPolicies",
                   "httpMethod": "POST",
                   "id": "iam.organizations.locations.accessPolicies.create",
@@ -603,12 +603,12 @@
                   ],
                   "parameters": {
                     "accessPolicyId": {
-                      "description": "Required. The ID to use for the Unified Access Policy, which will become the final component of the Unified Access Policy's resource name. This value must start with a lowercase letter followed by up to 62 lowercase letters, numbers, hyphens, or dots (/a-z{2,62}/). This value must be unique among all Unified Access Policies with the same parent.",
+                      "description": "Required. The ID to use for the access policy, which will become the final component of the access policy's resource name. This value must start with a lowercase letter followed by up to 62 lowercase letters, numbers, hyphens, or dots. Pattern, /a-z{2,62}/. This value must be unique among all access policies with the same parent.",
                       "location": "query",
                       "type": "string"
                     },
                     "parent": {
-                      "description": "Required. The parent resource where this Unified Access Policy is created. Format: * `projects/{project_id}/locations/{location}` * `projects/{project_number}/locations/{location}` * `folders/{folder_id}/locations/{location}` * `organizations/{organization_id}/locations/{location}`",
+                      "description": "Required. The parent resource where this access policy will be created. Format: `projects/{project_id}/locations/{location}` `projects/{project_number}/locations/{location}` `folders/{folder_id}/locations/{location}` `organizations/{organization_id}/locations/{location}`",
                       "location": "path",
                       "pattern": "^organizations/[^/]+/locations/[^/]+$",
                       "required": true,
@@ -632,7 +632,7 @@
                   ]
                 },
                 "delete": {
-                  "description": "Deletes a Unified Access Policy.",
+                  "description": "Deletes an access policy.",
                   "flatPath": "v3/organizations/{organizationsId}/locations/{locationsId}/accessPolicies/{accessPoliciesId}",
                   "httpMethod": "DELETE",
                   "id": "iam.organizations.locations.accessPolicies.delete",
@@ -641,17 +641,17 @@
                   ],
                   "parameters": {
                     "etag": {
-                      "description": "Optional. The etag of the Unified Access Policy. If this is provided, it must match the server's etag.",
+                      "description": "Optional. The etag of the access policy. If this is provided, it must match the server's etag.",
                       "location": "query",
                       "type": "string"
                     },
                     "force": {
-                      "description": "Optional. If set to true, the request will force the deletion of the Unified Access Policy even if it's referenced in existing bindings. If this value is set to false and the Unified Access Policy is referenced in existing bindings, then the request fails.",
+                      "description": "Optional. If set to true, the request will force the deletion of the Policy even if the Policy references PolicyBindings.",
                       "location": "query",
                       "type": "boolean"
                     },
                     "name": {
-                      "description": "Required. The name of the Unified Access Policy to delete. Format: * `projects/{project_id}/locations/{location}/accessPolicies/{unified_access_policy_id}` * `projects/{project_number}/locations/{location}/accessPolicies/{unified_access_policy_id}` * `folders/{folder_id}/locations/{location}/accessPolicies/{unified_access_policy_id}` * `organizations/{organization_id}/locations/{location}/accessPolicies/{unified_access_policy_id}`",
+                      "description": "Required. The name of the access policy to delete. Format: `projects/{project_id}/locations/{location}/accessPolicies/{access_policy_id}` `projects/{project_number}/locations/{location}/accessPolicies/{access_policy_id}` `folders/{folder_id}/locations/{location}/accessPolicies/{access_policy_id}` `organizations/{organization_id}/locations/{location}/accessPolicies/{access_policy_id}`",
                       "location": "path",
                       "pattern": "^organizations/[^/]+/locations/[^/]+/accessPolicies/[^/]+$",
                       "required": true,
@@ -672,7 +672,7 @@
                   ]
                 },
                 "get": {
-                  "description": "Gets a Unified Access Policy.",
+                  "description": "Gets an access policy.",
                   "flatPath": "v3/organizations/{organizationsId}/locations/{locationsId}/accessPolicies/{accessPoliciesId}",
                   "httpMethod": "GET",
                   "id": "iam.organizations.locations.accessPolicies.get",
@@ -681,7 +681,7 @@
                   ],
                   "parameters": {
                     "name": {
-                      "description": "Required. The name of the Unified Access Policy to retrieve. Format: * `projects/{project_id}/locations/{location}/accessPolicies/{unified_access_policy_id}` * `projects/{project_number}/locations/{location}/accessPolicies/{unified_access_policy_id}` * `folders/{folder_id}/locations/{location}/accessPolicies/{unified_access_policy_id}` * `organizations/{organization_id}/locations/{location}/accessPolicies/{unified_access_policy_id}`",
+                      "description": "Required. The name of the access policy to retrieve. Format: `projects/{project_id}/locations/{location}/accessPolicies/{access_policy_id}` `projects/{project_number}/locations/{location}/accessPolicies/{access_policy_id}` `folders/{folder_id}/locations/{location}/accessPolicies/{access_policy_id}` `organizations/{organization_id}/locations/{location}/accessPolicies/{access_policy_id}`",
                       "location": "path",
                       "pattern": "^organizations/[^/]+/locations/[^/]+/accessPolicies/[^/]+$",
                       "required": true,
@@ -697,7 +697,7 @@
                   ]
                 },
                 "list": {
-                  "description": "Lists Unified Access Policies.",
+                  "description": "Lists access policies.",
                   "flatPath": "v3/organizations/{organizationsId}/locations/{locationsId}/accessPolicies",
                   "httpMethod": "GET",
                   "id": "iam.organizations.locations.accessPolicies.list",
@@ -706,12 +706,12 @@
                   ],
                   "parameters": {
                     "filter": {
-                      "description": "Optional. An expression for filtering the results of the request. Example filter query: `display_name:example*` matches Unified Access Policies whose display name starts with \"example\".",
+                      "description": "Optional. An expression for filtering the results of the request. Example filter query: `display_name:example*` matches access policies whose display name starts with \"example\".",
                       "location": "query",
                       "type": "string"
                     },
                     "pageSize": {
-                      "description": "Optional. The maximum number of Unified Access Policies to return. The service might return a smaller number of bindings. If unspecified, at most 50 Unified Access Policies are returned. Valid value ranges from 1 to 1000; values above 1000 are reduced to 1000.",
+                      "description": "Optional. The maximum number of access policies to return. The service may return fewer than this value. If unspecified, at most 50 access policies will be returned. Valid value ranges from 1 to 1000; values above 1000 will be coerced to 1000.",
                       "format": "int32",
                       "location": "query",
                       "type": "integer"
@@ -722,7 +722,7 @@
                       "type": "string"
                     },
                     "parent": {
-                      "description": "Required. The parent resource, which owns the collection of Unified Access Policy resources. Format: * `projects/{project_id}/locations/{location}` * `projects/{project_number}/locations/{location}` * `folders/{folder_id}/locations/{location}` * `organizations/{organization_id}/locations/{location}`",
+                      "description": "Required. The parent resource, which owns the collection of access policy resources. Format: `projects/{project_id}/locations/{location}` `projects/{project_number}/locations/{location}` `folders/{folder_id}/locations/{location}` `organizations/{organization_id}/locations/{location}`",
                       "location": "path",
                       "pattern": "^organizations/[^/]+/locations/[^/]+$",
                       "required": true,
@@ -738,7 +738,7 @@
                   ]
                 },
                 "patch": {
-                  "description": "Updates a Unified Access Policy.",
+                  "description": "Updates an access policy.",
                   "flatPath": "v3/organizations/{organizationsId}/locations/{locationsId}/accessPolicies/{accessPoliciesId}",
                   "httpMethod": "PATCH",
                   "id": "iam.organizations.locations.accessPolicies.patch",
@@ -747,7 +747,7 @@
                   ],
                   "parameters": {
                     "name": {
-                      "description": "Identifier. The resource name of the Unified Access Policy. The following formats are supported: * `projects/{project_id}/locations/{location}/accessPolicies/{unified_access_policy_id}` * `projects/{project_number}/locations/{location}/accessPolicies/{unified_access_policy_id}` * `folders/{folder_id}/locations/{location}/accessPolicies/{unified_access_policy_id}` * `organizations/{organization_id}/locations/{location}/accessPolicies/{unified_access_policy_id}`",
+                      "description": "Identifier. The resource name of the access policy. The following formats are supported: * `projects/{project_id}/locations/{location}/accessPolicies/{policy_id}` * `projects/{project_number}/locations/{location}/accessPolicies/{policy_id}` * `folders/{folder_id}/locations/{location}/accessPolicies/{policy_id}` * `organizations/{organization_id}/locations/{location}/accessPolicies/{policy_id}`",
                       "location": "path",
                       "pattern": "^organizations/[^/]+/locations/[^/]+/accessPolicies/[^/]+$",
                       "required": true,
@@ -780,14 +780,14 @@
                   ],
                   "parameters": {
                     "name": {
-                      "description": "Required. The name of the Unified Access Policy. Format: * `organizations/{organization_id}/locations/{location}/accessPolicies/{unified_access_policy_id}` * `folders/{folder_id}/locations/{location}/accessPolicies/{unified_access_policy_id}` * `projects/{project_id}/locations/{location}/accessPolicies/{unified_access_policy_id}` * `projects/{project_number}/locations/{location}/accessPolicies/{unified_access_policy_id}`",
+                      "description": "Required. The name of the access policy. Format: `organizations/{organization_id}/locations/{location}/accessPolicies/{access_policy_id}` `folders/{folder_id}/locations/{location}/accessPolicies/{access_policy_id}` `projects/{project_id}/locations/{location}/accessPolicies/{access_policy_id}` `projects/{project_number}/locations/{location}/accessPolicies/{access_policy_id}`",
                       "location": "path",
                       "pattern": "^organizations/[^/]+/locations/[^/]+/accessPolicies/[^/]+$",
                       "required": true,
                       "type": "string"
                     },
                     "pageSize": {
-                      "description": "Optional. The maximum number of Unified Access Policy bindings to return. The service might return a smaller number of bindings. If unspecified, at most 50 bindings are returned. The maximum value is 1000; values above 1000 are reduced to 1000.",
+                      "description": "Optional. The maximum number of policy bindings to return. The service may return fewer than this value. If unspecified, at most 50 policy bindings will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.",
                       "format": "int32",
                       "location": "query",
                       "type": "integer"
@@ -1299,7 +1299,7 @@
             "accessPolicies": {
               "methods": {
                 "create": {
-                  "description": "Creates a Unified Access Policy, and returns a long running operation.",
+                  "description": "Creates an access policy, and returns a long running operation.",
                   "flatPath": "v3/projects/{projectsId}/locations/{locationsId}/accessPolicies",
                   "httpMethod": "POST",
                   "id": "iam.projects.locations.accessPolicies.create",
@@ -1308,12 +1308,12 @@
                   ],
                   "parameters": {
                     "accessPolicyId": {
-                      "description": "Required. The ID to use for the Unified Access Policy, which will become the final component of the Unified Access Policy's resource name. This value must start with a lowercase letter followed by up to 62 lowercase letters, numbers, hyphens, or dots (/a-z{2,62}/). This value must be unique among all Unified Access Policies with the same parent.",
+                      "description": "Required. The ID to use for the access policy, which will become the final component of the access policy's resource name. This value must start with a lowercase letter followed by up to 62 lowercase letters, numbers, hyphens, or dots. Pattern, /a-z{2,62}/. This value must be unique among all access policies with the same parent.",
                       "location": "query",
                       "type": "string"
                     },
                     "parent": {
-                      "description": "Required. The parent resource where this Unified Access Policy is created. Format: * `projects/{project_id}/locations/{location}` * `projects/{project_number}/locations/{location}` * `folders/{folder_id}/locations/{location}` * `organizations/{organization_id}/locations/{location}`",
+                      "description": "Required. The parent resource where this access policy will be created. Format: `projects/{project_id}/locations/{location}` `projects/{project_number}/locations/{location}` `folders/{folder_id}/locations/{location}` `organizations/{organization_id}/locations/{location}`",
                       "location": "path",
                       "pattern": "^projects/[^/]+/locations/[^/]+$",
                       "required": true,
@@ -1337,7 +1337,7 @@
                   ]
                 },
                 "delete": {
-                  "description": "Deletes a Unified Access Policy.",
+                  "description": "Deletes an access policy.",
                   "flatPath": "v3/projects/{projectsId}/locations/{locationsId}/accessPolicies/{accessPoliciesId}",
                   "httpMethod": "DELETE",
                   "id": "iam.projects.locations.accessPolicies.delete",
@@ -1346,17 +1346,17 @@
                   ],
                   "parameters": {
                     "etag": {
-                      "description": "Optional. The etag of the Unified Access Policy. If this is provided, it must match the server's etag.",
+                      "description": "Optional. The etag of the access policy. If this is provided, it must match the server's etag.",
                       "location": "query",
                       "type": "string"
                     },
                     "force": {
-                      "description": "Optional. If set to true, the request will force the deletion of the Unified Access Policy even if it's referenced in existing bindings. If this value is set to false and the Unified Access Policy is referenced in existing bindings, then the request fails.",
+                      "description": "Optional. If set to true, the request will force the deletion of the Policy even if the Policy references PolicyBindings.",
                       "location": "query",
                       "type": "boolean"
                     },
                     "name": {
-                      "description": "Required. The name of the Unified Access Policy to delete. Format: * `projects/{project_id}/locations/{location}/accessPolicies/{unified_access_policy_id}` * `projects/{project_number}/locations/{location}/accessPolicies/{unified_access_policy_id}` * `folders/{folder_id}/locations/{location}/accessPolicies/{unified_access_policy_id}` * `organizations/{organization_id}/locations/{location}/accessPolicies/{unified_access_policy_id}`",
+                      "description": "Required. The name of the access policy to delete. Format: `projects/{project_id}/locations/{location}/accessPolicies/{access_policy_id}` `projects/{project_number}/locations/{location}/accessPolicies/{access_policy_id}` `folders/{folder_id}/locations/{location}/accessPolicies/{access_policy_id}` `organizations/{organization_id}/locations/{location}/accessPolicies/{access_policy_id}`",
                       "location": "path",
                       "pattern": "^projects/[^/]+/locations/[^/]+/accessPolicies/[^/]+$",
                       "required": true,
@@ -1377,7 +1377,7 @@
                   ]
                 },
                 "get": {
-                  "description": "Gets a Unified Access Policy.",
+                  "description": "Gets an access policy.",
                   "flatPath": "v3/projects/{projectsId}/locations/{locationsId}/accessPolicies/{accessPoliciesId}",
                   "httpMethod": "GET",
                   "id": "iam.projects.locations.accessPolicies.get",
@@ -1386,7 +1386,7 @@
                   ],
                   "parameters": {
                     "name": {
-                      "description": "Required. The name of the Unified Access Policy to retrieve. Format: * `projects/{project_id}/locations/{location}/accessPolicies/{unified_access_policy_id}` * `projects/{project_number}/locations/{location}/accessPolicies/{unified_access_policy_id}` * `folders/{folder_id}/locations/{location}/accessPolicies/{unified_access_policy_id}` * `organizations/{organization_id}/locations/{location}/accessPolicies/{unified_access_policy_id}`",
+                      "description": "Required. The name of the access policy to retrieve. Format: `projects/{project_id}/locations/{location}/accessPolicies/{access_policy_id}` `projects/{project_number}/locations/{location}/accessPolicies/{access_policy_id}` `folders/{folder_id}/locations/{location}/accessPolicies/{access_policy_id}` `organizations/{organization_id}/locations/{location}/accessPolicies/{access_policy_id}`",
                       "location": "path",
                       "pattern": "^projects/[^/]+/locations/[^/]+/accessPolicies/[^/]+$",
                       "required": true,
@@ -1402,7 +1402,7 @@
                   ]
                 },
                 "list": {
-                  "description": "Lists Unified Access Policies.",
+                  "description": "Lists access policies.",
                   "flatPath": "v3/projects/{projectsId}/locations/{locationsId}/accessPolicies",
                   "httpMethod": "GET",
                   "id": "iam.projects.locations.accessPolicies.list",
@@ -1411,12 +1411,12 @@
                   ],
                   "parameters": {
                     "filter": {
-                      "description": "Optional. An expression for filtering the results of the request. Example filter query: `display_name:example*` matches Unified Access Policies whose display name starts with \"example\".",
+                      "description": "Optional. An expression for filtering the results of the request. Example filter query: `display_name:example*` matches access policies whose display name starts with \"example\".",
                       "location": "query",
                       "type": "string"
                     },
                     "pageSize": {
-                      "description": "Optional. The maximum number of Unified Access Policies to return. The service might return a smaller number of bindings. If unspecified, at most 50 Unified Access Policies are returned. Valid value ranges from 1 to 1000; values above 1000 are reduced to 1000.",
+                      "description": "Optional. The maximum number of access policies to return. The service may return fewer than this value. If unspecified, at most 50 access policies will be returned. Valid value ranges from 1 to 1000; values above 1000 will be coerced to 1000.",
                       "format": "int32",
                       "location": "query",
                       "type": "integer"
@@ -1427,7 +1427,7 @@
                       "type": "string"
                     },
                     "parent": {
-                      "description": "Required. The parent resource, which owns the collection of Unified Access Policy resources. Format: * `projects/{project_id}/locations/{location}` * `projects/{project_number}/locations/{location}` * `folders/{folder_id}/locations/{location}` * `organizations/{organization_id}/locations/{location}`",
+                      "description": "Required. The parent resource, which owns the collection of access policy resources. Format: `projects/{project_id}/locations/{location}` `projects/{project_number}/locations/{location}` `folders/{folder_id}/locations/{location}` `organizations/{organization_id}/locations/{location}`",
                       "location": "path",
                       "pattern": "^projects/[^/]+/locations/[^/]+$",
                       "required": true,
@@ -1443,7 +1443,7 @@
                   ]
                 },
                 "patch": {
-                  "description": "Updates a Unified Access Policy.",
+                  "description": "Updates an access policy.",
                   "flatPath": "v3/projects/{projectsId}/locations/{locationsId}/accessPolicies/{accessPoliciesId}",
                   "httpMethod": "PATCH",
                   "id": "iam.projects.locations.accessPolicies.patch",
@@ -1452,7 +1452,7 @@
                   ],
                   "parameters": {
                     "name": {
-                      "description": "Identifier. The resource name of the Unified Access Policy. The following formats are supported: * `projects/{project_id}/locations/{location}/accessPolicies/{unified_access_policy_id}` * `projects/{project_number}/locations/{location}/accessPolicies/{unified_access_policy_id}` * `folders/{folder_id}/locations/{location}/accessPolicies/{unified_access_policy_id}` * `organizations/{organization_id}/locations/{location}/accessPolicies/{unified_access_policy_id}`",
+                      "description": "Identifier. The resource name of the access policy. The following formats are supported: * `projects/{project_id}/locations/{location}/accessPolicies/{policy_id}` * `projects/{project_number}/locations/{location}/accessPolicies/{policy_id}` * `folders/{folder_id}/locations/{location}/accessPolicies/{policy_id}` * `organizations/{organization_id}/locations/{location}/accessPolicies/{policy_id}`",
                       "location": "path",
                       "pattern": "^projects/[^/]+/locations/[^/]+/accessPolicies/[^/]+$",
                       "required": true,
@@ -1485,14 +1485,14 @@
                   ],
                   "parameters": {
                     "name": {
-                      "description": "Required. The name of the Unified Access Policy. Format: * `organizations/{organization_id}/locations/{location}/accessPolicies/{unified_access_policy_id}` * `folders/{folder_id}/locations/{location}/accessPolicies/{unified_access_policy_id}` * `projects/{project_id}/locations/{location}/accessPolicies/{unified_access_policy_id}` * `projects/{project_number}/locations/{location}/accessPolicies/{unified_access_policy_id}`",
+                      "description": "Required. The name of the access policy. Format: `organizations/{organization_id}/locations/{location}/accessPolicies/{access_policy_id}` `folders/{folder_id}/locations/{location}/accessPolicies/{access_policy_id}` `projects/{project_id}/locations/{location}/accessPolicies/{access_policy_id}` `projects/{project_number}/locations/{location}/accessPolicies/{access_policy_id}`",
                       "location": "path",
                       "pattern": "^projects/[^/]+/locations/[^/]+/accessPolicies/[^/]+$",
                       "required": true,
                       "type": "string"
                     },
                     "pageSize": {
-                      "description": "Optional. The maximum number of Unified Access Policy bindings to return. The service might return a smaller number of bindings. If unspecified, at most 50 bindings are returned. The maximum value is 1000; values above 1000 are reduced to 1000.",
+                      "description": "Optional. The maximum number of policy bindings to return. The service may return fewer than this value. If unspecified, at most 50 policy bindings will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.",
                       "format": "int32",
                       "location": "query",
                       "type": "integer"
@@ -1811,45 +1811,45 @@
       "type": "object"
     },
     "GoogleIamV3AccessPolicy": {
-      "description": "An IAM Unified Access Policy resource.",
+      "description": "An IAM access policy resource.",
       "id": "GoogleIamV3AccessPolicy",
       "properties": {
         "annotations": {
           "additionalProperties": {
             "type": "string"
           },
-          "description": "Optional. User-defined annotations. See https://google.aip.dev/148#annotations for more details such as format and size limitations.",
+          "description": "Optional. User defined annotations. See https://google.aip.dev/148#annotations for more details such as format and size limitations",
           "type": "object"
         },
         "createTime": {
-          "description": "Output only. The time when the Unified Access Policy was created.",
+          "description": "Output only. The time when the access policy was created.",
           "format": "google-datetime",
           "readOnly": true,
           "type": "string"
         },
         "details": {
           "$ref": "GoogleIamV3AccessPolicyDetails",
-          "description": "Optional. The details for the Unified Access Policy."
+          "description": "Optional. The details for the access policy."
         },
         "displayName": {
-          "description": "Optional. The description of the Unified Access Policy. This description can be a maximum of 63 characters.",
+          "description": "Optional. The description of the access policy. Must be less than or equal to 63 characters.",
           "type": "string"
         },
         "etag": {
-          "description": "Optional. The etag for the Unified Access Policy. If this is provided on update, it must match the server's etag.",
+          "description": "Optional. The etag for the access policy. If this is provided on update, it must match the server's etag.",
           "type": "string"
         },
         "name": {
-          "description": "Identifier. The resource name of the Unified Access Policy. The following formats are supported: * `projects/{project_id}/locations/{location}/accessPolicies/{unified_access_policy_id}` * `projects/{project_number}/locations/{location}/accessPolicies/{unified_access_policy_id}` * `folders/{folder_id}/locations/{location}/accessPolicies/{unified_access_policy_id}` * `organizations/{organization_id}/locations/{location}/accessPolicies/{unified_access_policy_id}`",
+          "description": "Identifier. The resource name of the access policy. The following formats are supported: * `projects/{project_id}/locations/{location}/accessPolicies/{policy_id}` * `projects/{project_number}/locations/{location}/accessPolicies/{policy_id}` * `folders/{folder_id}/locations/{location}/accessPolicies/{policy_id}` * `organizations/{organization_id}/locations/{location}/accessPolicies/{policy_id}`",
           "type": "string"
         },
         "uid": {
-          "description": "Output only. The globally unique ID of the Unified Access Policy.",
+          "description": "Output only. The globally unique ID of the access policy.",
           "readOnly": true,
           "type": "string"
         },
         "updateTime": {
-          "description": "Output only. The time when the Unified Access Policy was most recently updated.",
+          "description": "Output only. The time when the access policy was most recently updated.",
           "format": "google-datetime",
           "readOnly": true,
           "type": "string"
@@ -1858,11 +1858,11 @@
       "type": "object"
     },
     "GoogleIamV3AccessPolicyDetails": {
-      "description": "Unified Access Policy details.",
+      "description": "Access policy details.",
       "id": "GoogleIamV3AccessPolicyDetails",
       "properties": {
         "rules": {
-          "description": "Required. A list of Unified Access Policy rules.",
+          "description": "Required. A list of access policy rules.",
           "items": {
             "$ref": "GoogleIamV3AccessPolicyRule"
           },
@@ -1872,18 +1872,18 @@
       "type": "object"
     },
     "GoogleIamV3AccessPolicyRule": {
-      "description": "Unified Access Policy rule that determines the behavior of the policy.",
+      "description": "Access Policy Rule that determines the behavior of the policy.",
       "id": "GoogleIamV3AccessPolicyRule",
       "properties": {
         "conditions": {
           "additionalProperties": {
             "$ref": "GoogleTypeExpr"
           },
-          "description": "Optional. The conditions that determine whether this rule applies to a request. Conditions are identified by their key, which is the FQDN of the service that they are relevant to. For example: ``` \"conditions\": { \"iam.googleapis.com\": { \"expression\": {cel_expression} } } ``` Each rule is evaluated independently. If this rule does not apply to a request, other rules might still apply. The following keys are supported: * `eventarc.googleapis.com`: Can use `CEL` functions that evaluate resource fields. * `iam.googleapis.com`: Can use `CEL` functions that evaluate [resource tags](https://cloud.google.com/iam/help/conditions/resource-tags) and combine them using boolean and logical operators. Other functions and operators are not supported. * `iap.googleapis.com`: Can use `CEL` functions and [attributes](https://docs.cloud.google.com/gemini-enterprise-agent-platform/govern/policies/cel-attributes-uap) that evaluate destination resources for requests that use the `iap.googleapis.com/resources.egressViaIAP` permission.",
+          "description": "Optional. The conditions that determine whether this rule applies to a request. Conditions are identified by their key, which is the FQDN of the service that they are relevant to. For example: ``` \"conditions\": { \"iam.googleapis.com\": { \"expression\": } } ``` Each rule is evaluated independently. If this rule does not apply to a request, other rules might still apply. Currently supported keys are as follows: * `eventarc.googleapis.com`: Can use `CEL` functions that evaluate resource fields. * `iam.googleapis.com`: Can use `CEL` functions that evaluate [resource tags](https://cloud.google.com/iam/help/conditions/resource-tags) and combine them using boolean and logical operators. Other functions and operators are not supported.",
           "type": "object"
         },
         "description": {
-          "description": "Optional. Customer-specified description of the rule. This description can be a maximum of 256 characters.",
+          "description": "Optional. Customer specified description of the rule. Must be less than or equal to 256 characters.",
           "type": "string"
         },
         "effect": {
@@ -1895,13 +1895,13 @@
           ],
           "enumDescriptions": [
             "The effect is unspecified.",
-            "The rule will deny access if it evaluates to true.",
-            "The rule will grant access if it evaluates to true."
+            "The policy will deny access if it evaluates to true.",
+            "The policy will grant access if it evaluates to true."
           ],
           "type": "string"
         },
         "excludedPrincipals": {
-          "description": "Optional. The principals to exclude from the rule, even if they are listed in the `principals`. For example, you could add a Google group to the `principals`, then exclude specific users who belong to that group.",
+          "description": "Optional. The identities that are excluded from the access policy rule, even if they are listed in the `principals`. For example, you could add a Google group to the `principals`, then exclude specific users who belong to that group.",
           "items": {
             "type": "string"
           },
@@ -1912,7 +1912,7 @@
           "description": "Required. Attributes that are used to determine whether this rule applies to a request."
         },
         "principals": {
-          "description": "Required. The principals to include in the rule. This field can contain the following values: * `principal://goog/subject/{email_id}`: A specific Google Account. Includes Gmail, Cloud Identity, and Google Workspace user accounts. For example, `principal://goog/subject/alice@example.com`. * `principal://iam.googleapis.com/projects/-/serviceAccounts/{service_account_id}`: A Google Cloud service account. For example, `principal://iam.googleapis.com/projects/-/serviceAccounts/my-service-account@iam.gserviceaccount.com`. * `principalSet://goog/group/{group_id}`: A Google group. For example, `principalSet://goog/group/admins@example.com`. * `principalSet://goog/cloudIdentityCustomerId/{customer_id}`: All of the principals associated with the specified Google Workspace or Cloud Identity customer ID. For example, `principalSet://goog/cloudIdentityCustomerId/C01Abc35`. * `principalSet://goog/public:all`: A special identifier that represents any principal that is on the internet, even if they do not have a Google Account or are not logged in. This value is only supported in rules with the `DENY` effect. * `principal://iam.googleapis.com/locations/global/workforcePools/{pool_id}/subject/{subject_attribute_value}`: A single identity in a workforce identity pool. * `principalSet://iam.googleapis.com/locations/global/workforcePools/{pool_id}/group/{group_id}`: All workforce identities in a group. * `principalSet://iam.googleapis.com/locations/global/workforcePools/{pool_id}/attribute.{attribute_name}/{attribute_value}`: All workforce identities with a specific attribute value. * `principalSet://iam.googleapis.com/locations/global/workforcePools/{pool_id}/*`: All identities in a workforce identity pool. * `principal://iam.googleapis.com/projects/{project_number}/locations/global/workloadIdentityPools/{pool_id}/subject/{subject_attribute_value}`: A single identity in a workload identity pool. * `principalSet://iam.googleapis.com/projects/{project_number}/locations/global/workloadIdentityPools/{pool_id}/group/{group_id}`: A workload identity pool group. * `principalSet://iam.googleapis.com/projects/{project_number}/locations/global/workloadIdentityPools/{pool_id}/attribute.{attribute_name}/{attribute_value}`: All identities in a workload identity pool with a certain attribute. * `principalSet://iam.googleapis.com/projects/{project_number}/locations/global/workloadIdentityPools/{pool_id}/*`: All identities in a workload identity pool. * `principal://{trust_domain}/{agent_resource_path}/{agent_id}`: A single, specific agent identity. * `principalSet://{trust_domain}/*`: All agent identities that belong to a particular trust domain. * `principalSet://{trust_domain}/attribute.{attribute_name}/{attribute_value}`: All agents with a particular attribute. If an identifier that was previously used in a rule is soft deleted, then a `deleted` prefix is automatically added to the identifier. Users can't add new identifiers with this syntax. * `deleted:principal://goog/subject/{email_id}?uid={uid}`: A specific Google Account that was deleted recently. For example, `deleted:principal://goog/subject/alice@example.com?uid=1234567890`. If the Google Account is recovered, this identifier reverts to the standard identifier for a Google Account. * `deleted:principalSet://goog/group/{group_id}?uid={uid}`: A Google group that was deleted recently. For example, `deleted:principalSet://goog/group/admins@example.com?uid=1234567890`. If the Google group is restored, this identifier reverts to the standard identifier for a Google group. * `deleted:principal://iam.googleapis.com/projects/-/serviceAccounts/{service_account_id}?uid={uid}`: A Google Cloud service account that was deleted recently. For example, `deleted:principal://iam.googleapis.com/projects/-/serviceAccounts/my-service-account@iam.gserviceaccount.com?uid=1234567890`. If the service account is undeleted, this identifier reverts to the standard identifier for a service account. * `deleted:principal://iam.googleapis.com/locations/global/workforcePools/{pool_id}/subject/{subject_attribute_value}`: A workforce identity that was deleted recently. For example, `deleted:principal://iam.googleapis.com/locations/global/workforcePools/my-pool-id/subject/my-subject-attribute-value`. If the workforce identity is undeleted, this identifier reverts to the standard identifier for a workforce identity.",
+          "description": "Required. The identities for which this rule's effect governs using one or more permissions on Google Cloud resources. This field can contain the following values: * `principal://goog/subject/{email_id}`: A specific Google Account. Includes Gmail, Cloud Identity, and Google Workspace user accounts. For example, `principal://goog/subject/alice@example.com`. * `principal://iam.googleapis.com/projects/-/serviceAccounts/{service_account_id}`: A Google Cloud service account. For example, `principal://iam.googleapis.com/projects/-/serviceAccounts/my-service-account@iam.gserviceaccount.com`. * `principalSet://goog/group/{group_id}`: A Google group. For example, `principalSet://goog/group/admins@example.com`. * `principalSet://goog/cloudIdentityCustomerId/{customer_id}`: All of the principals associated with the specified Google Workspace or Cloud Identity customer ID. For example, `principalSet://goog/cloudIdentityCustomerId/C01Abc35`. * `principalSet://goog/public:all`: A special identifier that represents any principal that is on the internet, even if they do not have a Google Account or are not logged in. `principalSet://goog/public:all` is only supported in `DENY` effect rule. * `principal://iam.googleapis.com/locations/global/workforcePools/{pool_id}/subject/{subject_attribute_value}`: A single identity in a workforce identity pool. * `principalSet://iam.googleapis.com/locations/global/workforcePools/{pool_id}/group/{group_id}`: All workforce identities in a group. * `principalSet://iam.googleapis.com/locations/global/workforcePools/{pool_id}/attribute.{attribute_name}/{attribute_value}`: All workforce identities with a specific attribute value. * `principalSet://iam.googleapis.com/locations/global/workforcePools/{pool_id}/*`: All identities in a workforce identity pool. * `principal://iam.googleapis.com/projects/{project_number}/locations/global/workloadIdentityPools/{pool_id}/subject/{subject_attribute_value}`: A single identity in a workload identity pool. * `principalSet://iam.googleapis.com/projects/{project_number}/locations/global/workloadIdentityPools/{pool_id}/group/{group_id}`: A workload identity pool group. * `principalSet://iam.googleapis.com/projects/{project_number}/locations/global/workloadIdentityPools/{pool_id}/attribute.{attribute_name}/{attribute_value}`: All identities in a workload identity pool with a certain attribute. * `principalSet://iam.googleapis.com/projects/{project_number}/locations/global/workloadIdentityPools/{pool_id}/*`: All identities in a workload identity pool. * `principal://{trust_domain}/{agent_resource_path}/{agent_id}`: A single, specific agent identity. * `principalSet://{trust_domain}/*`: All agent identities belonging to a particular trust domain. * `principalSet://{trust_domain}/attribute.{attribute_name}/{attribute_value}`: All agents with a particular attribute. If an identifier that was previously set on a policy is soft deleted, then calls to read that policy will return the identifier with a deleted prefix. Users cannot set identifiers with this syntax. * `deleted:principal://goog/subject/{email_id}?uid={uid}`: A specific Google Account that was deleted recently. For example, `deleted:principal://goog/subject/alice@example.com?uid=1234567890`. If the Google Account is recovered, this identifier reverts to the standard identifier for a Google Account. * `deleted:principalSet://goog/group/{group_id}?uid={uid}`: A Google group that was deleted recently. For example, `deleted:principalSet://goog/group/admins@example.com?uid=1234567890`. If the Google group is restored, this identifier reverts to the standard identifier for a Google group. * `deleted:principal://iam.googleapis.com/projects/-/serviceAccounts/{service_account_id}?uid={uid}`: A Google Cloud service account that was deleted recently. For example, `deleted:principal://iam.googleapis.com/projects/-/serviceAccounts/my-service-account@iam.gserviceaccount.com?uid=1234567890`. If the service account is undeleted, this identifier reverts to the standard identifier for a service account. * `deleted:principal://iam.googleapis.com/locations/global/workforcePools/{pool_id}/subject/{subject_attribute_value}`: A workforce identity that was deleted recently. For example, `deleted:principal://iam.googleapis.com/locations/global/workforcePools/my-pool-id/subject/my-subject-attribute-value`. If the workforce identity is undeleted, this identifier reverts to the standard identifier for a workforce identity.",
           "items": {
             "type": "string"
           },
@@ -1926,14 +1926,14 @@
       "id": "GoogleIamV3AccessPolicyRuleOperation",
       "properties": {
         "excludedPermissions": {
-          "description": "Optional. Specifies the permissions to exclude from the rule. If a permission appears in `permissions` _and_ in `excluded_permissions`, then it will _not_ be subject to the rule effect. The excluded permissions can be specified using the same syntax as `permissions`.",
+          "description": "Optional. Specifies the permissions that this rule excludes from the set of affected permissions given by `permissions`. If a permission appears in `permissions` _and_ in `excluded_permissions` then it will _not_ be subject to the policy effect. The excluded permissions can be specified using the same syntax as `permissions`.",
           "items": {
             "type": "string"
           },
           "type": "array"
         },
         "permissions": {
-          "description": "Optional. The permissions to include in the rule. Rules with the `ALLOW` effect grant the specified permissions. Rules with the `DENY` effect deny the specified permissions. The following formats are supported: * Individual permissions: Individual permissions use the format `{service_fqdn}/{resource}.{verb}`, where `{service_fqdn}` is the fully qualified domain name for the service. For example, `eventarc.googleapis.com/messageBuses.publish`. * Roles: Only supported in rules with the `ALLOW` effect. Roles use the format `role:{role_name}`. For example, `role:roles/logging.logsViewer`. If you include a role name in a rule, then the rule includes all of the permissions in that role. * Permission groups: Sets of permissions, such as `aiplatform.googleapis.com/*.*`. Permission groups are sets of permissions that match a specified pattern. There are some restrictions on the permission groups you can reference and the permissions included in those groups. For more information, see [Permission groups](https://docs.cloud.google.com/iam/help/uap/permission-groups). An empty list doesn't match any `permissions`.",
+          "description": "Optional. The permissions that are explicitly affected by this rule. Each permission uses the format `{service_fqdn}/{resource}.{verb}`, where `{service_fqdn}` is the fully qualified domain name for the service. Currently supported permissions are as follows: * `eventarc.googleapis.com/messageBuses.publish`. An empty list doesn't match any `permissions`.",
           "items": {
             "type": "string"
           },
@@ -1947,7 +1947,7 @@
       "id": "GoogleIamV3ListAccessPoliciesResponse",
       "properties": {
         "accessPolicies": {
-          "description": "The Unified Access Policies from the specified parent.",
+          "description": "The access policies from the specified parent.",
           "items": {
             "$ref": "GoogleIamV3AccessPolicy"
           },
@@ -2087,7 +2087,7 @@
           "enumDescriptions": [
             "Unspecified policy kind; Not a valid state",
             "Principal access boundary policy kind",
-            "Unified Access Policy kind."
+            "Access policy kind."
           ],
           "type": "string"
         },
@@ -2123,7 +2123,7 @@
           "type": "string"
         },
         "resource": {
-          "description": "Immutable. The full resource name that's used for Unified Access Policy bindings. Examples: * Organization: `//cloudresourcemanager.googleapis.com/organizations/ORGANIZATION_ID` * Folder: `//cloudresourcemanager.googleapis.com/folders/FOLDER_ID` * Project: * `//cloudresourcemanager.googleapis.com/projects/PROJECT_NUMBER` * `//cloudresourcemanager.googleapis.com/projects/PROJECT_ID`",
+          "description": "Immutable. The full resource name that's used for access policy bindings. Examples: * Organization: `//cloudresourcemanager.googleapis.com/organizations/ORGANIZATION_ID` * Folder: `//cloudresourcemanager.googleapis.com/folders/FOLDER_ID` * Project: * `//cloudresourcemanager.googleapis.com/projects/PROJECT_NUMBER` * `//cloudresourcemanager.googleapis.com/projects/PROJECT_ID`",
           "type": "string"
         }
       },
@@ -2233,7 +2233,7 @@
           "type": "string"
         },
         "policyBindings": {
-          "description": "The bindings that reference the specified Unified Access Policy.",
+          "description": "The policy bindings that reference the specified policy.",
           "items": {
             "$ref": "GoogleIamV3PolicyBinding"
           },
