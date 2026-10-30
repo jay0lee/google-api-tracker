@@ -462,7 +462,7 @@
                   ],
                   "parameters": {
                     "customerId": {
-                      "description": "Required. The customer ID.",
+                      "description": "Required. The unique identifier for the customer in Cloud Identity. The customer ID is an alphanumeric string that begins with the letter `C`, for example, `C01234abc`. To find your customer ID, see [Find your customer ID](https://support.google.com/cloudidentity/answer/10070793).",
                       "location": "path",
                       "required": true,
                       "type": "string"
@@ -490,13 +490,13 @@
                   ],
                   "parameters": {
                     "customerId": {
-                      "description": "Required. The customer ID.",
+                      "description": "Required. The unique identifier for the customer in Cloud Identity. The customer ID is an alphanumeric string that begins with the letter `C`, for example, `C01234abc`. To find your customer ID, see [Find your customer ID](https://support.google.com/cloudidentity/answer/10070793).",
                       "location": "path",
                       "required": true,
                       "type": "string"
                     },
                     "userId": {
-                      "description": "Required. The user ID.",
+                      "description": "Required. The unique, service-assigned identifier for the user resource in Cloud Identity. This value is the same as the User.id value of the corresponding user.",
                       "location": "path",
                       "required": true,
                       "type": "string"
@@ -526,13 +526,13 @@
                       "type": "string"
                     },
                     "customerId": {
-                      "description": "Required. The customer ID.",
+                      "description": "Required. The unique identifier for the customer in Cloud Identity. The customer ID is an alphanumeric string that begins with the letter `C`, for example, `C01234abc`. To find your customer ID, see [Find your customer ID](https://support.google.com/cloudidentity/answer/10070793).",
                       "location": "path",
                       "required": true,
                       "type": "string"
                     },
                     "userId": {
-                      "description": "Required. The user ID.",
+                      "description": "Required. The unique, service-assigned identifier for the user resource in Cloud Identity. This value is the same as the User.id value of the corresponding user.",
                       "location": "path",
                       "required": true,
                       "type": "string"
@@ -557,7 +557,7 @@
                   ],
                   "parameters": {
                     "customerId": {
-                      "description": "Required. The customer ID.",
+                      "description": "Required. The unique identifier for the customer in Cloud Identity. The customer ID is an alphanumeric string that begins with the letter `C`, for example, `C01234abc`. To find your customer ID, see [Find your customer ID](https://support.google.com/cloudidentity/answer/10070793).",
                       "location": "path",
                       "required": true,
                       "type": "string"
@@ -588,13 +588,13 @@
                   ],
                   "parameters": {
                     "customerId": {
-                      "description": "Required. The customer ID.",
+                      "description": "Required. The unique identifier for the customer in Cloud Identity. The customer ID is an alphanumeric string that begins with the letter `C`, for example, `C01234abc`. To find your customer ID, see [Find your customer ID](https://support.google.com/cloudidentity/answer/10070793).",
                       "location": "path",
                       "required": true,
                       "type": "string"
                     },
                     "userId": {
-                      "description": "Required. The user ID.",
+                      "description": "Required. The unique, service-assigned identifier for the user resource in Cloud Identity. This value is the same as the User.id value of the corresponding user.",
                       "location": "path",
                       "required": true,
                       "type": "string"
@@ -621,6 +621,69 @@
   "retrieved_from": "https://cloudidentityscim.googleapis.com/$discovery/rest?version=v1&key=****",
   "rootUrl": "https://cloudidentityscim.googleapis.com/",
   "schemas": {
+    "AdditionalIm": {
+      "description": "SCIM representation of a user's non-primary instant messaging (IM) address. Excludes primary IM addresses, which correspond to the SCIM core schema attribute `ims`.",
+      "id": "AdditionalIm",
+      "properties": {
+        "type": {
+          "description": "Optional. The type of the IM service. Supported values include `aim`, `gtalk`, `icq`, `jabber`, `msn`, `netmeeting`, `qq`, `skype`, and `yahoo`. Custom values are also supported; any other string value is treated as a custom type.",
+          "type": "string"
+        },
+        "usage": {
+          "description": "Optional. The usage of the IM. Supported values include `home`, `work`, and `other`. Custom values are also supported; any other string value is treated as a custom usage.",
+          "type": "string"
+        },
+        "value": {
+          "description": "Required. The IM address.",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "AdditionalOrganization": {
+      "description": "SCIM representation of a user's non-primary organization. Excludes the user's primary organization, which is represented across the `primaryOrganization` attribute, the SCIM Enterprise User extension (`urn:ietf:params:scim:schemas:extension:enterprise:2.0:User`), and the SCIM core schema attribute `title`.",
+      "id": "AdditionalOrganization",
+      "properties": {
+        "costCenter": {
+          "description": "Optional. The cost center of the organization.",
+          "type": "string"
+        },
+        "department": {
+          "description": "Optional. The department of the organization.",
+          "type": "string"
+        },
+        "domain": {
+          "description": "Optional. The domain name associated with the organization. For example, `example.com`.",
+          "type": "string"
+        },
+        "fullTimeEquivalent": {
+          "description": "Optional. The full-time equivalent millipercent within the organization (100000 = 100%).",
+          "format": "int32",
+          "type": "integer"
+        },
+        "location": {
+          "description": "Optional. The physical location of the organization.",
+          "type": "string"
+        },
+        "name": {
+          "description": "Optional. The name of the organization.",
+          "type": "string"
+        },
+        "symbol": {
+          "description": "Optional. The symbol of the organization.",
+          "type": "string"
+        },
+        "title": {
+          "description": "Optional. The user's title within the organization.",
+          "type": "string"
+        },
+        "type": {
+          "description": "Optional. The type of the organization. Valid values are `school` and `work`.",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "Address": {
       "description": "SCIM representation of a user's address.",
       "id": "Address",
@@ -812,6 +875,57 @@
       },
       "type": "object"
     },
+    "CloudIdentityUserExtension": {
+      "description": "Defines the attributes for the Google Cloud Identity User extension. The schema URN for this extension is: `urn:ietf:params:scim:schemas:extension:google:2.0:CloudIdentityUser`.",
+      "id": "CloudIdentityUserExtension",
+      "properties": {
+        "additionalExternalIds": {
+          "description": "Optional. A collection of external identifiers for the user. This list serves as a supplemental set to those already represented by the SCIM core schema attribute `externalId` and the SCIM Enterprise User extension attribute `urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:employeeNumber`.",
+          "items": {
+            "$ref": "ExternalId"
+          },
+          "type": "array"
+        },
+        "additionalIms": {
+          "description": "Optional. Non-primary instant messaging addresses for the user. Excludes primary IM addresses, which correspond to the SCIM core schema attribute `ims`.",
+          "items": {
+            "$ref": "AdditionalIm"
+          },
+          "type": "array"
+        },
+        "additionalOrganizations": {
+          "description": "Optional. Non-primary organizations of the user.",
+          "items": {
+            "$ref": "AdditionalOrganization"
+          },
+          "type": "array"
+        },
+        "addressListVisible": {
+          "description": "Optional. Indicates whether the user should be shown in the global address list. If unassigned or cleared by the client, this attribute defaults to `true`.",
+          "type": "boolean"
+        },
+        "gender": {
+          "description": "Optional. The gender of the user. Supported values are `female`, `male`, `other`, and `unknown`. Custom values are also supported; any other string value is treated as a custom gender.",
+          "type": "string"
+        },
+        "organizationalUnit": {
+          "$ref": "OrganizationalUnit",
+          "description": "Optional. The organizational unit of the user."
+        },
+        "primaryOrganization": {
+          "$ref": "PrimaryOrganization",
+          "description": "Optional. Additional attributes of the primary organization of the user. Excludes `name`, `department`, and `costCenter` (which are represented by `urn:ietf:params:scim:schemas:extension:enterprise:2.0:User`), as well as `title` (which corresponds to the SCIM core schema attribute `title`)."
+        },
+        "websites": {
+          "description": "Optional. The websites associated with the user, excluding websites of type `profile` (which correspond to the SCIM core schema attribute `profileUrl`).",
+          "items": {
+            "$ref": "Website"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
     "Email": {
       "description": "SCIM representation of a user's email.",
       "id": "Email",
@@ -854,6 +968,10 @@
           "description": "Optional. Identifier, typically assigned by the organization, used to identify the user inside the organization.",
           "type": "string"
         },
+        "manager": {
+          "$ref": "Manager",
+          "description": "Optional. The user's manager. A complex attribute that optionally allows service providers to represent organizational hierarchy by referencing the `id` attribute of another user."
+        },
         "organization": {
           "description": "Optional. The name of an organization a user belongs to.",
           "type": "string"
@@ -869,6 +987,21 @@
           "description": "Output only. Specifies whether or not the operation is supported.",
           "readOnly": true,
           "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "ExternalId": {
+      "description": "SCIM representation of a user's additional external identifier. Excludes external identifiers already represented by the SCIM core schema attribute `externalId` and the SCIM Enterprise User extension attribute `urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:employeeNumber`.",
+      "id": "ExternalId",
+      "properties": {
+        "type": {
+          "description": "Optional. The type of the external ID. Supported values include `account`, `customer`, `loginId`, and `network`. Custom values are also supported; any other string value is treated as a custom type. The values `organization` and `cloudidentityscim.googleapis.com` are reserved and cannot be used.",
+          "type": "string"
+        },
+        "value": {
+          "description": "Required. The value of the external ID.",
+          "type": "string"
         }
       },
       "type": "object"
@@ -1059,6 +1192,22 @@
       },
       "type": "object"
     },
+    "Manager": {
+      "description": "SCIM representation of a user's manager. Fields are based on [RFC 7643 Section 4.3](https://datatracker.ietf.org/doc/html/rfc7643#section-4.3).",
+      "id": "Manager",
+      "properties": {
+        "$ref": {
+          "description": "Output only. The URI of the SCIM resource representing the user's manager.",
+          "readOnly": true,
+          "type": "string"
+        },
+        "value": {
+          "description": "Optional. The `id` of the SCIM resource representing the user's manager.",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "Member": {
       "description": "SCIM representation of a group member.",
       "id": "Member",
@@ -1127,6 +1276,17 @@
       },
       "type": "object"
     },
+    "OrganizationalUnit": {
+      "description": "SCIM representation of a user's organizational unit.",
+      "id": "OrganizationalUnit",
+      "properties": {
+        "path": {
+          "description": "Optional. The full path of the organizational unit the user belongs to (for example, `/corp/engineering`), or `/` for the top-level organizational unit. The organizational unit must already exist. If unassigned or cleared by the client, this attribute defaults to `/`.",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "PatchBody": {
       "description": "The structure for the body of a PATCH request.",
       "id": "PatchBody",
@@ -1174,6 +1334,34 @@
         },
         "value": {
           "description": "Required. The phone number.",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "PrimaryOrganization": {
+      "description": "SCIM representation of a user's primary organization. The fields in this complex attribute apply to the same primary organization as the SCIM Enterprise User extension (`urn:ietf:params:scim:schemas:extension:enterprise:2.0:User`). It excludes `name`, `department`, and `costCenter` (which are represented by the `organization`, `department`, and `costCenter` attributes in `urn:ietf:params:scim:schemas:extension:enterprise:2.0:User`), as well as `title` (which corresponds to the SCIM core schema attribute `title`).",
+      "id": "PrimaryOrganization",
+      "properties": {
+        "domain": {
+          "description": "Optional. The domain name associated with the organization. For example, `example.com`.",
+          "type": "string"
+        },
+        "fullTimeEquivalent": {
+          "description": "Optional. The full-time equivalent millipercent within the organization (100000 = 100%).",
+          "format": "int32",
+          "type": "integer"
+        },
+        "location": {
+          "description": "Optional. The physical location of the organization.",
+          "type": "string"
+        },
+        "symbol": {
+          "description": "Optional. The symbol of the organization.",
+          "type": "string"
+        },
+        "type": {
+          "description": "Optional. The type of the organization. Valid values are `school` and `work`.",
           "type": "string"
         }
       },
@@ -1416,8 +1604,27 @@
           "$ref": "EnterpriseUserExtension",
           "description": "Optional. SCIM Enterprise User extension attributes."
         },
+        "urn:ietf:params:scim:schemas:extension:google:2.0:CloudIdentityUser": {
+          "$ref": "CloudIdentityUserExtension",
+          "description": "Optional. SCIM Cloud Identity User extension attributes."
+        },
         "userName": {
           "description": "Required. The user's primary email address. Used as the unique identifier for the user.",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "Website": {
+      "description": "SCIM representation of a user's website. Excludes websites of type `profile`, which correspond to the SCIM core schema attribute `profileUrl`.",
+      "id": "Website",
+      "properties": {
+        "type": {
+          "description": "Optional. The type of the website. Supported values are `home`, `work`, and `other`. Any input value other than `home` or `work` is treated as `other`.",
+          "type": "string"
+        },
+        "value": {
+          "description": "Required. The website URL.",
           "type": "string"
         }
       },
