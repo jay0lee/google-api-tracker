@@ -1556,6 +1556,7 @@
                     "$ref": "ListReactionsResponse"
                   },
                   "scopes": [
+                    "https://www.googleapis.com/auth/chat.app.messages.readonly",
                     "https://www.googleapis.com/auth/chat.bot",
                     "https://www.googleapis.com/auth/chat.messages",
                     "https://www.googleapis.com/auth/chat.messages.reactions",
