@@ -3429,6 +3429,10 @@
           "description": "The approval ID.",
           "type": "string"
         },
+        "approvedRevisionId": {
+          "description": "The revision ID of the file when the approval completed successfully. This is only set when the approval status is APPROVED.",
+          "type": "string"
+        },
         "completeTime": {
           "description": "The time the approval was completed.",
           "format": "google-datetime",
