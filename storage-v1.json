@@ -6378,19 +6378,6 @@
           "description": "The modification time of the object metadata in RFC 3339 format. Set initially to object creation time and then updated whenever any metadata of the object changes. This includes changes made by a requester, such as modifying custom metadata, as well as changes made by Cloud Storage on behalf of a requester, such as changing the storage class based on an Object Lifecycle Configuration.",
           "format": "date-time",
           "type": "string"
-        },
-        "zonalAvailabilityInfo": {
-          "description": "Information about the object's availability in Rapid Cache Ultra (RCU) zonal caches. This field will only populate once the object is loaded into the cache.",
-          "properties": {
-            "availableZones": {
-              "description": "A list of zones where the object has a zonal copy. The zone names are expected to be in lower-dash case format (e.g., 'us-central1-a').",
-              "items": {
-                "type": "string"
-              },
-              "type": "array"
-            }
-          },
-          "type": "object"
         }
       },
       "type": "object"
